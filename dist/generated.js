@@ -1,9 +1,8 @@
 /*
     This code is automayicly generated, do not edit by hand.
-    Generated at: 2023-12-02 11:45:09.455
-    Generated for: typescript@5.3.2
+    Generated at: 2024-06-15 08:06:47.403
+    Generated for: typescript@5.4.5
 */
-//undefined
 import ts from "typescript";
 ;
 export function createNodeArray({ elements, hasTrailingComma }) {

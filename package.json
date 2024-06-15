@@ -1,12 +1,13 @@
 {
-  "name": "typescript-factory-unpacked",
+  "name": "typescript-code-generation",
   "version": "0.0.1",
   "description": "Wrapper around the Typescript Compiler API that changes the parameters to a single object so you can omit unused paramters making for a cleaner function call.",
   "type": "module",
   "main": "index.js",
   "scripts": {
     "generate": "npx tsx src",
-    "generate-watch": "npx tsx watch src"
+    "generate-watch": "npx tsx watch src",
+    "build": "npx tsx src & npx tsc -p lib"
   },
   "author": "Anthony de Jong",
   "license": "ISC",

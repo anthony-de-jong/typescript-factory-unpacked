@@ -265,3 +265,10 @@ node_modules/undici-types/readable.d.ts
 node_modules/undici-types/README.md
 node_modules/undici-types/webidl.d.ts
 node_modules/undici-types/websocket.d.ts
+node_modules/@types/node/sea.d.ts
+node_modules/typescript/lib/lib.dom.asynciterable.d.ts
+node_modules/typescript/lib/lib.es2016.intl.d.ts
+node_modules/typescript/lib/lib.esnext.collection.d.ts
+node_modules/typescript/lib/lib.esnext.object.d.ts
+node_modules/typescript/lib/lib.esnext.promise.d.ts
+node_modules/typescript/lib/lib.webworker.asynciterable.d.ts

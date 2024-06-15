@@ -1,5 +1,5 @@
-import ts, { DeclarationStatement, Identifier, Modifier, ModuleDeclaration, Node, SourceFile } from 'typescript';
-import { existsSync, readFileSync, stat, write, writeFileSync } from 'fs';
+import ts, { Identifier, Modifier, Node, SourceFile } from 'typescript';
+import { existsSync, readFileSync, writeFileSync } from 'fs';
 import { default as assert } from 'assert';
 
 import generateHeaderComment from './header-comment.js';
@@ -22,14 +22,6 @@ function* nodeIterator(file: SourceFile, node: Node, filter: (node: Node) => boo
 
     for (const child of node.getChildren(file))
         yield* nodeIterator(file, child, filter);
-}
-
-function findAll<T extends Node = Node>(file: SourceFile, node: Node, filter: (node: Node) => boolean): T[] {
-    return Array.from(nodeIterator(file, node, filter)) as T[];
-}
-
-function findAllInFile<T extends Node = Node>(file: SourceFile, filter: (node: Node) => boolean) : T[] {
-    return Array.from(nodeIterator(file, file, filter)) as T[];
 }
 
 function findFirstInFile<T extends Node = Node>(file: SourceFile, filter: (node: Node) => boolean): T | undefined {
@@ -67,25 +59,36 @@ declarationFactoryType.forEachChild(node => {
     }
 });
 
+const usedTypes = new Set<string>();
 const statements: ts.Statement[] = [];
 
 for (const methodSignatures of methods.values()) {
     if (methodSignatures.length === 1) {
-        statements.push(createFunctionDeclaration(
+        const declaration = createFunctionDeclaration(
             methodSignatures[0].name as ts.Identifier,
             methodSignatures[0].typeParameters,
             methodSignatures[0].parameters,
             methodSignatures[0].type,
-        ))
+        );
+
+        for (const type of getUsedTypeNamesFromMethodOrFunction(methodSignatures[0]))
+            usedTypes.add(type);
+
+        statements.push(declaration);
     } else {
         for (const methodSignature of methodSignatures) {
-            statements.push(createFunctionDeclaration(
+            const declaration = createFunctionDeclaration(
                 methodSignature.name as ts.Identifier,
                 methodSignature.typeParameters,
                 methodSignature.parameters,
                 methodSignature.type,
                 false
-            ));
+            );
+
+            for (const type of getUsedTypeNamesFromMethodOrFunction(methodSignature))
+                usedTypes.add(type);
+
+            statements.push(declaration);
         }
 
         const parameters = Array.from(new Set(methodSignatures.flatMap(a => a.parameters.map(b => (b.name as ts.Identifier).text))));
@@ -100,14 +103,6 @@ for (const methodSignatures of methods.values()) {
     }
 }
 
-const importTypesFilter = (n:Node) => ts.isEnumDeclaration(n) || ts.isInterfaceDeclaration(n) || ts.isTypeAliasDeclaration(n);
-
-const namespaces = findAllInFile<ModuleDeclaration>(typeFile, ts.isModuleDeclaration);
-const namespaceTypes = namespaces.map(a => findAll<DeclarationStatement>(typeFile, a, importTypesFilter).map(b => b.name.text))
-
-const excludedTypes = new Set(namespaceTypes.slice(1).flat());
-const includedTypes = new Set(namespaceTypes[0].filter(a => !excludedTypes.has(a)));
-
 const printer = ts.createPrinter({ removeComments: false });
 
 statements.unshift(factory.createImportDeclaration(
@@ -116,7 +111,7 @@ statements.unshift(factory.createImportDeclaration(
         false,
         factory.createIdentifier("ts"),
         factory.createNamedImports(
-            Array.from(includedTypes.values(), n => factory.createImportSpecifier(false, undefined, factory.createIdentifier(n)))
+            Array.from(usedTypes.values(), n => factory.createImportSpecifier(false, undefined, factory.createIdentifier(n)))
         )
     ),
     factory.createStringLiteral("typescript"),
@@ -124,18 +119,16 @@ statements.unshift(factory.createImportDeclaration(
 ));
 
 ts.addSyntheticLeadingComment(statements[0], ts.SyntaxKind.MultiLineCommentTrivia, generateHeaderComment(), true);
-ts.addSyntheticLeadingComment(statements[0], ts.SyntaxKind.SingleLineCommentTrivia, undefined, true);
 
 statements.splice(1, 0, ts.factory.createEmptyStatement())
 
 const module = printer.printList(
-    ts.ListFormat.MultiLine, 
-    factory.createNodeArray(statements), 
+    ts.ListFormat.MultiLine,
+    factory.createNodeArray(statements),
     undefined
 );
-[]
-writeFileSync('./lib/generated.ts', module);
 
+writeFileSync('./lib/generated.ts', module);
 
 // //ts.SyntaxKind.MultiLineCommentTrivia
 
@@ -191,4 +184,77 @@ function createFunctionDeclaration(
             )
         ], true)
     )
+}
+
+function* getUsedTypeNamesFromMethodOrFunction(declaration: ts.MethodSignature | ts.FunctionTypeNode, ignored?:string[]) {
+    ignored ??= []
+    ignored.push(...declaration?.typeParameters?.map(a => a.name.text) ??[]);
+
+    if (declaration.type)
+        yield* getUsedTypeNamesFromTypeNode(declaration.type, ignored)
+
+    if (declaration.typeParameters)
+        for (const typeParameter of declaration.typeParameters.filter(a => a.constraint))
+            yield* getUsedTypeNamesFromTypeNode(typeParameter.constraint, ignored);
+
+    if (declaration.parameters)
+        for (const parameter of declaration.parameters.filter(a => a.type))
+            yield* getUsedTypeNamesFromTypeNode(parameter.type, ignored);
+}
+
+function* getUsedTypeNamesFromTypeNode(declaration: ts.TypeNode, ignored?: string[]) {
+    switch (true) {
+        case ts.isTypeReferenceNode(declaration):
+            let name: ts.EntityName = declaration.typeName
+
+            while (ts.isQualifiedName(name))
+                name = name.left;
+
+            if (declaration.typeArguments)
+                for (const typeArgument of declaration.typeArguments)
+                    yield* getUsedTypeNamesFromTypeNode(typeArgument, ignored);
+
+            if (ignored?.includes(name.text))
+                return;
+
+            yield name.text;
+            break;
+
+        case ts.isArrayTypeNode(declaration):
+            yield* getUsedTypeNamesFromTypeNode(declaration.elementType, ignored);
+            break;
+
+        case ts.isFunctionTypeNode(declaration):
+            yield* getUsedTypeNamesFromMethodOrFunction(declaration, ignored);
+        break;
+
+        case ts.isIndexedAccessTypeNode(declaration):
+            yield* getUsedTypeNamesFromTypeNode(declaration.indexType, ignored);
+            yield* getUsedTypeNamesFromTypeNode(declaration.objectType, ignored);
+        break;
+
+        case ts.isTypeOperatorNode(declaration):
+        case ts.isParenthesizedTypeNode(declaration):
+            yield* getUsedTypeNamesFromTypeNode(declaration.type, ignored);
+            break;
+
+        case ts.isUnionTypeNode(declaration):
+        case ts.isIntersectionTypeNode(declaration):
+            for (const type of declaration.types)
+                yield* getUsedTypeNamesFromTypeNode(type, ignored);
+            break;
+
+        case ts.isLiteralTypeNode(declaration):
+        case ts.isTypeLiteralNode(declaration):
+        case declaration.kind == ts.SyntaxKind.VoidKeyword:
+        case declaration.kind == ts.SyntaxKind.StringKeyword:
+        case declaration.kind == ts.SyntaxKind.NumberKeyword:
+        case declaration.kind == ts.SyntaxKind.BooleanKeyword:
+        case declaration.kind == ts.SyntaxKind.UndefinedKeyword:
+            break;
+
+        default:
+            console.log(declaration.getText(typeFile))
+            console.warn("Not implemented type node: ", ts.SyntaxKind[declaration?.kind]);
+    }
 }
