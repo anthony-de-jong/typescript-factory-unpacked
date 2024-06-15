@@ -62,45 +62,90 @@ declarationFactoryType.forEachChild(node => {
 const usedTypes = new Set<string>();
 const statements: ts.Statement[] = [];
 
-for (const methodSignatures of methods.values()) {
-    if (methodSignatures.length === 1) {
-        const declaration = createFunctionDeclaration(
-            methodSignatures[0].name as ts.Identifier,
-            methodSignatures[0].typeParameters,
-            methodSignatures[0].parameters,
-            methodSignatures[0].type,
-        );
+for (const [name, signatures] of methods) {
+    let parameters: { [key: string]: boolean } = null;
 
-        for (const type of getUsedTypeNamesFromMethodOrFunction(methodSignatures[0]))
+    for (const signature of signatures) {
+        for (const type of getUsedTypeNamesFromMethodOrFunction(signature))
             usedTypes.add(type);
 
-        statements.push(declaration);
-    } else {
-        for (const methodSignature of methodSignatures) {
-            const declaration = createFunctionDeclaration(
-                methodSignature.name as ts.Identifier,
-                methodSignature.typeParameters,
-                methodSignature.parameters,
-                methodSignature.type,
-                false
-            );
+        for (const parameter of signature.parameters)
+            (parameters ??= {})[parameter.name.getText(typeFile)] ||= !!parameter.questionToken;
 
-            for (const type of getUsedTypeNamesFromMethodOrFunction(methodSignature))
-                usedTypes.add(type);
-
-            statements.push(declaration);
+        if (signature.parameters.length === 1) {
+            statements.push(createFunction_SingleArgument(signature));
         }
 
-        const parameters = Array.from(new Set(methodSignatures.flatMap(a => a.parameters.map(b => (b.name as ts.Identifier).text))));
-        const signature = methodSignatures.find(a => parameters.every(b => a.parameters.some(c => b == (c.name as Identifier).text)));
-
-        statements.push(createFunctionDeclaration(
-            signature.name as ts.Identifier,
-            undefined,
-            signature.parameters.map(a => factory.createParameterDeclaration(undefined, undefined, a.name, a.questionToken)),
-            undefined
-        ));
+        statements.push(createFunction_ObjectArgument(signature));
     }
+
+    let body: ts.Expression = factory.createCallExpression(
+        factory.createPropertyAccessExpression(
+            factory.createPropertyAccessExpression(
+                factory.createIdentifier('ts'),
+                factory.createIdentifier('factory'),
+            ),
+            name,
+        ),
+        undefined,
+        Object.keys(parameters ?? {}).map(p => factory.createPropertyAccessExpression(
+            factory.createIdentifier("o"),
+            factory.createIdentifier(p)
+        ))
+    );
+
+    if (signatures.some(a => a.parameters?.length === 1)) {
+        body = factory.createConditionalExpression(
+            Object.entries(parameters ?? {})
+                .filter(([_, optional]) => !optional)
+                .map(([name, _]) => factory.createBinaryExpression(
+                    factory.createStringLiteral(name),
+                    factory.createToken(ts.SyntaxKind.InKeyword),
+                    factory.createIdentifier("o")
+                )).reduce<ts.Expression>((a, b) => factory.createLogicalAnd(a, b), factory.createBinaryExpression(
+                    factory.createTypeOfExpression(factory.createIdentifier("o")),
+                    factory.createToken(ts.SyntaxKind.EqualsEqualsEqualsToken),
+                    factory.createStringLiteral("object")
+                )),
+            factory.createToken(ts.SyntaxKind.QuestionToken),
+            body,
+            factory.createToken(ts.SyntaxKind.ColonToken),
+            factory.createCallExpression(
+                factory.createPropertyAccessExpression(
+                    factory.createPropertyAccessExpression(
+                        factory.createIdentifier('ts'),
+                        factory.createIdentifier('factory'),
+                    ),
+                    name,
+                ),
+                undefined,
+                [factory.createIdentifier("o")]
+            )
+        )
+    }
+
+    statements.push(factory.createFunctionDeclaration(
+        [factory.createToken(ts.SyntaxKind.ExportKeyword)],
+        undefined,
+        name,
+        undefined,
+        parameters ? [
+            factory.createParameterDeclaration(
+                undefined,
+                undefined,
+                "o",
+                undefined,
+                undefined,
+                undefined
+            )
+        ] : undefined,
+        undefined,
+        factory.createBlock([
+            factory.createReturnStatement(
+                body
+            )
+        ], true)
+    ));
 }
 
 const printer = ts.createPrinter({ removeComments: false });
@@ -134,17 +179,33 @@ writeFileSync('./lib/generated.ts', module);
 
 console.log('Finished');
 
-function createFunctionDeclaration(
-    name: string | Identifier,
-    typeParameters: readonly ts.TypeParameterDeclaration[],
+function createFunction_SingleArgument({ name, typeParameters, parameters, type }: {
+    name: ts.PropertyName,
+    type?: ts.TypeNode,
     parameters: readonly ts.ParameterDeclaration[],
-    type: ts.TypeNode,
-    includeBody: boolean = true) {
-
+    typeParameters?: readonly ts.TypeParameterDeclaration[],
+}) {
     return factory.createFunctionDeclaration(
         [factory.createToken(ts.SyntaxKind.ExportKeyword)],
         undefined,
-        name,
+        ts.isIdentifier(name) ? name : name.getText(typeFile),
+        typeParameters,
+        parameters,
+        type,
+        undefined,
+    )
+}
+
+function createFunction_ObjectArgument({ name, typeParameters, parameters, type }: {
+    name: ts.PropertyName,
+    type?: ts.TypeNode,
+    parameters: readonly ts.ParameterDeclaration[],
+    typeParameters?: readonly ts.TypeParameterDeclaration[],
+}) {
+    return factory.createFunctionDeclaration(
+        [factory.createToken(ts.SyntaxKind.ExportKeyword)],
+        undefined,
+        ts.isIdentifier(name) ? name : name.getText(typeFile),
         typeParameters,
         [
             factory.createParameterDeclaration(
@@ -168,27 +229,13 @@ function createFunctionDeclaration(
             )
         ],
         type,
-        includeBody && factory.createBlock([
-            factory.createReturnStatement(
-                factory.createCallExpression(
-                    factory.createPropertyAccessExpression(
-                        factory.createPropertyAccessExpression(
-                            factory.createIdentifier('ts'),
-                            factory.createIdentifier('factory'),
-                        ),
-                        name,
-                    ),
-                    typeParameters?.map(t => factory.createTypeReferenceNode(t.name)),
-                    parameters.map(p => p.name as Identifier)
-                )
-            )
-        ], true)
+        undefined
     )
 }
 
-function* getUsedTypeNamesFromMethodOrFunction(declaration: ts.MethodSignature | ts.FunctionTypeNode, ignored?:string[]) {
+function* getUsedTypeNamesFromMethodOrFunction(declaration: ts.MethodSignature | ts.FunctionTypeNode, ignored?: string[]) {
     ignored ??= []
-    ignored.push(...declaration?.typeParameters?.map(a => a.name.text) ??[]);
+    ignored.push(...declaration?.typeParameters?.map(a => a.name.text) ?? []);
 
     if (declaration.type)
         yield* getUsedTypeNamesFromTypeNode(declaration.type, ignored)
@@ -226,12 +273,12 @@ function* getUsedTypeNamesFromTypeNode(declaration: ts.TypeNode, ignored?: strin
 
         case ts.isFunctionTypeNode(declaration):
             yield* getUsedTypeNamesFromMethodOrFunction(declaration, ignored);
-        break;
+            break;
 
         case ts.isIndexedAccessTypeNode(declaration):
             yield* getUsedTypeNamesFromTypeNode(declaration.indexType, ignored);
             yield* getUsedTypeNamesFromTypeNode(declaration.objectType, ignored);
-        break;
+            break;
 
         case ts.isTypeOperatorNode(declaration):
         case ts.isParenthesizedTypeNode(declaration):
