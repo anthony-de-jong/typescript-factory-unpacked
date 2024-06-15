@@ -1,10 +1,12 @@
 import ts, { Identifier, Modifier, Node, SourceFile } from 'typescript';
-import { existsSync, readFileSync, writeFileSync } from 'fs';
+import { existsSync, readFileSync, renameSync, writeFileSync } from 'fs';
 import { default as assert } from 'assert';
 
 import generateHeaderComment from './header-comment.js';
 
-const factory = ts.factory;
+import * as factory from "../lib/generated.ts";
+
+const FLAG_SINGLE_ARGUMENT_SUPPORT = false;
 
 console.log(`----- ${new Date().toString()} -----`);
 
@@ -72,96 +74,87 @@ for (const [name, signatures] of methods) {
         for (const parameter of signature.parameters)
             (parameters ??= {})[parameter.name.getText(typeFile)] ||= isParameterOptional(parameter);
 
-        if (signature.parameters.length === 1) {
-            statements.push(createFunction_SingleArgument(signature));
+        if (FLAG_SINGLE_ARGUMENT_SUPPORT) {
+            if (signature.parameters.length === 1) {
+                statements.push(createFunction_SingleArgument(signature));
+            }
         }
 
         statements.push(createFunction_ObjectArgument(signature));
     }
 
-    let body: ts.Expression = factory.createCallExpression(
-        factory.createPropertyAccessExpression(
-            factory.createPropertyAccessExpression(
-                factory.createIdentifier('ts'),
-                factory.createIdentifier('factory'),
-            ),
-            name,
-        ),
-        undefined,
-        Object.keys(parameters ?? {}).map(p => factory.createPropertyAccessExpression(
-            factory.createIdentifier("o"),
-            factory.createIdentifier(p)
-        ))
-    );
-
-    if (signatures.some(a => a.parameters?.length === 1)) {
-        body = factory.createConditionalExpression(
-            Object.entries(parameters ?? {})
-                .filter(([_, optional]) => !optional)
-                .map(([name, _]) => factory.createBinaryExpression(
-                    factory.createStringLiteral(name),
-                    factory.createToken(ts.SyntaxKind.InKeyword),
-                    factory.createIdentifier("o")
-                )).reduce<ts.Expression>((a, b) => factory.createLogicalAnd(a, b), factory.createBinaryExpression(
-                    factory.createTypeOfExpression(factory.createIdentifier("o")),
-                    factory.createToken(ts.SyntaxKind.EqualsEqualsEqualsToken),
-                    factory.createStringLiteral("object")
-                )),
-            factory.createToken(ts.SyntaxKind.QuestionToken),
-            body,
-            factory.createToken(ts.SyntaxKind.ColonToken),
-            factory.createCallExpression(
-                factory.createPropertyAccessExpression(
-                    factory.createPropertyAccessExpression(
-                        factory.createIdentifier('ts'),
-                        factory.createIdentifier('factory'),
-                    ),
-                    name,
-                ),
-                undefined,
-                [factory.createIdentifier("o")]
-            )
-        )
+    let body: ts.Expression = factory.createCallExpression({
+        expression: factory.createPropertyAccessExpression({
+            expression: factory.createPropertyAccessExpression({
+                expression: factory.createIdentifier({ text: "ts" }),
+                name: factory.createIdentifier({ text: "factory" })
+            }),
+            name: name
+        }),
+        argumentsArray: Object.keys(parameters ?? {}).map(p => factory.createPropertyAccessExpression({
+            expression: factory.createIdentifier({ text: "o" }),
+            name: factory.createIdentifier({ text: p })
+        }))
+    });
+    if (FLAG_SINGLE_ARGUMENT_SUPPORT) {
+        if (signatures.some(a => a.parameters?.length === 1)) {
+            body = factory.createConditionalExpression({
+                condition: Object.entries(parameters ?? {})
+                    .filter(([_, optional]) => !optional)
+                    .map(([name, _]) => factory.createBinaryExpression({
+                        left: factory.createStringLiteral({ text: name }),
+                        operator: factory.createToken({ token: ts.SyntaxKind.InKeyword }),
+                        right: factory.createIdentifier({ text: "o" })
+                    })).reduce<ts.Expression>((left, right) => factory.createLogicalAnd({ left, right }), factory.createBinaryExpression({
+                        left: factory.createTypeOfExpression({ expression: factory.createIdentifier({ text: "o" }) }),
+                        operator: factory.createToken({ token: ts.SyntaxKind.EqualsEqualsEqualsToken }),
+                        right: factory.createStringLiteral({ text: "object" })
+                    })),
+                questionToken: factory.createToken({ token: ts.SyntaxKind.QuestionToken }),
+                whenTrue: body,
+                colonToken: factory.createToken({ token: ts.SyntaxKind.ColonToken }),
+                whenFalse: factory.createCallExpression({
+                    expression: factory.createPropertyAccessExpression({
+                        expression: factory.createPropertyAccessExpression({
+                            expression: factory.createIdentifier({ text: 'ts' }),
+                            name: factory.createIdentifier({ text: 'factory' }),
+                        }),
+                        name: name,
+                    }),
+                    argumentsArray: [factory.createIdentifier({ text: "o" })]
+                })
+            })
+        }
     }
 
-    statements.push(factory.createFunctionDeclaration(
-        [factory.createToken(ts.SyntaxKind.ExportKeyword)],
-        undefined,
-        name,
-        undefined,
-        parameters ? [
-            factory.createParameterDeclaration(
-                undefined,
-                undefined,
-                "o",
-                undefined,
-                undefined,
-                undefined
-            )
-        ] : undefined,
-        undefined,
-        factory.createBlock([
-            factory.createReturnStatement(
-                body
-            )
-        ], true)
-    ));
+    statements.push(factory.createFunctionDeclaration({
+        modifiers: [factory.createToken({ token: ts.SyntaxKind.ExportKeyword })],
+        name: name,
+        parameters:
+            parameters
+                ? [factory.createParameterDeclaration({ name: "o" })]
+                : undefined,
+        body: factory.createBlock({
+            statements: [
+                factory.createReturnStatement({ expression: body })
+            ],
+            multiLine: true
+        })
+    }));
 }
 
 const printer = ts.createPrinter({ removeComments: false });
 
-statements.unshift(factory.createImportDeclaration(
-    undefined,
-    factory.createImportClause(
-        false,
-        factory.createIdentifier("ts"),
-        factory.createNamedImports(
-            Array.from(usedTypes.values(), n => factory.createImportSpecifier(false, undefined, factory.createIdentifier(n)))
-        )
-    ),
-    factory.createStringLiteral("typescript"),
-    undefined
-));
+statements.unshift(factory.createImportDeclaration({
+    importClause: factory.createImportClause({
+        isTypeOnly: false,
+        name: factory.createIdentifier({ text: "ts" }),
+        namedBindings: factory.createNamedImports({
+            elements: Array.from(usedTypes.values(), n => factory.createImportSpecifier({ isTypeOnly: false, name: factory.createIdentifier({ text: n }) }))
+        }),
+    }),
+    moduleSpecifier: factory.createStringLiteral({ text: "typescript" })
+}));
 
 ts.addSyntheticLeadingComment(statements[0], ts.SyntaxKind.MultiLineCommentTrivia, generateHeaderComment(), true);
 
@@ -169,13 +162,12 @@ statements.splice(1, 0, ts.factory.createEmptyStatement())
 
 const module = printer.printList(
     ts.ListFormat.MultiLine,
-    factory.createNodeArray(statements),
+    factory.createNodeArray({ elements: statements }),
     undefined
 );
 
+renameSync('./lib/generated.ts', './lib/generated.old.ts');
 writeFileSync('./lib/generated.ts', module);
-
-// //ts.SyntaxKind.MultiLineCommentTrivia
 
 console.log('Finished');
 
@@ -185,15 +177,13 @@ function createFunction_SingleArgument({ name, typeParameters, parameters, type 
     parameters: readonly ts.ParameterDeclaration[],
     typeParameters?: readonly ts.TypeParameterDeclaration[],
 }) {
-    return factory.createFunctionDeclaration(
-        [factory.createToken(ts.SyntaxKind.ExportKeyword)],
-        undefined,
-        ts.isIdentifier(name) ? name : name.getText(typeFile),
+    return factory.createFunctionDeclaration({
+        modifiers: [factory.createToken({ token: ts.SyntaxKind.ExportKeyword })],
+        name: ts.isIdentifier(name) ? name : name.getText(typeFile),
         typeParameters,
         parameters,
-        type,
-        undefined,
-    )
+        type
+    });
 }
 
 function createFunction_ObjectArgument({ name, typeParameters, parameters, type }: {
@@ -202,37 +192,29 @@ function createFunction_ObjectArgument({ name, typeParameters, parameters, type 
     parameters: readonly ts.ParameterDeclaration[],
     typeParameters?: readonly ts.TypeParameterDeclaration[],
 }) {
-    return factory.createFunctionDeclaration(
-        [factory.createToken(ts.SyntaxKind.ExportKeyword)],
-        undefined,
-        ts.isIdentifier(name) ? name : name.getText(typeFile),
+    return factory.createFunctionDeclaration({
+        modifiers: [factory.createToken({ token: ts.SyntaxKind.ExportKeyword })],
+        name: ts.isIdentifier(name) ? name : name.getText(typeFile),
         typeParameters,
-        [
-            factory.createParameterDeclaration(
-                undefined,
-                undefined,
-                parameters.length && factory.createObjectBindingPattern(
-                    parameters.map(p => factory.createBindingElement(
-                        undefined, undefined, p.name, undefined
-                    ))
-                ),
-                undefined,
-                parameters.length && factory.createTypeLiteralNode(
-                    parameters.map(p => factory.createPropertySignature(
-                        p.modifiers?.filter(a => ts.isModifier(a)) as Modifier[],
-                        p.name as Identifier,
-                        isParameterOptional(p)
-                            ? factory.createToken(ts.SyntaxKind.QuestionToken)
+        parameters: [
+            factory.createParameterDeclaration({
+                name: parameters.length && factory.createObjectBindingPattern({
+                    elements: parameters.map(p => factory.createBindingElement({ name: p.name }))
+                }),
+                type: parameters.length && factory.createTypeLiteralNode({
+                    members: parameters.map(p => factory.createPropertySignature({
+                        modifiers: p.modifiers?.filter(a => ts.isModifier(a)) as Modifier[],
+                        name: p.name as Identifier,
+                        questionToken: isParameterOptional(p)
+                            ? factory.createToken({ token: ts.SyntaxKind.QuestionToken })
                             : undefined,
-                        p.type
-                    ))
-                ),
-                undefined
-            )
+                        type: p.type
+                    }))
+                })
+            })
         ],
-        type,
-        undefined
-    )
+        type
+    });
 }
 
 function isParameterOptional(parameter: ts.ParameterDeclaration) {

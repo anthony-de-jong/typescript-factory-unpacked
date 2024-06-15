@@ -1,6 +1,6 @@
 /*
     This code is automayicly generated, do not edit by hand.
-    Generated at: 2024-06-15 10:11:37.453
+    Generated at: 2024-06-15 11:16:50.533
     Generated for: typescript@5.4.5
 */
 import ts, { NodeArray, Node, NumericLiteral, TokenFlags, BigIntLiteral, PseudoBigInt, StringLiteral, PropertyNameLiteral, PrivateIdentifier, RegularExpressionLiteral, Identifier, GeneratedIdentifierFlags, SuperExpression, SyntaxKind, ThisExpression, NullLiteral, TrueLiteral, FalseLiteral, EndOfFileToken, Token, PunctuationToken, PunctuationSyntaxKind, KeywordTypeNode, KeywordTypeSyntaxKind, ModifierToken, ModifierSyntaxKind, KeywordToken, KeywordSyntaxKind, Modifier, ModifierFlags, QualifiedName, EntityName, ComputedPropertyName, Expression, TypeParameterDeclaration, TypeNode, ParameterDeclaration, ModifierLike, DotDotDotToken, BindingName, QuestionToken, Decorator, PropertySignature, PropertyName, PropertyDeclaration, ExclamationToken, MethodSignature, MethodDeclaration, AsteriskToken, Block, ConstructorDeclaration, GetAccessorDeclaration, SetAccessorDeclaration, CallSignatureDeclaration, ConstructSignatureDeclaration, IndexSignatureDeclaration, TemplateLiteralTypeSpan, TemplateMiddle, TemplateTail, ClassStaticBlockDeclaration, TypePredicateNode, AssertsKeyword, ThisTypeNode, TypeReferenceNode, FunctionTypeNode, ConstructorTypeNode, TypeQueryNode, TypeLiteralNode, TypeElement, ArrayTypeNode, TupleTypeNode, NamedTupleMember, OptionalTypeNode, RestTypeNode, UnionTypeNode, IntersectionTypeNode, ConditionalTypeNode, InferTypeNode, ImportTypeNode, ImportAttributes, ParenthesizedTypeNode, TypeOperatorNode, IndexedAccessTypeNode, MappedTypeNode, ReadonlyKeyword, PlusToken, MinusToken, LiteralTypeNode, TemplateLiteralTypeNode, TemplateHead, ObjectBindingPattern, BindingElement, ArrayBindingPattern, ArrayBindingElement, ArrayLiteralExpression, ObjectLiteralExpression, ObjectLiteralElementLike, PropertyAccessExpression, MemberName, PropertyAccessChain, QuestionDotToken, ElementAccessExpression, ElementAccessChain, CallExpression, CallChain, NewExpression, TaggedTemplateExpression, TemplateLiteral, TypeAssertion, ParenthesizedExpression, FunctionExpression, ArrowFunction, EqualsGreaterThanToken, ConciseBody, DeleteExpression, TypeOfExpression, VoidExpression, AwaitExpression, PrefixUnaryExpression, PrefixUnaryOperator, PostfixUnaryExpression, PostfixUnaryOperator, BinaryExpression, BinaryOperator, BinaryOperatorToken, ConditionalExpression, ColonToken, TemplateExpression, TemplateSpan, NoSubstitutionTemplateLiteral, YieldExpression, SpreadElement, ClassExpression, HeritageClause, ClassElement, OmittedExpression, ExpressionWithTypeArguments, AsExpression, NonNullExpression, NonNullChain, MetaProperty, SatisfiesExpression, SemicolonClassElement, Statement, VariableStatement, VariableDeclarationList, VariableDeclaration, EmptyStatement, ExpressionStatement, IfStatement, DoStatement, WhileStatement, ForStatement, ForInitializer, ForInStatement, ForOfStatement, AwaitKeyword, ContinueStatement, BreakStatement, ReturnStatement, WithStatement, SwitchStatement, CaseBlock, LabeledStatement, ThrowStatement, TryStatement, CatchClause, DebuggerStatement, NodeFlags, FunctionDeclaration, ClassDeclaration, InterfaceDeclaration, TypeAliasDeclaration, EnumDeclaration, EnumMember, ModuleDeclaration, ModuleName, ModuleBody, ModuleBlock, CaseOrDefaultClause, NamespaceExportDeclaration, ImportEqualsDeclaration, ModuleReference, ImportDeclaration, ImportClause, NamedImportBindings, AssertClause, AssertEntry, AssertionKey, ImportTypeAssertionContainer, ImportAttribute, ImportAttributeName, NamespaceImport, NamespaceExport, NamedImports, ImportSpecifier, ExportAssignment, ExportDeclaration, NamedExportBindings, NamedExports, ExportSpecifier, ExternalModuleReference, JSDocAllType, JSDocUnknownType, JSDocNonNullableType, JSDocNullableType, JSDocOptionalType, JSDocFunctionType, JSDocVariadicType, JSDocNamepathType, JSDocTypeExpression, JSDocNameReference, JSDocMemberName, JSDocLink, JSDocLinkCode, JSDocLinkPlain, JSDocTypeLiteral, JSDocPropertyLikeTag, JSDocSignature, JSDocTemplateTag, JSDocParameterTag, JSDocReturnTag, JSDocComment, JSDocTypedefTag, JSDocNamespaceDeclaration, JSDocPropertyTag, JSDocTypeTag, JSDocSeeTag, JSDocThisTag, JSDocEnumTag, JSDocCallbackTag, JSDocOverloadTag, JSDocAugmentsTag, JSDocImplementsTag, JSDocAuthorTag, JSDocClassTag, JSDocPublicTag, JSDocPrivateTag, JSDocProtectedTag, JSDocReadonlyTag, JSDocUnknownTag, JSDocDeprecatedTag, JSDocOverrideTag, JSDocThrowsTag, JSDocSatisfiesTag, JSDocText, JSDoc, JSDocTag, JsxElement, JsxOpeningElement, JsxChild, JsxClosingElement, JsxSelfClosingElement, JsxTagNameExpression, JsxAttributes, JsxFragment, JsxOpeningFragment, JsxClosingFragment, JsxText, JsxAttribute, JsxAttributeName, JsxAttributeValue, JsxAttributeLike, JsxSpreadAttribute, JsxExpression, JsxNamespacedName, CaseClause, DefaultClause, PropertyAssignment, ShorthandPropertyAssignment, SpreadAssignment, SourceFile, FileReference, NotEmittedStatement, PartiallyEmittedExpression, CommaListExpression, Bundle, UnparsedSource, InputFiles, DestructuringAssignment, EqualsToken, AssignmentExpression, ImmediatelyInvokedArrowFunction, OuterExpressionKinds, HasModifiers, HasDecorators, AccessorDeclaration } from "typescript";
@@ -19,12 +19,11 @@ export function createNumericLiteral({ value, numericLiteralFlags }: {
 export function createNumericLiteral(o) {
     return ts.factory.createNumericLiteral(o.value, o.numericLiteralFlags);
 }
-export function createBigIntLiteral(value: string | PseudoBigInt): BigIntLiteral;
 export function createBigIntLiteral({ value }: {
     value: string | PseudoBigInt;
 }): BigIntLiteral;
 export function createBigIntLiteral(o) {
-    return typeof o === "object" && "value" in o ? ts.factory.createBigIntLiteral(o.value) : ts.factory.createBigIntLiteral(o);
+    return ts.factory.createBigIntLiteral(o.value);
 }
 export function createStringLiteral({ text, isSingleQuote }: {
     text: string;
@@ -40,19 +39,17 @@ export function createStringLiteralFromNode({ sourceNode, isSingleQuote }: {
 export function createStringLiteralFromNode(o) {
     return ts.factory.createStringLiteralFromNode(o.sourceNode, o.isSingleQuote);
 }
-export function createRegularExpressionLiteral(text: string): RegularExpressionLiteral;
 export function createRegularExpressionLiteral({ text }: {
     text: string;
 }): RegularExpressionLiteral;
 export function createRegularExpressionLiteral(o) {
-    return typeof o === "object" && "text" in o ? ts.factory.createRegularExpressionLiteral(o.text) : ts.factory.createRegularExpressionLiteral(o);
+    return ts.factory.createRegularExpressionLiteral(o.text);
 }
-export function createIdentifier(text: string): Identifier;
 export function createIdentifier({ text }: {
     text: string;
 }): Identifier;
 export function createIdentifier(o) {
-    return typeof o === "object" && "text" in o ? ts.factory.createIdentifier(o.text) : ts.factory.createIdentifier(o);
+    return ts.factory.createIdentifier(o.text);
 }
 export function createTempVariable({ recordTempVariable, reservedInNestedScopes }: {
     recordTempVariable?: ((node: Identifier) => void) | undefined;
@@ -61,12 +58,11 @@ export function createTempVariable({ recordTempVariable, reservedInNestedScopes 
 export function createTempVariable(o) {
     return ts.factory.createTempVariable(o.recordTempVariable, o.reservedInNestedScopes);
 }
-export function createLoopVariable(reservedInNestedScopes?: boolean): Identifier;
 export function createLoopVariable({ reservedInNestedScopes }: {
     reservedInNestedScopes?: boolean;
 }): Identifier;
 export function createLoopVariable(o) {
-    return typeof o === "object" ? ts.factory.createLoopVariable(o.reservedInNestedScopes) : ts.factory.createLoopVariable(o);
+    return ts.factory.createLoopVariable(o.reservedInNestedScopes);
 }
 export function createUniqueName({ text, flags }: {
     text: string;
@@ -82,73 +78,59 @@ export function getGeneratedNameForNode({ node, flags }: {
 export function getGeneratedNameForNode(o) {
     return ts.factory.getGeneratedNameForNode(o.node, o.flags);
 }
-export function createPrivateIdentifier(text: string): PrivateIdentifier;
 export function createPrivateIdentifier({ text }: {
     text: string;
 }): PrivateIdentifier;
 export function createPrivateIdentifier(o) {
-    return typeof o === "object" && "text" in o ? ts.factory.createPrivateIdentifier(o.text) : ts.factory.createPrivateIdentifier(o);
+    return ts.factory.createPrivateIdentifier(o.text);
 }
-export function createUniquePrivateName(text?: string): PrivateIdentifier;
 export function createUniquePrivateName({ text }: {
     text?: string;
 }): PrivateIdentifier;
 export function createUniquePrivateName(o) {
-    return typeof o === "object" ? ts.factory.createUniquePrivateName(o.text) : ts.factory.createUniquePrivateName(o);
+    return ts.factory.createUniquePrivateName(o.text);
 }
-export function getGeneratedPrivateNameForNode(node: Node): PrivateIdentifier;
 export function getGeneratedPrivateNameForNode({ node }: {
     node: Node;
 }): PrivateIdentifier;
 export function getGeneratedPrivateNameForNode(o) {
-    return typeof o === "object" && "node" in o ? ts.factory.getGeneratedPrivateNameForNode(o.node) : ts.factory.getGeneratedPrivateNameForNode(o);
+    return ts.factory.getGeneratedPrivateNameForNode(o.node);
 }
-export function createToken(token: SyntaxKind.SuperKeyword): SuperExpression;
 export function createToken({ token }: {
     token: SyntaxKind.SuperKeyword;
 }): SuperExpression;
-export function createToken(token: SyntaxKind.ThisKeyword): ThisExpression;
 export function createToken({ token }: {
     token: SyntaxKind.ThisKeyword;
 }): ThisExpression;
-export function createToken(token: SyntaxKind.NullKeyword): NullLiteral;
 export function createToken({ token }: {
     token: SyntaxKind.NullKeyword;
 }): NullLiteral;
-export function createToken(token: SyntaxKind.TrueKeyword): TrueLiteral;
 export function createToken({ token }: {
     token: SyntaxKind.TrueKeyword;
 }): TrueLiteral;
-export function createToken(token: SyntaxKind.FalseKeyword): FalseLiteral;
 export function createToken({ token }: {
     token: SyntaxKind.FalseKeyword;
 }): FalseLiteral;
-export function createToken(token: SyntaxKind.EndOfFileToken): EndOfFileToken;
 export function createToken({ token }: {
     token: SyntaxKind.EndOfFileToken;
 }): EndOfFileToken;
-export function createToken(token: SyntaxKind.Unknown): Token<SyntaxKind.Unknown>;
 export function createToken({ token }: {
     token: SyntaxKind.Unknown;
 }): Token<SyntaxKind.Unknown>;
-export function createToken<TKind extends PunctuationSyntaxKind>(token: TKind): PunctuationToken<TKind>;
 export function createToken<TKind extends PunctuationSyntaxKind>({ token }: {
     token: TKind;
 }): PunctuationToken<TKind>;
-export function createToken<TKind extends KeywordTypeSyntaxKind>(token: TKind): KeywordTypeNode<TKind>;
 export function createToken<TKind extends KeywordTypeSyntaxKind>({ token }: {
     token: TKind;
 }): KeywordTypeNode<TKind>;
-export function createToken<TKind extends ModifierSyntaxKind>(token: TKind): ModifierToken<TKind>;
 export function createToken<TKind extends ModifierSyntaxKind>({ token }: {
     token: TKind;
 }): ModifierToken<TKind>;
-export function createToken<TKind extends KeywordSyntaxKind>(token: TKind): KeywordToken<TKind>;
 export function createToken<TKind extends KeywordSyntaxKind>({ token }: {
     token: TKind;
 }): KeywordToken<TKind>;
 export function createToken(o) {
-    return typeof o === "object" && "token" in o ? ts.factory.createToken(o.token) : ts.factory.createToken(o);
+    return ts.factory.createToken(o.token);
 }
 export function createSuper(): SuperExpression;
 export function createSuper() {
@@ -170,19 +152,17 @@ export function createFalse(): FalseLiteral;
 export function createFalse() {
     return ts.factory.createFalse();
 }
-export function createModifier<T extends ModifierSyntaxKind>(kind: T): ModifierToken<T>;
 export function createModifier<T extends ModifierSyntaxKind>({ kind }: {
     kind: T;
 }): ModifierToken<T>;
 export function createModifier(o) {
-    return typeof o === "object" && "kind" in o ? ts.factory.createModifier(o.kind) : ts.factory.createModifier(o);
+    return ts.factory.createModifier(o.kind);
 }
-export function createModifiersFromModifierFlags(flags: ModifierFlags): Modifier[] | undefined;
 export function createModifiersFromModifierFlags({ flags }: {
     flags: ModifierFlags;
 }): Modifier[] | undefined;
 export function createModifiersFromModifierFlags(o) {
-    return typeof o === "object" && "flags" in o ? ts.factory.createModifiersFromModifierFlags(o.flags) : ts.factory.createModifiersFromModifierFlags(o);
+    return ts.factory.createModifiersFromModifierFlags(o.flags);
 }
 export function createQualifiedName({ left, right }: {
     left: EntityName;
@@ -199,12 +179,11 @@ export function updateQualifiedName({ node, left, right }: {
 export function updateQualifiedName(o) {
     return ts.factory.updateQualifiedName(o.node, o.left, o.right);
 }
-export function createComputedPropertyName(expression: Expression): ComputedPropertyName;
 export function createComputedPropertyName({ expression }: {
     expression: Expression;
 }): ComputedPropertyName;
 export function createComputedPropertyName(o) {
-    return typeof o === "object" && "expression" in o ? ts.factory.createComputedPropertyName(o.expression) : ts.factory.createComputedPropertyName(o);
+    return ts.factory.createComputedPropertyName(o.expression);
 }
 export function updateComputedPropertyName({ node, expression }: {
     node: ComputedPropertyName;
@@ -255,12 +234,11 @@ export function updateParameterDeclaration({ node, modifiers, dotDotDotToken, na
 export function updateParameterDeclaration(o) {
     return ts.factory.updateParameterDeclaration(o.node, o.modifiers, o.dotDotDotToken, o.name, o.questionToken, o.type, o.initializer);
 }
-export function createDecorator(expression: Expression): Decorator;
 export function createDecorator({ expression }: {
     expression: Expression;
 }): Decorator;
 export function createDecorator(o) {
-    return typeof o === "object" && "expression" in o ? ts.factory.createDecorator(o.expression) : ts.factory.createDecorator(o);
+    return ts.factory.createDecorator(o.expression);
 }
 export function updateDecorator({ node, expression }: {
     node: Decorator;
@@ -482,12 +460,11 @@ export function updateTemplateLiteralTypeSpan({ node, type, literal }: {
 export function updateTemplateLiteralTypeSpan(o) {
     return ts.factory.updateTemplateLiteralTypeSpan(o.node, o.type, o.literal);
 }
-export function createClassStaticBlockDeclaration(body: Block): ClassStaticBlockDeclaration;
 export function createClassStaticBlockDeclaration({ body }: {
     body: Block;
 }): ClassStaticBlockDeclaration;
 export function createClassStaticBlockDeclaration(o) {
-    return typeof o === "object" && "body" in o ? ts.factory.createClassStaticBlockDeclaration(o.body) : ts.factory.createClassStaticBlockDeclaration(o);
+    return ts.factory.createClassStaticBlockDeclaration(o.body);
 }
 export function updateClassStaticBlockDeclaration({ node, body }: {
     node: ClassStaticBlockDeclaration;
@@ -496,12 +473,11 @@ export function updateClassStaticBlockDeclaration({ node, body }: {
 export function updateClassStaticBlockDeclaration(o) {
     return ts.factory.updateClassStaticBlockDeclaration(o.node, o.body);
 }
-export function createKeywordTypeNode<TKind extends KeywordTypeSyntaxKind>(kind: TKind): KeywordTypeNode<TKind>;
 export function createKeywordTypeNode<TKind extends KeywordTypeSyntaxKind>({ kind }: {
     kind: TKind;
 }): KeywordTypeNode<TKind>;
 export function createKeywordTypeNode(o) {
-    return typeof o === "object" && "kind" in o ? ts.factory.createKeywordTypeNode(o.kind) : ts.factory.createKeywordTypeNode(o);
+    return ts.factory.createKeywordTypeNode(o.kind);
 }
 export function createTypePredicateNode({ assertsModifier, parameterName, type }: {
     assertsModifier?: AssertsKeyword | undefined;
@@ -586,12 +562,11 @@ export function updateTypeQueryNode({ node, exprName, typeArguments }: {
 export function updateTypeQueryNode(o) {
     return ts.factory.updateTypeQueryNode(o.node, o.exprName, o.typeArguments);
 }
-export function createTypeLiteralNode(members: readonly TypeElement[] | undefined): TypeLiteralNode;
 export function createTypeLiteralNode({ members }: {
     members?: readonly TypeElement[] | undefined;
 }): TypeLiteralNode;
 export function createTypeLiteralNode(o) {
-    return typeof o === "object" ? ts.factory.createTypeLiteralNode(o.members) : ts.factory.createTypeLiteralNode(o);
+    return ts.factory.createTypeLiteralNode(o.members);
 }
 export function updateTypeLiteralNode({ node, members }: {
     node: TypeLiteralNode;
@@ -600,12 +575,11 @@ export function updateTypeLiteralNode({ node, members }: {
 export function updateTypeLiteralNode(o) {
     return ts.factory.updateTypeLiteralNode(o.node, o.members);
 }
-export function createArrayTypeNode(elementType: TypeNode): ArrayTypeNode;
 export function createArrayTypeNode({ elementType }: {
     elementType: TypeNode;
 }): ArrayTypeNode;
 export function createArrayTypeNode(o) {
-    return typeof o === "object" && "elementType" in o ? ts.factory.createArrayTypeNode(o.elementType) : ts.factory.createArrayTypeNode(o);
+    return ts.factory.createArrayTypeNode(o.elementType);
 }
 export function updateArrayTypeNode({ node, elementType }: {
     node: ArrayTypeNode;
@@ -614,12 +588,11 @@ export function updateArrayTypeNode({ node, elementType }: {
 export function updateArrayTypeNode(o) {
     return ts.factory.updateArrayTypeNode(o.node, o.elementType);
 }
-export function createTupleTypeNode(elements: readonly (TypeNode | NamedTupleMember)[]): TupleTypeNode;
 export function createTupleTypeNode({ elements }: {
     elements: readonly (TypeNode | NamedTupleMember)[];
 }): TupleTypeNode;
 export function createTupleTypeNode(o) {
-    return typeof o === "object" && "elements" in o ? ts.factory.createTupleTypeNode(o.elements) : ts.factory.createTupleTypeNode(o);
+    return ts.factory.createTupleTypeNode(o.elements);
 }
 export function updateTupleTypeNode({ node, elements }: {
     node: TupleTypeNode;
@@ -647,12 +620,11 @@ export function updateNamedTupleMember({ node, dotDotDotToken, name, questionTok
 export function updateNamedTupleMember(o) {
     return ts.factory.updateNamedTupleMember(o.node, o.dotDotDotToken, o.name, o.questionToken, o.type);
 }
-export function createOptionalTypeNode(type: TypeNode): OptionalTypeNode;
 export function createOptionalTypeNode({ type }: {
     type: TypeNode;
 }): OptionalTypeNode;
 export function createOptionalTypeNode(o) {
-    return typeof o === "object" && "type" in o ? ts.factory.createOptionalTypeNode(o.type) : ts.factory.createOptionalTypeNode(o);
+    return ts.factory.createOptionalTypeNode(o.type);
 }
 export function updateOptionalTypeNode({ node, type }: {
     node: OptionalTypeNode;
@@ -661,12 +633,11 @@ export function updateOptionalTypeNode({ node, type }: {
 export function updateOptionalTypeNode(o) {
     return ts.factory.updateOptionalTypeNode(o.node, o.type);
 }
-export function createRestTypeNode(type: TypeNode): RestTypeNode;
 export function createRestTypeNode({ type }: {
     type: TypeNode;
 }): RestTypeNode;
 export function createRestTypeNode(o) {
-    return typeof o === "object" && "type" in o ? ts.factory.createRestTypeNode(o.type) : ts.factory.createRestTypeNode(o);
+    return ts.factory.createRestTypeNode(o.type);
 }
 export function updateRestTypeNode({ node, type }: {
     node: RestTypeNode;
@@ -675,12 +646,11 @@ export function updateRestTypeNode({ node, type }: {
 export function updateRestTypeNode(o) {
     return ts.factory.updateRestTypeNode(o.node, o.type);
 }
-export function createUnionTypeNode(types: readonly TypeNode[]): UnionTypeNode;
 export function createUnionTypeNode({ types }: {
     types: readonly TypeNode[];
 }): UnionTypeNode;
 export function createUnionTypeNode(o) {
-    return typeof o === "object" && "types" in o ? ts.factory.createUnionTypeNode(o.types) : ts.factory.createUnionTypeNode(o);
+    return ts.factory.createUnionTypeNode(o.types);
 }
 export function updateUnionTypeNode({ node, types }: {
     node: UnionTypeNode;
@@ -689,12 +659,11 @@ export function updateUnionTypeNode({ node, types }: {
 export function updateUnionTypeNode(o) {
     return ts.factory.updateUnionTypeNode(o.node, o.types);
 }
-export function createIntersectionTypeNode(types: readonly TypeNode[]): IntersectionTypeNode;
 export function createIntersectionTypeNode({ types }: {
     types: readonly TypeNode[];
 }): IntersectionTypeNode;
 export function createIntersectionTypeNode(o) {
-    return typeof o === "object" && "types" in o ? ts.factory.createIntersectionTypeNode(o.types) : ts.factory.createIntersectionTypeNode(o);
+    return ts.factory.createIntersectionTypeNode(o.types);
 }
 export function updateIntersectionTypeNode({ node, types }: {
     node: IntersectionTypeNode;
@@ -722,12 +691,11 @@ export function updateConditionalTypeNode({ node, checkType, extendsType, trueTy
 export function updateConditionalTypeNode(o) {
     return ts.factory.updateConditionalTypeNode(o.node, o.checkType, o.extendsType, o.trueType, o.falseType);
 }
-export function createInferTypeNode(typeParameter: TypeParameterDeclaration): InferTypeNode;
 export function createInferTypeNode({ typeParameter }: {
     typeParameter: TypeParameterDeclaration;
 }): InferTypeNode;
 export function createInferTypeNode(o) {
-    return typeof o === "object" && "typeParameter" in o ? ts.factory.createInferTypeNode(o.typeParameter) : ts.factory.createInferTypeNode(o);
+    return ts.factory.createInferTypeNode(o.typeParameter);
 }
 export function updateInferTypeNode({ node, typeParameter }: {
     node: InferTypeNode;
@@ -757,12 +725,11 @@ export function updateImportTypeNode({ node, argument, attributes, qualifier, ty
 export function updateImportTypeNode(o) {
     return ts.factory.updateImportTypeNode(o.node, o.argument, o.attributes, o.qualifier, o.typeArguments, o.isTypeOf);
 }
-export function createParenthesizedType(type: TypeNode): ParenthesizedTypeNode;
 export function createParenthesizedType({ type }: {
     type: TypeNode;
 }): ParenthesizedTypeNode;
 export function createParenthesizedType(o) {
-    return typeof o === "object" && "type" in o ? ts.factory.createParenthesizedType(o.type) : ts.factory.createParenthesizedType(o);
+    return ts.factory.createParenthesizedType(o.type);
 }
 export function updateParenthesizedType({ node, type }: {
     node: ParenthesizedTypeNode;
@@ -827,12 +794,11 @@ export function updateMappedTypeNode({ node, readonlyToken, typeParameter, nameT
 export function updateMappedTypeNode(o) {
     return ts.factory.updateMappedTypeNode(o.node, o.readonlyToken, o.typeParameter, o.nameType, o.questionToken, o.type, o.members);
 }
-export function createLiteralTypeNode(literal: LiteralTypeNode["literal"]): LiteralTypeNode;
 export function createLiteralTypeNode({ literal }: {
     literal: LiteralTypeNode["literal"];
 }): LiteralTypeNode;
 export function createLiteralTypeNode(o) {
-    return typeof o === "object" && "literal" in o ? ts.factory.createLiteralTypeNode(o.literal) : ts.factory.createLiteralTypeNode(o);
+    return ts.factory.createLiteralTypeNode(o.literal);
 }
 export function updateLiteralTypeNode({ node, literal }: {
     node: LiteralTypeNode;
@@ -856,12 +822,11 @@ export function updateTemplateLiteralType({ node, head, templateSpans }: {
 export function updateTemplateLiteralType(o) {
     return ts.factory.updateTemplateLiteralType(o.node, o.head, o.templateSpans);
 }
-export function createObjectBindingPattern(elements: readonly BindingElement[]): ObjectBindingPattern;
 export function createObjectBindingPattern({ elements }: {
     elements: readonly BindingElement[];
 }): ObjectBindingPattern;
 export function createObjectBindingPattern(o) {
-    return typeof o === "object" && "elements" in o ? ts.factory.createObjectBindingPattern(o.elements) : ts.factory.createObjectBindingPattern(o);
+    return ts.factory.createObjectBindingPattern(o.elements);
 }
 export function updateObjectBindingPattern({ node, elements }: {
     node: ObjectBindingPattern;
@@ -870,12 +835,11 @@ export function updateObjectBindingPattern({ node, elements }: {
 export function updateObjectBindingPattern(o) {
     return ts.factory.updateObjectBindingPattern(o.node, o.elements);
 }
-export function createArrayBindingPattern(elements: readonly ArrayBindingElement[]): ArrayBindingPattern;
 export function createArrayBindingPattern({ elements }: {
     elements: readonly ArrayBindingElement[];
 }): ArrayBindingPattern;
 export function createArrayBindingPattern(o) {
-    return typeof o === "object" && "elements" in o ? ts.factory.createArrayBindingPattern(o.elements) : ts.factory.createArrayBindingPattern(o);
+    return ts.factory.createArrayBindingPattern(o.elements);
 }
 export function updateArrayBindingPattern({ node, elements }: {
     node: ArrayBindingPattern;
@@ -1080,12 +1044,11 @@ export function updateTypeAssertion({ node, type, expression }: {
 export function updateTypeAssertion(o) {
     return ts.factory.updateTypeAssertion(o.node, o.type, o.expression);
 }
-export function createParenthesizedExpression(expression: Expression): ParenthesizedExpression;
 export function createParenthesizedExpression({ expression }: {
     expression: Expression;
 }): ParenthesizedExpression;
 export function createParenthesizedExpression(o) {
-    return typeof o === "object" && "expression" in o ? ts.factory.createParenthesizedExpression(o.expression) : ts.factory.createParenthesizedExpression(o);
+    return ts.factory.createParenthesizedExpression(o.expression);
 }
 export function updateParenthesizedExpression({ node, expression }: {
     node: ParenthesizedExpression;
@@ -1142,12 +1105,11 @@ export function updateArrowFunction({ node, modifiers, typeParameters, parameter
 export function updateArrowFunction(o) {
     return ts.factory.updateArrowFunction(o.node, o.modifiers, o.typeParameters, o.parameters, o.type, o.equalsGreaterThanToken, o.body);
 }
-export function createDeleteExpression(expression: Expression): DeleteExpression;
 export function createDeleteExpression({ expression }: {
     expression: Expression;
 }): DeleteExpression;
 export function createDeleteExpression(o) {
-    return typeof o === "object" && "expression" in o ? ts.factory.createDeleteExpression(o.expression) : ts.factory.createDeleteExpression(o);
+    return ts.factory.createDeleteExpression(o.expression);
 }
 export function updateDeleteExpression({ node, expression }: {
     node: DeleteExpression;
@@ -1156,12 +1118,11 @@ export function updateDeleteExpression({ node, expression }: {
 export function updateDeleteExpression(o) {
     return ts.factory.updateDeleteExpression(o.node, o.expression);
 }
-export function createTypeOfExpression(expression: Expression): TypeOfExpression;
 export function createTypeOfExpression({ expression }: {
     expression: Expression;
 }): TypeOfExpression;
 export function createTypeOfExpression(o) {
-    return typeof o === "object" && "expression" in o ? ts.factory.createTypeOfExpression(o.expression) : ts.factory.createTypeOfExpression(o);
+    return ts.factory.createTypeOfExpression(o.expression);
 }
 export function updateTypeOfExpression({ node, expression }: {
     node: TypeOfExpression;
@@ -1170,12 +1131,11 @@ export function updateTypeOfExpression({ node, expression }: {
 export function updateTypeOfExpression(o) {
     return ts.factory.updateTypeOfExpression(o.node, o.expression);
 }
-export function createVoidExpression(expression: Expression): VoidExpression;
 export function createVoidExpression({ expression }: {
     expression: Expression;
 }): VoidExpression;
 export function createVoidExpression(o) {
-    return typeof o === "object" && "expression" in o ? ts.factory.createVoidExpression(o.expression) : ts.factory.createVoidExpression(o);
+    return ts.factory.createVoidExpression(o.expression);
 }
 export function updateVoidExpression({ node, expression }: {
     node: VoidExpression;
@@ -1184,12 +1144,11 @@ export function updateVoidExpression({ node, expression }: {
 export function updateVoidExpression(o) {
     return ts.factory.updateVoidExpression(o.node, o.expression);
 }
-export function createAwaitExpression(expression: Expression): AwaitExpression;
 export function createAwaitExpression({ expression }: {
     expression: Expression;
 }): AwaitExpression;
 export function createAwaitExpression(o) {
-    return typeof o === "object" && "expression" in o ? ts.factory.createAwaitExpression(o.expression) : ts.factory.createAwaitExpression(o);
+    return ts.factory.createAwaitExpression(o.expression);
 }
 export function updateAwaitExpression({ node, expression }: {
     node: AwaitExpression;
@@ -1348,12 +1307,11 @@ export function updateYieldExpression({ node, asteriskToken, expression }: {
 export function updateYieldExpression(o) {
     return ts.factory.updateYieldExpression(o.node, o.asteriskToken, o.expression);
 }
-export function createSpreadElement(expression: Expression): SpreadElement;
 export function createSpreadElement({ expression }: {
     expression: Expression;
 }): SpreadElement;
 export function createSpreadElement(o) {
-    return typeof o === "object" && "expression" in o ? ts.factory.createSpreadElement(o.expression) : ts.factory.createSpreadElement(o);
+    return ts.factory.createSpreadElement(o.expression);
 }
 export function updateSpreadElement({ node, expression }: {
     node: SpreadElement;
@@ -1417,12 +1375,11 @@ export function updateAsExpression({ node, expression, type }: {
 export function updateAsExpression(o) {
     return ts.factory.updateAsExpression(o.node, o.expression, o.type);
 }
-export function createNonNullExpression(expression: Expression): NonNullExpression;
 export function createNonNullExpression({ expression }: {
     expression: Expression;
 }): NonNullExpression;
 export function createNonNullExpression(o) {
-    return typeof o === "object" && "expression" in o ? ts.factory.createNonNullExpression(o.expression) : ts.factory.createNonNullExpression(o);
+    return ts.factory.createNonNullExpression(o.expression);
 }
 export function updateNonNullExpression({ node, expression }: {
     node: NonNullExpression;
@@ -1431,12 +1388,11 @@ export function updateNonNullExpression({ node, expression }: {
 export function updateNonNullExpression(o) {
     return ts.factory.updateNonNullExpression(o.node, o.expression);
 }
-export function createNonNullChain(expression: Expression): NonNullChain;
 export function createNonNullChain({ expression }: {
     expression: Expression;
 }): NonNullChain;
 export function createNonNullChain(o) {
-    return typeof o === "object" && "expression" in o ? ts.factory.createNonNullChain(o.expression) : ts.factory.createNonNullChain(o);
+    return ts.factory.createNonNullChain(o.expression);
 }
 export function updateNonNullChain({ node, expression }: {
     node: NonNullChain;
@@ -1526,12 +1482,11 @@ export function createEmptyStatement(): EmptyStatement;
 export function createEmptyStatement() {
     return ts.factory.createEmptyStatement();
 }
-export function createExpressionStatement(expression: Expression): ExpressionStatement;
 export function createExpressionStatement({ expression }: {
     expression: Expression;
 }): ExpressionStatement;
 export function createExpressionStatement(o) {
-    return typeof o === "object" && "expression" in o ? ts.factory.createExpressionStatement(o.expression) : ts.factory.createExpressionStatement(o);
+    return ts.factory.createExpressionStatement(o.expression);
 }
 export function updateExpressionStatement({ node, expression }: {
     node: ExpressionStatement;
@@ -1642,12 +1597,11 @@ export function updateForOfStatement({ node, awaitModifier, initializer, express
 export function updateForOfStatement(o) {
     return ts.factory.updateForOfStatement(o.node, o.awaitModifier, o.initializer, o.expression, o.statement);
 }
-export function createContinueStatement(label?: string | Identifier): ContinueStatement;
 export function createContinueStatement({ label }: {
     label?: string | Identifier;
 }): ContinueStatement;
 export function createContinueStatement(o) {
-    return typeof o === "object" ? ts.factory.createContinueStatement(o.label) : ts.factory.createContinueStatement(o);
+    return ts.factory.createContinueStatement(o.label);
 }
 export function updateContinueStatement({ node, label }: {
     node: ContinueStatement;
@@ -1656,12 +1610,11 @@ export function updateContinueStatement({ node, label }: {
 export function updateContinueStatement(o) {
     return ts.factory.updateContinueStatement(o.node, o.label);
 }
-export function createBreakStatement(label?: string | Identifier): BreakStatement;
 export function createBreakStatement({ label }: {
     label?: string | Identifier;
 }): BreakStatement;
 export function createBreakStatement(o) {
-    return typeof o === "object" ? ts.factory.createBreakStatement(o.label) : ts.factory.createBreakStatement(o);
+    return ts.factory.createBreakStatement(o.label);
 }
 export function updateBreakStatement({ node, label }: {
     node: BreakStatement;
@@ -1670,12 +1623,11 @@ export function updateBreakStatement({ node, label }: {
 export function updateBreakStatement(o) {
     return ts.factory.updateBreakStatement(o.node, o.label);
 }
-export function createReturnStatement(expression?: Expression): ReturnStatement;
 export function createReturnStatement({ expression }: {
     expression?: Expression;
 }): ReturnStatement;
 export function createReturnStatement(o) {
-    return typeof o === "object" ? ts.factory.createReturnStatement(o.expression) : ts.factory.createReturnStatement(o);
+    return ts.factory.createReturnStatement(o.expression);
 }
 export function updateReturnStatement({ node, expression }: {
     node: ReturnStatement;
@@ -1729,12 +1681,11 @@ export function updateLabeledStatement({ node, label, statement }: {
 export function updateLabeledStatement(o) {
     return ts.factory.updateLabeledStatement(o.node, o.label, o.statement);
 }
-export function createThrowStatement(expression: Expression): ThrowStatement;
 export function createThrowStatement({ expression }: {
     expression: Expression;
 }): ThrowStatement;
 export function createThrowStatement(o) {
-    return typeof o === "object" && "expression" in o ? ts.factory.createThrowStatement(o.expression) : ts.factory.createThrowStatement(o);
+    return ts.factory.createThrowStatement(o.expression);
 }
 export function updateThrowStatement({ node, expression }: {
     node: ThrowStatement;
@@ -1918,12 +1869,11 @@ export function updateModuleDeclaration({ node, modifiers, name, body }: {
 export function updateModuleDeclaration(o) {
     return ts.factory.updateModuleDeclaration(o.node, o.modifiers, o.name, o.body);
 }
-export function createModuleBlock(statements: readonly Statement[]): ModuleBlock;
 export function createModuleBlock({ statements }: {
     statements: readonly Statement[];
 }): ModuleBlock;
 export function createModuleBlock(o) {
-    return typeof o === "object" && "statements" in o ? ts.factory.createModuleBlock(o.statements) : ts.factory.createModuleBlock(o);
+    return ts.factory.createModuleBlock(o.statements);
 }
 export function updateModuleBlock({ node, statements }: {
     node: ModuleBlock;
@@ -1932,12 +1882,11 @@ export function updateModuleBlock({ node, statements }: {
 export function updateModuleBlock(o) {
     return ts.factory.updateModuleBlock(o.node, o.statements);
 }
-export function createCaseBlock(clauses: readonly CaseOrDefaultClause[]): CaseBlock;
 export function createCaseBlock({ clauses }: {
     clauses: readonly CaseOrDefaultClause[];
 }): CaseBlock;
 export function createCaseBlock(o) {
-    return typeof o === "object" && "clauses" in o ? ts.factory.createCaseBlock(o.clauses) : ts.factory.createCaseBlock(o);
+    return ts.factory.createCaseBlock(o.clauses);
 }
 export function updateCaseBlock({ node, clauses }: {
     node: CaseBlock;
@@ -1946,12 +1895,11 @@ export function updateCaseBlock({ node, clauses }: {
 export function updateCaseBlock(o) {
     return ts.factory.updateCaseBlock(o.node, o.clauses);
 }
-export function createNamespaceExportDeclaration(name: string | Identifier): NamespaceExportDeclaration;
 export function createNamespaceExportDeclaration({ name }: {
     name: string | Identifier;
 }): NamespaceExportDeclaration;
 export function createNamespaceExportDeclaration(o) {
-    return typeof o === "object" && "name" in o ? ts.factory.createNamespaceExportDeclaration(o.name) : ts.factory.createNamespaceExportDeclaration(o);
+    return ts.factory.createNamespaceExportDeclaration(o.name);
 }
 export function updateNamespaceExportDeclaration({ node, name }: {
     node: NamespaceExportDeclaration;
@@ -2090,12 +2038,11 @@ export function updateImportAttribute({ node, name, value }: {
 export function updateImportAttribute(o) {
     return ts.factory.updateImportAttribute(o.node, o.name, o.value);
 }
-export function createNamespaceImport(name: Identifier): NamespaceImport;
 export function createNamespaceImport({ name }: {
     name: Identifier;
 }): NamespaceImport;
 export function createNamespaceImport(o) {
-    return typeof o === "object" && "name" in o ? ts.factory.createNamespaceImport(o.name) : ts.factory.createNamespaceImport(o);
+    return ts.factory.createNamespaceImport(o.name);
 }
 export function updateNamespaceImport({ node, name }: {
     node: NamespaceImport;
@@ -2104,12 +2051,11 @@ export function updateNamespaceImport({ node, name }: {
 export function updateNamespaceImport(o) {
     return ts.factory.updateNamespaceImport(o.node, o.name);
 }
-export function createNamespaceExport(name: Identifier): NamespaceExport;
 export function createNamespaceExport({ name }: {
     name: Identifier;
 }): NamespaceExport;
 export function createNamespaceExport(o) {
-    return typeof o === "object" && "name" in o ? ts.factory.createNamespaceExport(o.name) : ts.factory.createNamespaceExport(o);
+    return ts.factory.createNamespaceExport(o.name);
 }
 export function updateNamespaceExport({ node, name }: {
     node: NamespaceExport;
@@ -2118,12 +2064,11 @@ export function updateNamespaceExport({ node, name }: {
 export function updateNamespaceExport(o) {
     return ts.factory.updateNamespaceExport(o.node, o.name);
 }
-export function createNamedImports(elements: readonly ImportSpecifier[]): NamedImports;
 export function createNamedImports({ elements }: {
     elements: readonly ImportSpecifier[];
 }): NamedImports;
 export function createNamedImports(o) {
-    return typeof o === "object" && "elements" in o ? ts.factory.createNamedImports(o.elements) : ts.factory.createNamedImports(o);
+    return ts.factory.createNamedImports(o.elements);
 }
 export function updateNamedImports({ node, elements }: {
     node: NamedImports;
@@ -2186,12 +2131,11 @@ export function updateExportDeclaration({ node, modifiers, isTypeOnly, exportCla
 export function updateExportDeclaration(o) {
     return ts.factory.updateExportDeclaration(o.node, o.modifiers, o.isTypeOnly, o.exportClause, o.moduleSpecifier, o.attributes);
 }
-export function createNamedExports(elements: readonly ExportSpecifier[]): NamedExports;
 export function createNamedExports({ elements }: {
     elements: readonly ExportSpecifier[];
 }): NamedExports;
 export function createNamedExports(o) {
-    return typeof o === "object" && "elements" in o ? ts.factory.createNamedExports(o.elements) : ts.factory.createNamedExports(o);
+    return ts.factory.createNamedExports(o.elements);
 }
 export function updateNamedExports({ node, elements }: {
     node: NamedExports;
@@ -2217,12 +2161,11 @@ export function updateExportSpecifier({ node, isTypeOnly, propertyName, name }: 
 export function updateExportSpecifier(o) {
     return ts.factory.updateExportSpecifier(o.node, o.isTypeOnly, o.propertyName, o.name);
 }
-export function createExternalModuleReference(expression: Expression): ExternalModuleReference;
 export function createExternalModuleReference({ expression }: {
     expression: Expression;
 }): ExternalModuleReference;
 export function createExternalModuleReference(o) {
-    return typeof o === "object" && "expression" in o ? ts.factory.createExternalModuleReference(o.expression) : ts.factory.createExternalModuleReference(o);
+    return ts.factory.createExternalModuleReference(o.expression);
 }
 export function updateExternalModuleReference({ node, expression }: {
     node: ExternalModuleReference;
@@ -2267,12 +2210,11 @@ export function updateJSDocNullableType({ node, type }: {
 export function updateJSDocNullableType(o) {
     return ts.factory.updateJSDocNullableType(o.node, o.type);
 }
-export function createJSDocOptionalType(type: TypeNode): JSDocOptionalType;
 export function createJSDocOptionalType({ type }: {
     type: TypeNode;
 }): JSDocOptionalType;
 export function createJSDocOptionalType(o) {
-    return typeof o === "object" && "type" in o ? ts.factory.createJSDocOptionalType(o.type) : ts.factory.createJSDocOptionalType(o);
+    return ts.factory.createJSDocOptionalType(o.type);
 }
 export function updateJSDocOptionalType({ node, type }: {
     node: JSDocOptionalType;
@@ -2296,12 +2238,11 @@ export function updateJSDocFunctionType({ node, parameters, type }: {
 export function updateJSDocFunctionType(o) {
     return ts.factory.updateJSDocFunctionType(o.node, o.parameters, o.type);
 }
-export function createJSDocVariadicType(type: TypeNode): JSDocVariadicType;
 export function createJSDocVariadicType({ type }: {
     type: TypeNode;
 }): JSDocVariadicType;
 export function createJSDocVariadicType(o) {
-    return typeof o === "object" && "type" in o ? ts.factory.createJSDocVariadicType(o.type) : ts.factory.createJSDocVariadicType(o);
+    return ts.factory.createJSDocVariadicType(o.type);
 }
 export function updateJSDocVariadicType({ node, type }: {
     node: JSDocVariadicType;
@@ -2310,12 +2251,11 @@ export function updateJSDocVariadicType({ node, type }: {
 export function updateJSDocVariadicType(o) {
     return ts.factory.updateJSDocVariadicType(o.node, o.type);
 }
-export function createJSDocNamepathType(type: TypeNode): JSDocNamepathType;
 export function createJSDocNamepathType({ type }: {
     type: TypeNode;
 }): JSDocNamepathType;
 export function createJSDocNamepathType(o) {
-    return typeof o === "object" && "type" in o ? ts.factory.createJSDocNamepathType(o.type) : ts.factory.createJSDocNamepathType(o);
+    return ts.factory.createJSDocNamepathType(o.type);
 }
 export function updateJSDocNamepathType({ node, type }: {
     node: JSDocNamepathType;
@@ -2324,12 +2264,11 @@ export function updateJSDocNamepathType({ node, type }: {
 export function updateJSDocNamepathType(o) {
     return ts.factory.updateJSDocNamepathType(o.node, o.type);
 }
-export function createJSDocTypeExpression(type: TypeNode): JSDocTypeExpression;
 export function createJSDocTypeExpression({ type }: {
     type: TypeNode;
 }): JSDocTypeExpression;
 export function createJSDocTypeExpression(o) {
-    return typeof o === "object" && "type" in o ? ts.factory.createJSDocTypeExpression(o.type) : ts.factory.createJSDocTypeExpression(o);
+    return ts.factory.createJSDocTypeExpression(o.type);
 }
 export function updateJSDocTypeExpression({ node, type }: {
     node: JSDocTypeExpression;
@@ -2338,12 +2277,11 @@ export function updateJSDocTypeExpression({ node, type }: {
 export function updateJSDocTypeExpression(o) {
     return ts.factory.updateJSDocTypeExpression(o.node, o.type);
 }
-export function createJSDocNameReference(name: EntityName | JSDocMemberName): JSDocNameReference;
 export function createJSDocNameReference({ name }: {
     name: EntityName | JSDocMemberName;
 }): JSDocNameReference;
 export function createJSDocNameReference(o) {
-    return typeof o === "object" && "name" in o ? ts.factory.createJSDocNameReference(o.name) : ts.factory.createJSDocNameReference(o);
+    return ts.factory.createJSDocNameReference(o.name);
 }
 export function updateJSDocNameReference({ node, name }: {
     node: JSDocNameReference;
@@ -2852,12 +2790,11 @@ export function updateJSDocSatisfiesTag({ node, tagName, typeExpression, comment
 export function updateJSDocSatisfiesTag(o) {
     return ts.factory.updateJSDocSatisfiesTag(o.node, o.tagName, o.typeExpression, o.comment);
 }
-export function createJSDocText(text: string): JSDocText;
 export function createJSDocText({ text }: {
     text: string;
 }): JSDocText;
 export function createJSDocText(o) {
-    return typeof o === "object" && "text" in o ? ts.factory.createJSDocText(o.text) : ts.factory.createJSDocText(o);
+    return ts.factory.createJSDocText(o.text);
 }
 export function updateJSDocText({ node, text }: {
     node: JSDocText;
@@ -2932,12 +2869,11 @@ export function updateJsxOpeningElement({ node, tagName, typeArguments, attribut
 export function updateJsxOpeningElement(o) {
     return ts.factory.updateJsxOpeningElement(o.node, o.tagName, o.typeArguments, o.attributes);
 }
-export function createJsxClosingElement(tagName: JsxTagNameExpression): JsxClosingElement;
 export function createJsxClosingElement({ tagName }: {
     tagName: JsxTagNameExpression;
 }): JsxClosingElement;
 export function createJsxClosingElement(o) {
-    return typeof o === "object" && "tagName" in o ? ts.factory.createJsxClosingElement(o.tagName) : ts.factory.createJsxClosingElement(o);
+    return ts.factory.createJsxClosingElement(o.tagName);
 }
 export function updateJsxClosingElement({ node, tagName }: {
     node: JsxClosingElement;
@@ -3001,12 +2937,11 @@ export function updateJsxAttribute({ node, name, initializer }: {
 export function updateJsxAttribute(o) {
     return ts.factory.updateJsxAttribute(o.node, o.name, o.initializer);
 }
-export function createJsxAttributes(properties: readonly JsxAttributeLike[]): JsxAttributes;
 export function createJsxAttributes({ properties }: {
     properties: readonly JsxAttributeLike[];
 }): JsxAttributes;
 export function createJsxAttributes(o) {
-    return typeof o === "object" && "properties" in o ? ts.factory.createJsxAttributes(o.properties) : ts.factory.createJsxAttributes(o);
+    return ts.factory.createJsxAttributes(o.properties);
 }
 export function updateJsxAttributes({ node, properties }: {
     node: JsxAttributes;
@@ -3015,12 +2950,11 @@ export function updateJsxAttributes({ node, properties }: {
 export function updateJsxAttributes(o) {
     return ts.factory.updateJsxAttributes(o.node, o.properties);
 }
-export function createJsxSpreadAttribute(expression: Expression): JsxSpreadAttribute;
 export function createJsxSpreadAttribute({ expression }: {
     expression: Expression;
 }): JsxSpreadAttribute;
 export function createJsxSpreadAttribute(o) {
-    return typeof o === "object" && "expression" in o ? ts.factory.createJsxSpreadAttribute(o.expression) : ts.factory.createJsxSpreadAttribute(o);
+    return ts.factory.createJsxSpreadAttribute(o.expression);
 }
 export function updateJsxSpreadAttribute({ node, expression }: {
     node: JsxSpreadAttribute;
@@ -3073,12 +3007,11 @@ export function updateCaseClause({ node, expression, statements }: {
 export function updateCaseClause(o) {
     return ts.factory.updateCaseClause(o.node, o.expression, o.statements);
 }
-export function createDefaultClause(statements: readonly Statement[]): DefaultClause;
 export function createDefaultClause({ statements }: {
     statements: readonly Statement[];
 }): DefaultClause;
 export function createDefaultClause(o) {
-    return typeof o === "object" && "statements" in o ? ts.factory.createDefaultClause(o.statements) : ts.factory.createDefaultClause(o);
+    return ts.factory.createDefaultClause(o.statements);
 }
 export function updateDefaultClause({ node, statements }: {
     node: DefaultClause;
@@ -3146,12 +3079,11 @@ export function updateShorthandPropertyAssignment({ node, name, objectAssignment
 export function updateShorthandPropertyAssignment(o) {
     return ts.factory.updateShorthandPropertyAssignment(o.node, o.name, o.objectAssignmentInitializer);
 }
-export function createSpreadAssignment(expression: Expression): SpreadAssignment;
 export function createSpreadAssignment({ expression }: {
     expression: Expression;
 }): SpreadAssignment;
 export function createSpreadAssignment(o) {
-    return typeof o === "object" && "expression" in o ? ts.factory.createSpreadAssignment(o.expression) : ts.factory.createSpreadAssignment(o);
+    return ts.factory.createSpreadAssignment(o.expression);
 }
 export function updateSpreadAssignment({ node, expression }: {
     node: SpreadAssignment;
@@ -3195,12 +3127,11 @@ export function updateSourceFile({ node, statements, isDeclarationFile, referenc
 export function updateSourceFile(o) {
     return ts.factory.updateSourceFile(o.node, o.statements, o.isDeclarationFile, o.referencedFiles, o.typeReferences, o.hasNoDefaultLib, o.libReferences);
 }
-export function createNotEmittedStatement(original: Node): NotEmittedStatement;
 export function createNotEmittedStatement({ original }: {
     original: Node;
 }): NotEmittedStatement;
 export function createNotEmittedStatement(o) {
-    return typeof o === "object" && "original" in o ? ts.factory.createNotEmittedStatement(o.original) : ts.factory.createNotEmittedStatement(o);
+    return ts.factory.createNotEmittedStatement(o.original);
 }
 export function createPartiallyEmittedExpression({ expression, original }: {
     expression: Expression;
@@ -3216,12 +3147,11 @@ export function updatePartiallyEmittedExpression({ node, expression }: {
 export function updatePartiallyEmittedExpression(o) {
     return ts.factory.updatePartiallyEmittedExpression(o.node, o.expression);
 }
-export function createCommaListExpression(elements: readonly Expression[]): CommaListExpression;
 export function createCommaListExpression({ elements }: {
     elements: readonly Expression[];
 }): CommaListExpression;
 export function createCommaListExpression(o) {
-    return typeof o === "object" && "elements" in o ? ts.factory.createCommaListExpression(o.elements) : ts.factory.createCommaListExpression(o);
+    return ts.factory.createCommaListExpression(o.elements);
 }
 export function updateCommaListExpression({ node, elements }: {
     node: CommaListExpression;
@@ -3230,7 +3160,6 @@ export function updateCommaListExpression({ node, elements }: {
 export function updateCommaListExpression(o) {
     return ts.factory.updateCommaListExpression(o.node, o.elements);
 }
-export function createBundle(sourceFiles: readonly SourceFile[]): Bundle;
 export function createBundle({ sourceFiles }: {
     sourceFiles: readonly SourceFile[];
 }): Bundle;
@@ -3239,7 +3168,7 @@ export function createBundle({ sourceFiles, prepends }: {
     prepends?: readonly (UnparsedSource | InputFiles)[];
 }): Bundle;
 export function createBundle(o) {
-    return typeof o === "object" && "sourceFiles" in o ? ts.factory.createBundle(o.sourceFiles, o.prepends) : ts.factory.createBundle(o);
+    return ts.factory.createBundle(o.sourceFiles, o.prepends);
 }
 export function updateBundle({ node, sourceFiles }: {
     node: Bundle;
@@ -3425,63 +3354,54 @@ export function createExponent({ left, right }: {
 export function createExponent(o) {
     return ts.factory.createExponent(o.left, o.right);
 }
-export function createPrefixPlus(operand: Expression): PrefixUnaryExpression;
 export function createPrefixPlus({ operand }: {
     operand: Expression;
 }): PrefixUnaryExpression;
 export function createPrefixPlus(o) {
-    return typeof o === "object" && "operand" in o ? ts.factory.createPrefixPlus(o.operand) : ts.factory.createPrefixPlus(o);
+    return ts.factory.createPrefixPlus(o.operand);
 }
-export function createPrefixMinus(operand: Expression): PrefixUnaryExpression;
 export function createPrefixMinus({ operand }: {
     operand: Expression;
 }): PrefixUnaryExpression;
 export function createPrefixMinus(o) {
-    return typeof o === "object" && "operand" in o ? ts.factory.createPrefixMinus(o.operand) : ts.factory.createPrefixMinus(o);
+    return ts.factory.createPrefixMinus(o.operand);
 }
-export function createPrefixIncrement(operand: Expression): PrefixUnaryExpression;
 export function createPrefixIncrement({ operand }: {
     operand: Expression;
 }): PrefixUnaryExpression;
 export function createPrefixIncrement(o) {
-    return typeof o === "object" && "operand" in o ? ts.factory.createPrefixIncrement(o.operand) : ts.factory.createPrefixIncrement(o);
+    return ts.factory.createPrefixIncrement(o.operand);
 }
-export function createPrefixDecrement(operand: Expression): PrefixUnaryExpression;
 export function createPrefixDecrement({ operand }: {
     operand: Expression;
 }): PrefixUnaryExpression;
 export function createPrefixDecrement(o) {
-    return typeof o === "object" && "operand" in o ? ts.factory.createPrefixDecrement(o.operand) : ts.factory.createPrefixDecrement(o);
+    return ts.factory.createPrefixDecrement(o.operand);
 }
-export function createBitwiseNot(operand: Expression): PrefixUnaryExpression;
 export function createBitwiseNot({ operand }: {
     operand: Expression;
 }): PrefixUnaryExpression;
 export function createBitwiseNot(o) {
-    return typeof o === "object" && "operand" in o ? ts.factory.createBitwiseNot(o.operand) : ts.factory.createBitwiseNot(o);
+    return ts.factory.createBitwiseNot(o.operand);
 }
-export function createLogicalNot(operand: Expression): PrefixUnaryExpression;
 export function createLogicalNot({ operand }: {
     operand: Expression;
 }): PrefixUnaryExpression;
 export function createLogicalNot(o) {
-    return typeof o === "object" && "operand" in o ? ts.factory.createLogicalNot(o.operand) : ts.factory.createLogicalNot(o);
+    return ts.factory.createLogicalNot(o.operand);
 }
-export function createPostfixIncrement(operand: Expression): PostfixUnaryExpression;
 export function createPostfixIncrement({ operand }: {
     operand: Expression;
 }): PostfixUnaryExpression;
 export function createPostfixIncrement(o) {
-    return typeof o === "object" && "operand" in o ? ts.factory.createPostfixIncrement(o.operand) : ts.factory.createPostfixIncrement(o);
+    return ts.factory.createPostfixIncrement(o.operand);
 }
-export function createPostfixDecrement(operand: Expression): PostfixUnaryExpression;
 export function createPostfixDecrement({ operand }: {
     operand: Expression;
 }): PostfixUnaryExpression;
 export function createPostfixDecrement(o) {
-    return typeof o === "object" && "operand" in o ? ts.factory.createPostfixDecrement(o.operand) : ts.factory.createPostfixDecrement(o);
+    return ts.factory.createPostfixDecrement(o.operand);
 }
-export function createImmediatelyInvokedFunctionExpression(statements: readonly Statement[]): CallExpression;
 export function createImmediatelyInvokedFunctionExpression({ statements }: {
     statements: readonly Statement[];
 }): CallExpression;
@@ -3491,9 +3411,8 @@ export function createImmediatelyInvokedFunctionExpression({ statements, param, 
     paramValue: Expression;
 }): CallExpression;
 export function createImmediatelyInvokedFunctionExpression(o) {
-    return typeof o === "object" && "statements" in o && "param" in o && "paramValue" in o ? ts.factory.createImmediatelyInvokedFunctionExpression(o.statements, o.param, o.paramValue) : ts.factory.createImmediatelyInvokedFunctionExpression(o);
+    return ts.factory.createImmediatelyInvokedFunctionExpression(o.statements, o.param, o.paramValue);
 }
-export function createImmediatelyInvokedArrowFunction(statements: readonly Statement[]): ImmediatelyInvokedArrowFunction;
 export function createImmediatelyInvokedArrowFunction({ statements }: {
     statements: readonly Statement[];
 }): ImmediatelyInvokedArrowFunction;
@@ -3503,25 +3422,23 @@ export function createImmediatelyInvokedArrowFunction({ statements, param, param
     paramValue: Expression;
 }): ImmediatelyInvokedArrowFunction;
 export function createImmediatelyInvokedArrowFunction(o) {
-    return typeof o === "object" && "statements" in o && "param" in o && "paramValue" in o ? ts.factory.createImmediatelyInvokedArrowFunction(o.statements, o.param, o.paramValue) : ts.factory.createImmediatelyInvokedArrowFunction(o);
+    return ts.factory.createImmediatelyInvokedArrowFunction(o.statements, o.param, o.paramValue);
 }
 export function createVoidZero(): VoidExpression;
 export function createVoidZero() {
     return ts.factory.createVoidZero();
 }
-export function createExportDefault(expression: Expression): ExportAssignment;
 export function createExportDefault({ expression }: {
     expression: Expression;
 }): ExportAssignment;
 export function createExportDefault(o) {
-    return typeof o === "object" && "expression" in o ? ts.factory.createExportDefault(o.expression) : ts.factory.createExportDefault(o);
+    return ts.factory.createExportDefault(o.expression);
 }
-export function createExternalModuleExport(exportName: Identifier): ExportDeclaration;
 export function createExternalModuleExport({ exportName }: {
     exportName: Identifier;
 }): ExportDeclaration;
 export function createExternalModuleExport(o) {
-    return typeof o === "object" && "exportName" in o ? ts.factory.createExternalModuleExport(o.exportName) : ts.factory.createExternalModuleExport(o);
+    return ts.factory.createExternalModuleExport(o.exportName);
 }
 export function restoreOuterExpressions({ outerExpression, innerExpression, kinds }: {
     outerExpression?: Expression | undefined;

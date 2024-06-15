@@ -1,54 +1,54 @@
 /*
     This code is automayicly generated, do not edit by hand.
-    Generated at: 2024-06-15 08:06:47.403
+    Generated at: 2024-06-15 11:16:50.533
     Generated for: typescript@5.4.5
 */
 import ts from "typescript";
 ;
-export function createNodeArray({ elements, hasTrailingComma }) {
-    return ts.factory.createNodeArray(elements, hasTrailingComma);
+export function createNodeArray(o) {
+    return ts.factory.createNodeArray(o.elements, o.hasTrailingComma);
 }
-export function createNumericLiteral({ value, numericLiteralFlags }) {
-    return ts.factory.createNumericLiteral(value, numericLiteralFlags);
+export function createNumericLiteral(o) {
+    return ts.factory.createNumericLiteral(o.value, o.numericLiteralFlags);
 }
-export function createBigIntLiteral({ value }) {
-    return ts.factory.createBigIntLiteral(value);
+export function createBigIntLiteral(o) {
+    return ts.factory.createBigIntLiteral(o.value);
 }
-export function createStringLiteral({ text, isSingleQuote }) {
-    return ts.factory.createStringLiteral(text, isSingleQuote);
+export function createStringLiteral(o) {
+    return ts.factory.createStringLiteral(o.text, o.isSingleQuote);
 }
-export function createStringLiteralFromNode({ sourceNode, isSingleQuote }) {
-    return ts.factory.createStringLiteralFromNode(sourceNode, isSingleQuote);
+export function createStringLiteralFromNode(o) {
+    return ts.factory.createStringLiteralFromNode(o.sourceNode, o.isSingleQuote);
 }
-export function createRegularExpressionLiteral({ text }) {
-    return ts.factory.createRegularExpressionLiteral(text);
+export function createRegularExpressionLiteral(o) {
+    return ts.factory.createRegularExpressionLiteral(o.text);
 }
-export function createIdentifier({ text }) {
-    return ts.factory.createIdentifier(text);
+export function createIdentifier(o) {
+    return ts.factory.createIdentifier(o.text);
 }
-export function createTempVariable({ recordTempVariable, reservedInNestedScopes }) {
-    return ts.factory.createTempVariable(recordTempVariable, reservedInNestedScopes);
+export function createTempVariable(o) {
+    return ts.factory.createTempVariable(o.recordTempVariable, o.reservedInNestedScopes);
 }
-export function createLoopVariable({ reservedInNestedScopes }) {
-    return ts.factory.createLoopVariable(reservedInNestedScopes);
+export function createLoopVariable(o) {
+    return ts.factory.createLoopVariable(o.reservedInNestedScopes);
 }
-export function createUniqueName({ text, flags }) {
-    return ts.factory.createUniqueName(text, flags);
+export function createUniqueName(o) {
+    return ts.factory.createUniqueName(o.text, o.flags);
 }
-export function getGeneratedNameForNode({ node, flags }) {
-    return ts.factory.getGeneratedNameForNode(node, flags);
+export function getGeneratedNameForNode(o) {
+    return ts.factory.getGeneratedNameForNode(o.node, o.flags);
 }
-export function createPrivateIdentifier({ text }) {
-    return ts.factory.createPrivateIdentifier(text);
+export function createPrivateIdentifier(o) {
+    return ts.factory.createPrivateIdentifier(o.text);
 }
-export function createUniquePrivateName({ text }) {
-    return ts.factory.createUniquePrivateName(text);
+export function createUniquePrivateName(o) {
+    return ts.factory.createUniquePrivateName(o.text);
 }
-export function getGeneratedPrivateNameForNode({ node }) {
-    return ts.factory.getGeneratedPrivateNameForNode(node);
+export function getGeneratedPrivateNameForNode(o) {
+    return ts.factory.getGeneratedPrivateNameForNode(o.node);
 }
-export function createToken({ token }) {
-    return ts.factory.createToken(token);
+export function createToken(o) {
+    return ts.factory.createToken(o.token);
 }
 export function createSuper() {
     return ts.factory.createSuper();
@@ -65,761 +65,761 @@ export function createTrue() {
 export function createFalse() {
     return ts.factory.createFalse();
 }
-export function createModifier({ kind }) {
-    return ts.factory.createModifier(kind);
+export function createModifier(o) {
+    return ts.factory.createModifier(o.kind);
 }
-export function createModifiersFromModifierFlags({ flags }) {
-    return ts.factory.createModifiersFromModifierFlags(flags);
+export function createModifiersFromModifierFlags(o) {
+    return ts.factory.createModifiersFromModifierFlags(o.flags);
 }
-export function createQualifiedName({ left, right }) {
-    return ts.factory.createQualifiedName(left, right);
+export function createQualifiedName(o) {
+    return ts.factory.createQualifiedName(o.left, o.right);
 }
-export function updateQualifiedName({ node, left, right }) {
-    return ts.factory.updateQualifiedName(node, left, right);
+export function updateQualifiedName(o) {
+    return ts.factory.updateQualifiedName(o.node, o.left, o.right);
 }
-export function createComputedPropertyName({ expression }) {
-    return ts.factory.createComputedPropertyName(expression);
+export function createComputedPropertyName(o) {
+    return ts.factory.createComputedPropertyName(o.expression);
 }
-export function updateComputedPropertyName({ node, expression }) {
-    return ts.factory.updateComputedPropertyName(node, expression);
+export function updateComputedPropertyName(o) {
+    return ts.factory.updateComputedPropertyName(o.node, o.expression);
 }
-export function createTypeParameterDeclaration({ modifiers, name, constraint, defaultType }) {
-    return ts.factory.createTypeParameterDeclaration(modifiers, name, constraint, defaultType);
+export function createTypeParameterDeclaration(o) {
+    return ts.factory.createTypeParameterDeclaration(o.modifiers, o.name, o.constraint, o.defaultType);
 }
-export function updateTypeParameterDeclaration({ node, modifiers, name, constraint, defaultType }) {
-    return ts.factory.updateTypeParameterDeclaration(node, modifiers, name, constraint, defaultType);
+export function updateTypeParameterDeclaration(o) {
+    return ts.factory.updateTypeParameterDeclaration(o.node, o.modifiers, o.name, o.constraint, o.defaultType);
 }
-export function createParameterDeclaration({ modifiers, dotDotDotToken, name, questionToken, type, initializer }) {
-    return ts.factory.createParameterDeclaration(modifiers, dotDotDotToken, name, questionToken, type, initializer);
+export function createParameterDeclaration(o) {
+    return ts.factory.createParameterDeclaration(o.modifiers, o.dotDotDotToken, o.name, o.questionToken, o.type, o.initializer);
 }
-export function updateParameterDeclaration({ node, modifiers, dotDotDotToken, name, questionToken, type, initializer }) {
-    return ts.factory.updateParameterDeclaration(node, modifiers, dotDotDotToken, name, questionToken, type, initializer);
+export function updateParameterDeclaration(o) {
+    return ts.factory.updateParameterDeclaration(o.node, o.modifiers, o.dotDotDotToken, o.name, o.questionToken, o.type, o.initializer);
 }
-export function createDecorator({ expression }) {
-    return ts.factory.createDecorator(expression);
+export function createDecorator(o) {
+    return ts.factory.createDecorator(o.expression);
 }
-export function updateDecorator({ node, expression }) {
-    return ts.factory.updateDecorator(node, expression);
+export function updateDecorator(o) {
+    return ts.factory.updateDecorator(o.node, o.expression);
 }
-export function createPropertySignature({ modifiers, name, questionToken, type }) {
-    return ts.factory.createPropertySignature(modifiers, name, questionToken, type);
+export function createPropertySignature(o) {
+    return ts.factory.createPropertySignature(o.modifiers, o.name, o.questionToken, o.type);
 }
-export function updatePropertySignature({ node, modifiers, name, questionToken, type }) {
-    return ts.factory.updatePropertySignature(node, modifiers, name, questionToken, type);
+export function updatePropertySignature(o) {
+    return ts.factory.updatePropertySignature(o.node, o.modifiers, o.name, o.questionToken, o.type);
 }
-export function createPropertyDeclaration({ modifiers, name, questionOrExclamationToken, type, initializer }) {
-    return ts.factory.createPropertyDeclaration(modifiers, name, questionOrExclamationToken, type, initializer);
+export function createPropertyDeclaration(o) {
+    return ts.factory.createPropertyDeclaration(o.modifiers, o.name, o.questionOrExclamationToken, o.type, o.initializer);
 }
-export function updatePropertyDeclaration({ node, modifiers, name, questionOrExclamationToken, type, initializer }) {
-    return ts.factory.updatePropertyDeclaration(node, modifiers, name, questionOrExclamationToken, type, initializer);
+export function updatePropertyDeclaration(o) {
+    return ts.factory.updatePropertyDeclaration(o.node, o.modifiers, o.name, o.questionOrExclamationToken, o.type, o.initializer);
 }
-export function createMethodSignature({ modifiers, name, questionToken, typeParameters, parameters, type }) {
-    return ts.factory.createMethodSignature(modifiers, name, questionToken, typeParameters, parameters, type);
+export function createMethodSignature(o) {
+    return ts.factory.createMethodSignature(o.modifiers, o.name, o.questionToken, o.typeParameters, o.parameters, o.type);
 }
-export function updateMethodSignature({ node, modifiers, name, questionToken, typeParameters, parameters, type }) {
-    return ts.factory.updateMethodSignature(node, modifiers, name, questionToken, typeParameters, parameters, type);
+export function updateMethodSignature(o) {
+    return ts.factory.updateMethodSignature(o.node, o.modifiers, o.name, o.questionToken, o.typeParameters, o.parameters, o.type);
 }
-export function createMethodDeclaration({ modifiers, asteriskToken, name, questionToken, typeParameters, parameters, type, body }) {
-    return ts.factory.createMethodDeclaration(modifiers, asteriskToken, name, questionToken, typeParameters, parameters, type, body);
+export function createMethodDeclaration(o) {
+    return ts.factory.createMethodDeclaration(o.modifiers, o.asteriskToken, o.name, o.questionToken, o.typeParameters, o.parameters, o.type, o.body);
 }
-export function updateMethodDeclaration({ node, modifiers, asteriskToken, name, questionToken, typeParameters, parameters, type, body }) {
-    return ts.factory.updateMethodDeclaration(node, modifiers, asteriskToken, name, questionToken, typeParameters, parameters, type, body);
+export function updateMethodDeclaration(o) {
+    return ts.factory.updateMethodDeclaration(o.node, o.modifiers, o.asteriskToken, o.name, o.questionToken, o.typeParameters, o.parameters, o.type, o.body);
 }
-export function createConstructorDeclaration({ modifiers, parameters, body }) {
-    return ts.factory.createConstructorDeclaration(modifiers, parameters, body);
+export function createConstructorDeclaration(o) {
+    return ts.factory.createConstructorDeclaration(o.modifiers, o.parameters, o.body);
 }
-export function updateConstructorDeclaration({ node, modifiers, parameters, body }) {
-    return ts.factory.updateConstructorDeclaration(node, modifiers, parameters, body);
+export function updateConstructorDeclaration(o) {
+    return ts.factory.updateConstructorDeclaration(o.node, o.modifiers, o.parameters, o.body);
 }
-export function createGetAccessorDeclaration({ modifiers, name, parameters, type, body }) {
-    return ts.factory.createGetAccessorDeclaration(modifiers, name, parameters, type, body);
+export function createGetAccessorDeclaration(o) {
+    return ts.factory.createGetAccessorDeclaration(o.modifiers, o.name, o.parameters, o.type, o.body);
 }
-export function updateGetAccessorDeclaration({ node, modifiers, name, parameters, type, body }) {
-    return ts.factory.updateGetAccessorDeclaration(node, modifiers, name, parameters, type, body);
+export function updateGetAccessorDeclaration(o) {
+    return ts.factory.updateGetAccessorDeclaration(o.node, o.modifiers, o.name, o.parameters, o.type, o.body);
 }
-export function createSetAccessorDeclaration({ modifiers, name, parameters, body }) {
-    return ts.factory.createSetAccessorDeclaration(modifiers, name, parameters, body);
+export function createSetAccessorDeclaration(o) {
+    return ts.factory.createSetAccessorDeclaration(o.modifiers, o.name, o.parameters, o.body);
 }
-export function updateSetAccessorDeclaration({ node, modifiers, name, parameters, body }) {
-    return ts.factory.updateSetAccessorDeclaration(node, modifiers, name, parameters, body);
+export function updateSetAccessorDeclaration(o) {
+    return ts.factory.updateSetAccessorDeclaration(o.node, o.modifiers, o.name, o.parameters, o.body);
 }
-export function createCallSignature({ typeParameters, parameters, type }) {
-    return ts.factory.createCallSignature(typeParameters, parameters, type);
+export function createCallSignature(o) {
+    return ts.factory.createCallSignature(o.typeParameters, o.parameters, o.type);
 }
-export function updateCallSignature({ node, typeParameters, parameters, type }) {
-    return ts.factory.updateCallSignature(node, typeParameters, parameters, type);
+export function updateCallSignature(o) {
+    return ts.factory.updateCallSignature(o.node, o.typeParameters, o.parameters, o.type);
 }
-export function createConstructSignature({ typeParameters, parameters, type }) {
-    return ts.factory.createConstructSignature(typeParameters, parameters, type);
+export function createConstructSignature(o) {
+    return ts.factory.createConstructSignature(o.typeParameters, o.parameters, o.type);
 }
-export function updateConstructSignature({ node, typeParameters, parameters, type }) {
-    return ts.factory.updateConstructSignature(node, typeParameters, parameters, type);
+export function updateConstructSignature(o) {
+    return ts.factory.updateConstructSignature(o.node, o.typeParameters, o.parameters, o.type);
 }
-export function createIndexSignature({ modifiers, parameters, type }) {
-    return ts.factory.createIndexSignature(modifiers, parameters, type);
+export function createIndexSignature(o) {
+    return ts.factory.createIndexSignature(o.modifiers, o.parameters, o.type);
 }
-export function updateIndexSignature({ node, modifiers, parameters, type }) {
-    return ts.factory.updateIndexSignature(node, modifiers, parameters, type);
+export function updateIndexSignature(o) {
+    return ts.factory.updateIndexSignature(o.node, o.modifiers, o.parameters, o.type);
 }
-export function createTemplateLiteralTypeSpan({ type, literal }) {
-    return ts.factory.createTemplateLiteralTypeSpan(type, literal);
+export function createTemplateLiteralTypeSpan(o) {
+    return ts.factory.createTemplateLiteralTypeSpan(o.type, o.literal);
 }
-export function updateTemplateLiteralTypeSpan({ node, type, literal }) {
-    return ts.factory.updateTemplateLiteralTypeSpan(node, type, literal);
+export function updateTemplateLiteralTypeSpan(o) {
+    return ts.factory.updateTemplateLiteralTypeSpan(o.node, o.type, o.literal);
 }
-export function createClassStaticBlockDeclaration({ body }) {
-    return ts.factory.createClassStaticBlockDeclaration(body);
+export function createClassStaticBlockDeclaration(o) {
+    return ts.factory.createClassStaticBlockDeclaration(o.body);
 }
-export function updateClassStaticBlockDeclaration({ node, body }) {
-    return ts.factory.updateClassStaticBlockDeclaration(node, body);
+export function updateClassStaticBlockDeclaration(o) {
+    return ts.factory.updateClassStaticBlockDeclaration(o.node, o.body);
 }
-export function createKeywordTypeNode({ kind }) {
-    return ts.factory.createKeywordTypeNode(kind);
+export function createKeywordTypeNode(o) {
+    return ts.factory.createKeywordTypeNode(o.kind);
 }
-export function createTypePredicateNode({ assertsModifier, parameterName, type }) {
-    return ts.factory.createTypePredicateNode(assertsModifier, parameterName, type);
+export function createTypePredicateNode(o) {
+    return ts.factory.createTypePredicateNode(o.assertsModifier, o.parameterName, o.type);
 }
-export function updateTypePredicateNode({ node, assertsModifier, parameterName, type }) {
-    return ts.factory.updateTypePredicateNode(node, assertsModifier, parameterName, type);
+export function updateTypePredicateNode(o) {
+    return ts.factory.updateTypePredicateNode(o.node, o.assertsModifier, o.parameterName, o.type);
 }
-export function createTypeReferenceNode({ typeName, typeArguments }) {
-    return ts.factory.createTypeReferenceNode(typeName, typeArguments);
+export function createTypeReferenceNode(o) {
+    return ts.factory.createTypeReferenceNode(o.typeName, o.typeArguments);
 }
-export function updateTypeReferenceNode({ node, typeName, typeArguments }) {
-    return ts.factory.updateTypeReferenceNode(node, typeName, typeArguments);
+export function updateTypeReferenceNode(o) {
+    return ts.factory.updateTypeReferenceNode(o.node, o.typeName, o.typeArguments);
 }
-export function createFunctionTypeNode({ typeParameters, parameters, type }) {
-    return ts.factory.createFunctionTypeNode(typeParameters, parameters, type);
+export function createFunctionTypeNode(o) {
+    return ts.factory.createFunctionTypeNode(o.typeParameters, o.parameters, o.type);
 }
-export function updateFunctionTypeNode({ node, typeParameters, parameters, type }) {
-    return ts.factory.updateFunctionTypeNode(node, typeParameters, parameters, type);
+export function updateFunctionTypeNode(o) {
+    return ts.factory.updateFunctionTypeNode(o.node, o.typeParameters, o.parameters, o.type);
 }
-export function createConstructorTypeNode({ modifiers, typeParameters, parameters, type }) {
-    return ts.factory.createConstructorTypeNode(modifiers, typeParameters, parameters, type);
+export function createConstructorTypeNode(o) {
+    return ts.factory.createConstructorTypeNode(o.modifiers, o.typeParameters, o.parameters, o.type);
 }
-export function updateConstructorTypeNode({ node, modifiers, typeParameters, parameters, type }) {
-    return ts.factory.updateConstructorTypeNode(node, modifiers, typeParameters, parameters, type);
+export function updateConstructorTypeNode(o) {
+    return ts.factory.updateConstructorTypeNode(o.node, o.modifiers, o.typeParameters, o.parameters, o.type);
 }
-export function createTypeQueryNode({ exprName, typeArguments }) {
-    return ts.factory.createTypeQueryNode(exprName, typeArguments);
+export function createTypeQueryNode(o) {
+    return ts.factory.createTypeQueryNode(o.exprName, o.typeArguments);
 }
-export function updateTypeQueryNode({ node, exprName, typeArguments }) {
-    return ts.factory.updateTypeQueryNode(node, exprName, typeArguments);
+export function updateTypeQueryNode(o) {
+    return ts.factory.updateTypeQueryNode(o.node, o.exprName, o.typeArguments);
 }
-export function createTypeLiteralNode({ members }) {
-    return ts.factory.createTypeLiteralNode(members);
+export function createTypeLiteralNode(o) {
+    return ts.factory.createTypeLiteralNode(o.members);
 }
-export function updateTypeLiteralNode({ node, members }) {
-    return ts.factory.updateTypeLiteralNode(node, members);
+export function updateTypeLiteralNode(o) {
+    return ts.factory.updateTypeLiteralNode(o.node, o.members);
 }
-export function createArrayTypeNode({ elementType }) {
-    return ts.factory.createArrayTypeNode(elementType);
+export function createArrayTypeNode(o) {
+    return ts.factory.createArrayTypeNode(o.elementType);
 }
-export function updateArrayTypeNode({ node, elementType }) {
-    return ts.factory.updateArrayTypeNode(node, elementType);
+export function updateArrayTypeNode(o) {
+    return ts.factory.updateArrayTypeNode(o.node, o.elementType);
 }
-export function createTupleTypeNode({ elements }) {
-    return ts.factory.createTupleTypeNode(elements);
+export function createTupleTypeNode(o) {
+    return ts.factory.createTupleTypeNode(o.elements);
 }
-export function updateTupleTypeNode({ node, elements }) {
-    return ts.factory.updateTupleTypeNode(node, elements);
+export function updateTupleTypeNode(o) {
+    return ts.factory.updateTupleTypeNode(o.node, o.elements);
 }
-export function createNamedTupleMember({ dotDotDotToken, name, questionToken, type }) {
-    return ts.factory.createNamedTupleMember(dotDotDotToken, name, questionToken, type);
+export function createNamedTupleMember(o) {
+    return ts.factory.createNamedTupleMember(o.dotDotDotToken, o.name, o.questionToken, o.type);
 }
-export function updateNamedTupleMember({ node, dotDotDotToken, name, questionToken, type }) {
-    return ts.factory.updateNamedTupleMember(node, dotDotDotToken, name, questionToken, type);
+export function updateNamedTupleMember(o) {
+    return ts.factory.updateNamedTupleMember(o.node, o.dotDotDotToken, o.name, o.questionToken, o.type);
 }
-export function createOptionalTypeNode({ type }) {
-    return ts.factory.createOptionalTypeNode(type);
+export function createOptionalTypeNode(o) {
+    return ts.factory.createOptionalTypeNode(o.type);
 }
-export function updateOptionalTypeNode({ node, type }) {
-    return ts.factory.updateOptionalTypeNode(node, type);
+export function updateOptionalTypeNode(o) {
+    return ts.factory.updateOptionalTypeNode(o.node, o.type);
 }
-export function createRestTypeNode({ type }) {
-    return ts.factory.createRestTypeNode(type);
+export function createRestTypeNode(o) {
+    return ts.factory.createRestTypeNode(o.type);
 }
-export function updateRestTypeNode({ node, type }) {
-    return ts.factory.updateRestTypeNode(node, type);
+export function updateRestTypeNode(o) {
+    return ts.factory.updateRestTypeNode(o.node, o.type);
 }
-export function createUnionTypeNode({ types }) {
-    return ts.factory.createUnionTypeNode(types);
+export function createUnionTypeNode(o) {
+    return ts.factory.createUnionTypeNode(o.types);
 }
-export function updateUnionTypeNode({ node, types }) {
-    return ts.factory.updateUnionTypeNode(node, types);
+export function updateUnionTypeNode(o) {
+    return ts.factory.updateUnionTypeNode(o.node, o.types);
 }
-export function createIntersectionTypeNode({ types }) {
-    return ts.factory.createIntersectionTypeNode(types);
+export function createIntersectionTypeNode(o) {
+    return ts.factory.createIntersectionTypeNode(o.types);
 }
-export function updateIntersectionTypeNode({ node, types }) {
-    return ts.factory.updateIntersectionTypeNode(node, types);
+export function updateIntersectionTypeNode(o) {
+    return ts.factory.updateIntersectionTypeNode(o.node, o.types);
 }
-export function createConditionalTypeNode({ checkType, extendsType, trueType, falseType }) {
-    return ts.factory.createConditionalTypeNode(checkType, extendsType, trueType, falseType);
+export function createConditionalTypeNode(o) {
+    return ts.factory.createConditionalTypeNode(o.checkType, o.extendsType, o.trueType, o.falseType);
 }
-export function updateConditionalTypeNode({ node, checkType, extendsType, trueType, falseType }) {
-    return ts.factory.updateConditionalTypeNode(node, checkType, extendsType, trueType, falseType);
+export function updateConditionalTypeNode(o) {
+    return ts.factory.updateConditionalTypeNode(o.node, o.checkType, o.extendsType, o.trueType, o.falseType);
 }
-export function createInferTypeNode({ typeParameter }) {
-    return ts.factory.createInferTypeNode(typeParameter);
+export function createInferTypeNode(o) {
+    return ts.factory.createInferTypeNode(o.typeParameter);
 }
-export function updateInferTypeNode({ node, typeParameter }) {
-    return ts.factory.updateInferTypeNode(node, typeParameter);
+export function updateInferTypeNode(o) {
+    return ts.factory.updateInferTypeNode(o.node, o.typeParameter);
 }
-export function createImportTypeNode({ argument, attributes, qualifier, typeArguments, isTypeOf }) {
-    return ts.factory.createImportTypeNode(argument, attributes, qualifier, typeArguments, isTypeOf);
+export function createImportTypeNode(o) {
+    return ts.factory.createImportTypeNode(o.argument, o.attributes, o.qualifier, o.typeArguments, o.isTypeOf);
 }
-export function updateImportTypeNode({ node, argument, attributes, qualifier, typeArguments, isTypeOf }) {
-    return ts.factory.updateImportTypeNode(node, argument, attributes, qualifier, typeArguments, isTypeOf);
+export function updateImportTypeNode(o) {
+    return ts.factory.updateImportTypeNode(o.node, o.argument, o.attributes, o.qualifier, o.typeArguments, o.isTypeOf);
 }
-export function createParenthesizedType({ type }) {
-    return ts.factory.createParenthesizedType(type);
+export function createParenthesizedType(o) {
+    return ts.factory.createParenthesizedType(o.type);
 }
-export function updateParenthesizedType({ node, type }) {
-    return ts.factory.updateParenthesizedType(node, type);
+export function updateParenthesizedType(o) {
+    return ts.factory.updateParenthesizedType(o.node, o.type);
 }
 export function createThisTypeNode() {
     return ts.factory.createThisTypeNode();
 }
-export function createTypeOperatorNode({ operator, type }) {
-    return ts.factory.createTypeOperatorNode(operator, type);
+export function createTypeOperatorNode(o) {
+    return ts.factory.createTypeOperatorNode(o.operator, o.type);
 }
-export function updateTypeOperatorNode({ node, type }) {
-    return ts.factory.updateTypeOperatorNode(node, type);
+export function updateTypeOperatorNode(o) {
+    return ts.factory.updateTypeOperatorNode(o.node, o.type);
 }
-export function createIndexedAccessTypeNode({ objectType, indexType }) {
-    return ts.factory.createIndexedAccessTypeNode(objectType, indexType);
+export function createIndexedAccessTypeNode(o) {
+    return ts.factory.createIndexedAccessTypeNode(o.objectType, o.indexType);
 }
-export function updateIndexedAccessTypeNode({ node, objectType, indexType }) {
-    return ts.factory.updateIndexedAccessTypeNode(node, objectType, indexType);
+export function updateIndexedAccessTypeNode(o) {
+    return ts.factory.updateIndexedAccessTypeNode(o.node, o.objectType, o.indexType);
 }
-export function createMappedTypeNode({ readonlyToken, typeParameter, nameType, questionToken, type, members }) {
-    return ts.factory.createMappedTypeNode(readonlyToken, typeParameter, nameType, questionToken, type, members);
+export function createMappedTypeNode(o) {
+    return ts.factory.createMappedTypeNode(o.readonlyToken, o.typeParameter, o.nameType, o.questionToken, o.type, o.members);
 }
-export function updateMappedTypeNode({ node, readonlyToken, typeParameter, nameType, questionToken, type, members }) {
-    return ts.factory.updateMappedTypeNode(node, readonlyToken, typeParameter, nameType, questionToken, type, members);
+export function updateMappedTypeNode(o) {
+    return ts.factory.updateMappedTypeNode(o.node, o.readonlyToken, o.typeParameter, o.nameType, o.questionToken, o.type, o.members);
 }
-export function createLiteralTypeNode({ literal }) {
-    return ts.factory.createLiteralTypeNode(literal);
+export function createLiteralTypeNode(o) {
+    return ts.factory.createLiteralTypeNode(o.literal);
 }
-export function updateLiteralTypeNode({ node, literal }) {
-    return ts.factory.updateLiteralTypeNode(node, literal);
+export function updateLiteralTypeNode(o) {
+    return ts.factory.updateLiteralTypeNode(o.node, o.literal);
 }
-export function createTemplateLiteralType({ head, templateSpans }) {
-    return ts.factory.createTemplateLiteralType(head, templateSpans);
+export function createTemplateLiteralType(o) {
+    return ts.factory.createTemplateLiteralType(o.head, o.templateSpans);
 }
-export function updateTemplateLiteralType({ node, head, templateSpans }) {
-    return ts.factory.updateTemplateLiteralType(node, head, templateSpans);
+export function updateTemplateLiteralType(o) {
+    return ts.factory.updateTemplateLiteralType(o.node, o.head, o.templateSpans);
 }
-export function createObjectBindingPattern({ elements }) {
-    return ts.factory.createObjectBindingPattern(elements);
+export function createObjectBindingPattern(o) {
+    return ts.factory.createObjectBindingPattern(o.elements);
 }
-export function updateObjectBindingPattern({ node, elements }) {
-    return ts.factory.updateObjectBindingPattern(node, elements);
+export function updateObjectBindingPattern(o) {
+    return ts.factory.updateObjectBindingPattern(o.node, o.elements);
 }
-export function createArrayBindingPattern({ elements }) {
-    return ts.factory.createArrayBindingPattern(elements);
+export function createArrayBindingPattern(o) {
+    return ts.factory.createArrayBindingPattern(o.elements);
 }
-export function updateArrayBindingPattern({ node, elements }) {
-    return ts.factory.updateArrayBindingPattern(node, elements);
+export function updateArrayBindingPattern(o) {
+    return ts.factory.updateArrayBindingPattern(o.node, o.elements);
 }
-export function createBindingElement({ dotDotDotToken, propertyName, name, initializer }) {
-    return ts.factory.createBindingElement(dotDotDotToken, propertyName, name, initializer);
+export function createBindingElement(o) {
+    return ts.factory.createBindingElement(o.dotDotDotToken, o.propertyName, o.name, o.initializer);
 }
-export function updateBindingElement({ node, dotDotDotToken, propertyName, name, initializer }) {
-    return ts.factory.updateBindingElement(node, dotDotDotToken, propertyName, name, initializer);
+export function updateBindingElement(o) {
+    return ts.factory.updateBindingElement(o.node, o.dotDotDotToken, o.propertyName, o.name, o.initializer);
 }
-export function createArrayLiteralExpression({ elements, multiLine }) {
-    return ts.factory.createArrayLiteralExpression(elements, multiLine);
+export function createArrayLiteralExpression(o) {
+    return ts.factory.createArrayLiteralExpression(o.elements, o.multiLine);
 }
-export function updateArrayLiteralExpression({ node, elements }) {
-    return ts.factory.updateArrayLiteralExpression(node, elements);
+export function updateArrayLiteralExpression(o) {
+    return ts.factory.updateArrayLiteralExpression(o.node, o.elements);
 }
-export function createObjectLiteralExpression({ properties, multiLine }) {
-    return ts.factory.createObjectLiteralExpression(properties, multiLine);
+export function createObjectLiteralExpression(o) {
+    return ts.factory.createObjectLiteralExpression(o.properties, o.multiLine);
 }
-export function updateObjectLiteralExpression({ node, properties }) {
-    return ts.factory.updateObjectLiteralExpression(node, properties);
+export function updateObjectLiteralExpression(o) {
+    return ts.factory.updateObjectLiteralExpression(o.node, o.properties);
 }
-export function createPropertyAccessExpression({ expression, name }) {
-    return ts.factory.createPropertyAccessExpression(expression, name);
+export function createPropertyAccessExpression(o) {
+    return ts.factory.createPropertyAccessExpression(o.expression, o.name);
 }
-export function updatePropertyAccessExpression({ node, expression, name }) {
-    return ts.factory.updatePropertyAccessExpression(node, expression, name);
+export function updatePropertyAccessExpression(o) {
+    return ts.factory.updatePropertyAccessExpression(o.node, o.expression, o.name);
 }
-export function createPropertyAccessChain({ expression, questionDotToken, name }) {
-    return ts.factory.createPropertyAccessChain(expression, questionDotToken, name);
+export function createPropertyAccessChain(o) {
+    return ts.factory.createPropertyAccessChain(o.expression, o.questionDotToken, o.name);
 }
-export function updatePropertyAccessChain({ node, expression, questionDotToken, name }) {
-    return ts.factory.updatePropertyAccessChain(node, expression, questionDotToken, name);
+export function updatePropertyAccessChain(o) {
+    return ts.factory.updatePropertyAccessChain(o.node, o.expression, o.questionDotToken, o.name);
 }
-export function createElementAccessExpression({ expression, index }) {
-    return ts.factory.createElementAccessExpression(expression, index);
+export function createElementAccessExpression(o) {
+    return ts.factory.createElementAccessExpression(o.expression, o.index);
 }
-export function updateElementAccessExpression({ node, expression, argumentExpression }) {
-    return ts.factory.updateElementAccessExpression(node, expression, argumentExpression);
+export function updateElementAccessExpression(o) {
+    return ts.factory.updateElementAccessExpression(o.node, o.expression, o.argumentExpression);
 }
-export function createElementAccessChain({ expression, questionDotToken, index }) {
-    return ts.factory.createElementAccessChain(expression, questionDotToken, index);
+export function createElementAccessChain(o) {
+    return ts.factory.createElementAccessChain(o.expression, o.questionDotToken, o.index);
 }
-export function updateElementAccessChain({ node, expression, questionDotToken, argumentExpression }) {
-    return ts.factory.updateElementAccessChain(node, expression, questionDotToken, argumentExpression);
+export function updateElementAccessChain(o) {
+    return ts.factory.updateElementAccessChain(o.node, o.expression, o.questionDotToken, o.argumentExpression);
 }
-export function createCallExpression({ expression, typeArguments, argumentsArray }) {
-    return ts.factory.createCallExpression(expression, typeArguments, argumentsArray);
+export function createCallExpression(o) {
+    return ts.factory.createCallExpression(o.expression, o.typeArguments, o.argumentsArray);
 }
-export function updateCallExpression({ node, expression, typeArguments, argumentsArray }) {
-    return ts.factory.updateCallExpression(node, expression, typeArguments, argumentsArray);
+export function updateCallExpression(o) {
+    return ts.factory.updateCallExpression(o.node, o.expression, o.typeArguments, o.argumentsArray);
 }
-export function createCallChain({ expression, questionDotToken, typeArguments, argumentsArray }) {
-    return ts.factory.createCallChain(expression, questionDotToken, typeArguments, argumentsArray);
+export function createCallChain(o) {
+    return ts.factory.createCallChain(o.expression, o.questionDotToken, o.typeArguments, o.argumentsArray);
 }
-export function updateCallChain({ node, expression, questionDotToken, typeArguments, argumentsArray }) {
-    return ts.factory.updateCallChain(node, expression, questionDotToken, typeArguments, argumentsArray);
+export function updateCallChain(o) {
+    return ts.factory.updateCallChain(o.node, o.expression, o.questionDotToken, o.typeArguments, o.argumentsArray);
 }
-export function createNewExpression({ expression, typeArguments, argumentsArray }) {
-    return ts.factory.createNewExpression(expression, typeArguments, argumentsArray);
+export function createNewExpression(o) {
+    return ts.factory.createNewExpression(o.expression, o.typeArguments, o.argumentsArray);
 }
-export function updateNewExpression({ node, expression, typeArguments, argumentsArray }) {
-    return ts.factory.updateNewExpression(node, expression, typeArguments, argumentsArray);
+export function updateNewExpression(o) {
+    return ts.factory.updateNewExpression(o.node, o.expression, o.typeArguments, o.argumentsArray);
 }
-export function createTaggedTemplateExpression({ tag, typeArguments, template }) {
-    return ts.factory.createTaggedTemplateExpression(tag, typeArguments, template);
+export function createTaggedTemplateExpression(o) {
+    return ts.factory.createTaggedTemplateExpression(o.tag, o.typeArguments, o.template);
 }
-export function updateTaggedTemplateExpression({ node, tag, typeArguments, template }) {
-    return ts.factory.updateTaggedTemplateExpression(node, tag, typeArguments, template);
+export function updateTaggedTemplateExpression(o) {
+    return ts.factory.updateTaggedTemplateExpression(o.node, o.tag, o.typeArguments, o.template);
 }
-export function createTypeAssertion({ type, expression }) {
-    return ts.factory.createTypeAssertion(type, expression);
+export function createTypeAssertion(o) {
+    return ts.factory.createTypeAssertion(o.type, o.expression);
 }
-export function updateTypeAssertion({ node, type, expression }) {
-    return ts.factory.updateTypeAssertion(node, type, expression);
+export function updateTypeAssertion(o) {
+    return ts.factory.updateTypeAssertion(o.node, o.type, o.expression);
 }
-export function createParenthesizedExpression({ expression }) {
-    return ts.factory.createParenthesizedExpression(expression);
+export function createParenthesizedExpression(o) {
+    return ts.factory.createParenthesizedExpression(o.expression);
 }
-export function updateParenthesizedExpression({ node, expression }) {
-    return ts.factory.updateParenthesizedExpression(node, expression);
+export function updateParenthesizedExpression(o) {
+    return ts.factory.updateParenthesizedExpression(o.node, o.expression);
 }
-export function createFunctionExpression({ modifiers, asteriskToken, name, typeParameters, parameters, type, body }) {
-    return ts.factory.createFunctionExpression(modifiers, asteriskToken, name, typeParameters, parameters, type, body);
+export function createFunctionExpression(o) {
+    return ts.factory.createFunctionExpression(o.modifiers, o.asteriskToken, o.name, o.typeParameters, o.parameters, o.type, o.body);
 }
-export function updateFunctionExpression({ node, modifiers, asteriskToken, name, typeParameters, parameters, type, body }) {
-    return ts.factory.updateFunctionExpression(node, modifiers, asteriskToken, name, typeParameters, parameters, type, body);
+export function updateFunctionExpression(o) {
+    return ts.factory.updateFunctionExpression(o.node, o.modifiers, o.asteriskToken, o.name, o.typeParameters, o.parameters, o.type, o.body);
 }
-export function createArrowFunction({ modifiers, typeParameters, parameters, type, equalsGreaterThanToken, body }) {
-    return ts.factory.createArrowFunction(modifiers, typeParameters, parameters, type, equalsGreaterThanToken, body);
+export function createArrowFunction(o) {
+    return ts.factory.createArrowFunction(o.modifiers, o.typeParameters, o.parameters, o.type, o.equalsGreaterThanToken, o.body);
 }
-export function updateArrowFunction({ node, modifiers, typeParameters, parameters, type, equalsGreaterThanToken, body }) {
-    return ts.factory.updateArrowFunction(node, modifiers, typeParameters, parameters, type, equalsGreaterThanToken, body);
+export function updateArrowFunction(o) {
+    return ts.factory.updateArrowFunction(o.node, o.modifiers, o.typeParameters, o.parameters, o.type, o.equalsGreaterThanToken, o.body);
 }
-export function createDeleteExpression({ expression }) {
-    return ts.factory.createDeleteExpression(expression);
+export function createDeleteExpression(o) {
+    return ts.factory.createDeleteExpression(o.expression);
 }
-export function updateDeleteExpression({ node, expression }) {
-    return ts.factory.updateDeleteExpression(node, expression);
+export function updateDeleteExpression(o) {
+    return ts.factory.updateDeleteExpression(o.node, o.expression);
 }
-export function createTypeOfExpression({ expression }) {
-    return ts.factory.createTypeOfExpression(expression);
+export function createTypeOfExpression(o) {
+    return ts.factory.createTypeOfExpression(o.expression);
 }
-export function updateTypeOfExpression({ node, expression }) {
-    return ts.factory.updateTypeOfExpression(node, expression);
+export function updateTypeOfExpression(o) {
+    return ts.factory.updateTypeOfExpression(o.node, o.expression);
 }
-export function createVoidExpression({ expression }) {
-    return ts.factory.createVoidExpression(expression);
+export function createVoidExpression(o) {
+    return ts.factory.createVoidExpression(o.expression);
 }
-export function updateVoidExpression({ node, expression }) {
-    return ts.factory.updateVoidExpression(node, expression);
+export function updateVoidExpression(o) {
+    return ts.factory.updateVoidExpression(o.node, o.expression);
 }
-export function createAwaitExpression({ expression }) {
-    return ts.factory.createAwaitExpression(expression);
+export function createAwaitExpression(o) {
+    return ts.factory.createAwaitExpression(o.expression);
 }
-export function updateAwaitExpression({ node, expression }) {
-    return ts.factory.updateAwaitExpression(node, expression);
+export function updateAwaitExpression(o) {
+    return ts.factory.updateAwaitExpression(o.node, o.expression);
 }
-export function createPrefixUnaryExpression({ operator, operand }) {
-    return ts.factory.createPrefixUnaryExpression(operator, operand);
+export function createPrefixUnaryExpression(o) {
+    return ts.factory.createPrefixUnaryExpression(o.operator, o.operand);
 }
-export function updatePrefixUnaryExpression({ node, operand }) {
-    return ts.factory.updatePrefixUnaryExpression(node, operand);
+export function updatePrefixUnaryExpression(o) {
+    return ts.factory.updatePrefixUnaryExpression(o.node, o.operand);
 }
-export function createPostfixUnaryExpression({ operand, operator }) {
-    return ts.factory.createPostfixUnaryExpression(operand, operator);
+export function createPostfixUnaryExpression(o) {
+    return ts.factory.createPostfixUnaryExpression(o.operand, o.operator);
 }
-export function updatePostfixUnaryExpression({ node, operand }) {
-    return ts.factory.updatePostfixUnaryExpression(node, operand);
+export function updatePostfixUnaryExpression(o) {
+    return ts.factory.updatePostfixUnaryExpression(o.node, o.operand);
 }
-export function createBinaryExpression({ left, operator, right }) {
-    return ts.factory.createBinaryExpression(left, operator, right);
+export function createBinaryExpression(o) {
+    return ts.factory.createBinaryExpression(o.left, o.operator, o.right);
 }
-export function updateBinaryExpression({ node, left, operator, right }) {
-    return ts.factory.updateBinaryExpression(node, left, operator, right);
+export function updateBinaryExpression(o) {
+    return ts.factory.updateBinaryExpression(o.node, o.left, o.operator, o.right);
 }
-export function createConditionalExpression({ condition, questionToken, whenTrue, colonToken, whenFalse }) {
-    return ts.factory.createConditionalExpression(condition, questionToken, whenTrue, colonToken, whenFalse);
+export function createConditionalExpression(o) {
+    return ts.factory.createConditionalExpression(o.condition, o.questionToken, o.whenTrue, o.colonToken, o.whenFalse);
 }
-export function updateConditionalExpression({ node, condition, questionToken, whenTrue, colonToken, whenFalse }) {
-    return ts.factory.updateConditionalExpression(node, condition, questionToken, whenTrue, colonToken, whenFalse);
+export function updateConditionalExpression(o) {
+    return ts.factory.updateConditionalExpression(o.node, o.condition, o.questionToken, o.whenTrue, o.colonToken, o.whenFalse);
 }
-export function createTemplateExpression({ head, templateSpans }) {
-    return ts.factory.createTemplateExpression(head, templateSpans);
+export function createTemplateExpression(o) {
+    return ts.factory.createTemplateExpression(o.head, o.templateSpans);
 }
-export function updateTemplateExpression({ node, head, templateSpans }) {
-    return ts.factory.updateTemplateExpression(node, head, templateSpans);
+export function updateTemplateExpression(o) {
+    return ts.factory.updateTemplateExpression(o.node, o.head, o.templateSpans);
 }
-export function createTemplateHead({ text, rawText, templateFlags }) {
-    return ts.factory.createTemplateHead(text, rawText, templateFlags);
+export function createTemplateHead(o) {
+    return ts.factory.createTemplateHead(o.text, o.rawText, o.templateFlags);
 }
-export function createTemplateMiddle({ text, rawText, templateFlags }) {
-    return ts.factory.createTemplateMiddle(text, rawText, templateFlags);
+export function createTemplateMiddle(o) {
+    return ts.factory.createTemplateMiddle(o.text, o.rawText, o.templateFlags);
 }
-export function createTemplateTail({ text, rawText, templateFlags }) {
-    return ts.factory.createTemplateTail(text, rawText, templateFlags);
+export function createTemplateTail(o) {
+    return ts.factory.createTemplateTail(o.text, o.rawText, o.templateFlags);
 }
-export function createNoSubstitutionTemplateLiteral({ text, rawText }) {
-    return ts.factory.createNoSubstitutionTemplateLiteral(text, rawText);
+export function createNoSubstitutionTemplateLiteral(o) {
+    return ts.factory.createNoSubstitutionTemplateLiteral(o.text, o.rawText);
 }
-export function createYieldExpression({ asteriskToken, expression }) {
-    return ts.factory.createYieldExpression(asteriskToken, expression);
+export function createYieldExpression(o) {
+    return ts.factory.createYieldExpression(o.asteriskToken, o.expression);
 }
-export function updateYieldExpression({ node, asteriskToken, expression }) {
-    return ts.factory.updateYieldExpression(node, asteriskToken, expression);
+export function updateYieldExpression(o) {
+    return ts.factory.updateYieldExpression(o.node, o.asteriskToken, o.expression);
 }
-export function createSpreadElement({ expression }) {
-    return ts.factory.createSpreadElement(expression);
+export function createSpreadElement(o) {
+    return ts.factory.createSpreadElement(o.expression);
 }
-export function updateSpreadElement({ node, expression }) {
-    return ts.factory.updateSpreadElement(node, expression);
+export function updateSpreadElement(o) {
+    return ts.factory.updateSpreadElement(o.node, o.expression);
 }
-export function createClassExpression({ modifiers, name, typeParameters, heritageClauses, members }) {
-    return ts.factory.createClassExpression(modifiers, name, typeParameters, heritageClauses, members);
+export function createClassExpression(o) {
+    return ts.factory.createClassExpression(o.modifiers, o.name, o.typeParameters, o.heritageClauses, o.members);
 }
-export function updateClassExpression({ node, modifiers, name, typeParameters, heritageClauses, members }) {
-    return ts.factory.updateClassExpression(node, modifiers, name, typeParameters, heritageClauses, members);
+export function updateClassExpression(o) {
+    return ts.factory.updateClassExpression(o.node, o.modifiers, o.name, o.typeParameters, o.heritageClauses, o.members);
 }
 export function createOmittedExpression() {
     return ts.factory.createOmittedExpression();
 }
-export function createExpressionWithTypeArguments({ expression, typeArguments }) {
-    return ts.factory.createExpressionWithTypeArguments(expression, typeArguments);
+export function createExpressionWithTypeArguments(o) {
+    return ts.factory.createExpressionWithTypeArguments(o.expression, o.typeArguments);
 }
-export function updateExpressionWithTypeArguments({ node, expression, typeArguments }) {
-    return ts.factory.updateExpressionWithTypeArguments(node, expression, typeArguments);
+export function updateExpressionWithTypeArguments(o) {
+    return ts.factory.updateExpressionWithTypeArguments(o.node, o.expression, o.typeArguments);
 }
-export function createAsExpression({ expression, type }) {
-    return ts.factory.createAsExpression(expression, type);
+export function createAsExpression(o) {
+    return ts.factory.createAsExpression(o.expression, o.type);
 }
-export function updateAsExpression({ node, expression, type }) {
-    return ts.factory.updateAsExpression(node, expression, type);
+export function updateAsExpression(o) {
+    return ts.factory.updateAsExpression(o.node, o.expression, o.type);
 }
-export function createNonNullExpression({ expression }) {
-    return ts.factory.createNonNullExpression(expression);
+export function createNonNullExpression(o) {
+    return ts.factory.createNonNullExpression(o.expression);
 }
-export function updateNonNullExpression({ node, expression }) {
-    return ts.factory.updateNonNullExpression(node, expression);
+export function updateNonNullExpression(o) {
+    return ts.factory.updateNonNullExpression(o.node, o.expression);
 }
-export function createNonNullChain({ expression }) {
-    return ts.factory.createNonNullChain(expression);
+export function createNonNullChain(o) {
+    return ts.factory.createNonNullChain(o.expression);
 }
-export function updateNonNullChain({ node, expression }) {
-    return ts.factory.updateNonNullChain(node, expression);
+export function updateNonNullChain(o) {
+    return ts.factory.updateNonNullChain(o.node, o.expression);
 }
-export function createMetaProperty({ keywordToken, name }) {
-    return ts.factory.createMetaProperty(keywordToken, name);
+export function createMetaProperty(o) {
+    return ts.factory.createMetaProperty(o.keywordToken, o.name);
 }
-export function updateMetaProperty({ node, name }) {
-    return ts.factory.updateMetaProperty(node, name);
+export function updateMetaProperty(o) {
+    return ts.factory.updateMetaProperty(o.node, o.name);
 }
-export function createSatisfiesExpression({ expression, type }) {
-    return ts.factory.createSatisfiesExpression(expression, type);
+export function createSatisfiesExpression(o) {
+    return ts.factory.createSatisfiesExpression(o.expression, o.type);
 }
-export function updateSatisfiesExpression({ node, expression, type }) {
-    return ts.factory.updateSatisfiesExpression(node, expression, type);
+export function updateSatisfiesExpression(o) {
+    return ts.factory.updateSatisfiesExpression(o.node, o.expression, o.type);
 }
-export function createTemplateSpan({ expression, literal }) {
-    return ts.factory.createTemplateSpan(expression, literal);
+export function createTemplateSpan(o) {
+    return ts.factory.createTemplateSpan(o.expression, o.literal);
 }
-export function updateTemplateSpan({ node, expression, literal }) {
-    return ts.factory.updateTemplateSpan(node, expression, literal);
+export function updateTemplateSpan(o) {
+    return ts.factory.updateTemplateSpan(o.node, o.expression, o.literal);
 }
 export function createSemicolonClassElement() {
     return ts.factory.createSemicolonClassElement();
 }
-export function createBlock({ statements, multiLine }) {
-    return ts.factory.createBlock(statements, multiLine);
+export function createBlock(o) {
+    return ts.factory.createBlock(o.statements, o.multiLine);
 }
-export function updateBlock({ node, statements }) {
-    return ts.factory.updateBlock(node, statements);
+export function updateBlock(o) {
+    return ts.factory.updateBlock(o.node, o.statements);
 }
-export function createVariableStatement({ modifiers, declarationList }) {
-    return ts.factory.createVariableStatement(modifiers, declarationList);
+export function createVariableStatement(o) {
+    return ts.factory.createVariableStatement(o.modifiers, o.declarationList);
 }
-export function updateVariableStatement({ node, modifiers, declarationList }) {
-    return ts.factory.updateVariableStatement(node, modifiers, declarationList);
+export function updateVariableStatement(o) {
+    return ts.factory.updateVariableStatement(o.node, o.modifiers, o.declarationList);
 }
 export function createEmptyStatement() {
     return ts.factory.createEmptyStatement();
 }
-export function createExpressionStatement({ expression }) {
-    return ts.factory.createExpressionStatement(expression);
+export function createExpressionStatement(o) {
+    return ts.factory.createExpressionStatement(o.expression);
 }
-export function updateExpressionStatement({ node, expression }) {
-    return ts.factory.updateExpressionStatement(node, expression);
+export function updateExpressionStatement(o) {
+    return ts.factory.updateExpressionStatement(o.node, o.expression);
 }
-export function createIfStatement({ expression, thenStatement, elseStatement }) {
-    return ts.factory.createIfStatement(expression, thenStatement, elseStatement);
+export function createIfStatement(o) {
+    return ts.factory.createIfStatement(o.expression, o.thenStatement, o.elseStatement);
 }
-export function updateIfStatement({ node, expression, thenStatement, elseStatement }) {
-    return ts.factory.updateIfStatement(node, expression, thenStatement, elseStatement);
+export function updateIfStatement(o) {
+    return ts.factory.updateIfStatement(o.node, o.expression, o.thenStatement, o.elseStatement);
 }
-export function createDoStatement({ statement, expression }) {
-    return ts.factory.createDoStatement(statement, expression);
+export function createDoStatement(o) {
+    return ts.factory.createDoStatement(o.statement, o.expression);
 }
-export function updateDoStatement({ node, statement, expression }) {
-    return ts.factory.updateDoStatement(node, statement, expression);
+export function updateDoStatement(o) {
+    return ts.factory.updateDoStatement(o.node, o.statement, o.expression);
 }
-export function createWhileStatement({ expression, statement }) {
-    return ts.factory.createWhileStatement(expression, statement);
+export function createWhileStatement(o) {
+    return ts.factory.createWhileStatement(o.expression, o.statement);
 }
-export function updateWhileStatement({ node, expression, statement }) {
-    return ts.factory.updateWhileStatement(node, expression, statement);
+export function updateWhileStatement(o) {
+    return ts.factory.updateWhileStatement(o.node, o.expression, o.statement);
 }
-export function createForStatement({ initializer, condition, incrementor, statement }) {
-    return ts.factory.createForStatement(initializer, condition, incrementor, statement);
+export function createForStatement(o) {
+    return ts.factory.createForStatement(o.initializer, o.condition, o.incrementor, o.statement);
 }
-export function updateForStatement({ node, initializer, condition, incrementor, statement }) {
-    return ts.factory.updateForStatement(node, initializer, condition, incrementor, statement);
+export function updateForStatement(o) {
+    return ts.factory.updateForStatement(o.node, o.initializer, o.condition, o.incrementor, o.statement);
 }
-export function createForInStatement({ initializer, expression, statement }) {
-    return ts.factory.createForInStatement(initializer, expression, statement);
+export function createForInStatement(o) {
+    return ts.factory.createForInStatement(o.initializer, o.expression, o.statement);
 }
-export function updateForInStatement({ node, initializer, expression, statement }) {
-    return ts.factory.updateForInStatement(node, initializer, expression, statement);
+export function updateForInStatement(o) {
+    return ts.factory.updateForInStatement(o.node, o.initializer, o.expression, o.statement);
 }
-export function createForOfStatement({ awaitModifier, initializer, expression, statement }) {
-    return ts.factory.createForOfStatement(awaitModifier, initializer, expression, statement);
+export function createForOfStatement(o) {
+    return ts.factory.createForOfStatement(o.awaitModifier, o.initializer, o.expression, o.statement);
 }
-export function updateForOfStatement({ node, awaitModifier, initializer, expression, statement }) {
-    return ts.factory.updateForOfStatement(node, awaitModifier, initializer, expression, statement);
+export function updateForOfStatement(o) {
+    return ts.factory.updateForOfStatement(o.node, o.awaitModifier, o.initializer, o.expression, o.statement);
 }
-export function createContinueStatement({ label }) {
-    return ts.factory.createContinueStatement(label);
+export function createContinueStatement(o) {
+    return ts.factory.createContinueStatement(o.label);
 }
-export function updateContinueStatement({ node, label }) {
-    return ts.factory.updateContinueStatement(node, label);
+export function updateContinueStatement(o) {
+    return ts.factory.updateContinueStatement(o.node, o.label);
 }
-export function createBreakStatement({ label }) {
-    return ts.factory.createBreakStatement(label);
+export function createBreakStatement(o) {
+    return ts.factory.createBreakStatement(o.label);
 }
-export function updateBreakStatement({ node, label }) {
-    return ts.factory.updateBreakStatement(node, label);
+export function updateBreakStatement(o) {
+    return ts.factory.updateBreakStatement(o.node, o.label);
 }
-export function createReturnStatement({ expression }) {
-    return ts.factory.createReturnStatement(expression);
+export function createReturnStatement(o) {
+    return ts.factory.createReturnStatement(o.expression);
 }
-export function updateReturnStatement({ node, expression }) {
-    return ts.factory.updateReturnStatement(node, expression);
+export function updateReturnStatement(o) {
+    return ts.factory.updateReturnStatement(o.node, o.expression);
 }
-export function createWithStatement({ expression, statement }) {
-    return ts.factory.createWithStatement(expression, statement);
+export function createWithStatement(o) {
+    return ts.factory.createWithStatement(o.expression, o.statement);
 }
-export function updateWithStatement({ node, expression, statement }) {
-    return ts.factory.updateWithStatement(node, expression, statement);
+export function updateWithStatement(o) {
+    return ts.factory.updateWithStatement(o.node, o.expression, o.statement);
 }
-export function createSwitchStatement({ expression, caseBlock }) {
-    return ts.factory.createSwitchStatement(expression, caseBlock);
+export function createSwitchStatement(o) {
+    return ts.factory.createSwitchStatement(o.expression, o.caseBlock);
 }
-export function updateSwitchStatement({ node, expression, caseBlock }) {
-    return ts.factory.updateSwitchStatement(node, expression, caseBlock);
+export function updateSwitchStatement(o) {
+    return ts.factory.updateSwitchStatement(o.node, o.expression, o.caseBlock);
 }
-export function createLabeledStatement({ label, statement }) {
-    return ts.factory.createLabeledStatement(label, statement);
+export function createLabeledStatement(o) {
+    return ts.factory.createLabeledStatement(o.label, o.statement);
 }
-export function updateLabeledStatement({ node, label, statement }) {
-    return ts.factory.updateLabeledStatement(node, label, statement);
+export function updateLabeledStatement(o) {
+    return ts.factory.updateLabeledStatement(o.node, o.label, o.statement);
 }
-export function createThrowStatement({ expression }) {
-    return ts.factory.createThrowStatement(expression);
+export function createThrowStatement(o) {
+    return ts.factory.createThrowStatement(o.expression);
 }
-export function updateThrowStatement({ node, expression }) {
-    return ts.factory.updateThrowStatement(node, expression);
+export function updateThrowStatement(o) {
+    return ts.factory.updateThrowStatement(o.node, o.expression);
 }
-export function createTryStatement({ tryBlock, catchClause, finallyBlock }) {
-    return ts.factory.createTryStatement(tryBlock, catchClause, finallyBlock);
+export function createTryStatement(o) {
+    return ts.factory.createTryStatement(o.tryBlock, o.catchClause, o.finallyBlock);
 }
-export function updateTryStatement({ node, tryBlock, catchClause, finallyBlock }) {
-    return ts.factory.updateTryStatement(node, tryBlock, catchClause, finallyBlock);
+export function updateTryStatement(o) {
+    return ts.factory.updateTryStatement(o.node, o.tryBlock, o.catchClause, o.finallyBlock);
 }
 export function createDebuggerStatement() {
     return ts.factory.createDebuggerStatement();
 }
-export function createVariableDeclaration({ name, exclamationToken, type, initializer }) {
-    return ts.factory.createVariableDeclaration(name, exclamationToken, type, initializer);
+export function createVariableDeclaration(o) {
+    return ts.factory.createVariableDeclaration(o.name, o.exclamationToken, o.type, o.initializer);
 }
-export function updateVariableDeclaration({ node, name, exclamationToken, type, initializer }) {
-    return ts.factory.updateVariableDeclaration(node, name, exclamationToken, type, initializer);
+export function updateVariableDeclaration(o) {
+    return ts.factory.updateVariableDeclaration(o.node, o.name, o.exclamationToken, o.type, o.initializer);
 }
-export function createVariableDeclarationList({ declarations, flags }) {
-    return ts.factory.createVariableDeclarationList(declarations, flags);
+export function createVariableDeclarationList(o) {
+    return ts.factory.createVariableDeclarationList(o.declarations, o.flags);
 }
-export function updateVariableDeclarationList({ node, declarations }) {
-    return ts.factory.updateVariableDeclarationList(node, declarations);
+export function updateVariableDeclarationList(o) {
+    return ts.factory.updateVariableDeclarationList(o.node, o.declarations);
 }
-export function createFunctionDeclaration({ modifiers, asteriskToken, name, typeParameters, parameters, type, body }) {
-    return ts.factory.createFunctionDeclaration(modifiers, asteriskToken, name, typeParameters, parameters, type, body);
+export function createFunctionDeclaration(o) {
+    return ts.factory.createFunctionDeclaration(o.modifiers, o.asteriskToken, o.name, o.typeParameters, o.parameters, o.type, o.body);
 }
-export function updateFunctionDeclaration({ node, modifiers, asteriskToken, name, typeParameters, parameters, type, body }) {
-    return ts.factory.updateFunctionDeclaration(node, modifiers, asteriskToken, name, typeParameters, parameters, type, body);
+export function updateFunctionDeclaration(o) {
+    return ts.factory.updateFunctionDeclaration(o.node, o.modifiers, o.asteriskToken, o.name, o.typeParameters, o.parameters, o.type, o.body);
 }
-export function createClassDeclaration({ modifiers, name, typeParameters, heritageClauses, members }) {
-    return ts.factory.createClassDeclaration(modifiers, name, typeParameters, heritageClauses, members);
+export function createClassDeclaration(o) {
+    return ts.factory.createClassDeclaration(o.modifiers, o.name, o.typeParameters, o.heritageClauses, o.members);
 }
-export function updateClassDeclaration({ node, modifiers, name, typeParameters, heritageClauses, members }) {
-    return ts.factory.updateClassDeclaration(node, modifiers, name, typeParameters, heritageClauses, members);
+export function updateClassDeclaration(o) {
+    return ts.factory.updateClassDeclaration(o.node, o.modifiers, o.name, o.typeParameters, o.heritageClauses, o.members);
 }
-export function createInterfaceDeclaration({ modifiers, name, typeParameters, heritageClauses, members }) {
-    return ts.factory.createInterfaceDeclaration(modifiers, name, typeParameters, heritageClauses, members);
+export function createInterfaceDeclaration(o) {
+    return ts.factory.createInterfaceDeclaration(o.modifiers, o.name, o.typeParameters, o.heritageClauses, o.members);
 }
-export function updateInterfaceDeclaration({ node, modifiers, name, typeParameters, heritageClauses, members }) {
-    return ts.factory.updateInterfaceDeclaration(node, modifiers, name, typeParameters, heritageClauses, members);
+export function updateInterfaceDeclaration(o) {
+    return ts.factory.updateInterfaceDeclaration(o.node, o.modifiers, o.name, o.typeParameters, o.heritageClauses, o.members);
 }
-export function createTypeAliasDeclaration({ modifiers, name, typeParameters, type }) {
-    return ts.factory.createTypeAliasDeclaration(modifiers, name, typeParameters, type);
+export function createTypeAliasDeclaration(o) {
+    return ts.factory.createTypeAliasDeclaration(o.modifiers, o.name, o.typeParameters, o.type);
 }
-export function updateTypeAliasDeclaration({ node, modifiers, name, typeParameters, type }) {
-    return ts.factory.updateTypeAliasDeclaration(node, modifiers, name, typeParameters, type);
+export function updateTypeAliasDeclaration(o) {
+    return ts.factory.updateTypeAliasDeclaration(o.node, o.modifiers, o.name, o.typeParameters, o.type);
 }
-export function createEnumDeclaration({ modifiers, name, members }) {
-    return ts.factory.createEnumDeclaration(modifiers, name, members);
+export function createEnumDeclaration(o) {
+    return ts.factory.createEnumDeclaration(o.modifiers, o.name, o.members);
 }
-export function updateEnumDeclaration({ node, modifiers, name, members }) {
-    return ts.factory.updateEnumDeclaration(node, modifiers, name, members);
+export function updateEnumDeclaration(o) {
+    return ts.factory.updateEnumDeclaration(o.node, o.modifiers, o.name, o.members);
 }
-export function createModuleDeclaration({ modifiers, name, body, flags }) {
-    return ts.factory.createModuleDeclaration(modifiers, name, body, flags);
+export function createModuleDeclaration(o) {
+    return ts.factory.createModuleDeclaration(o.modifiers, o.name, o.body, o.flags);
 }
-export function updateModuleDeclaration({ node, modifiers, name, body }) {
-    return ts.factory.updateModuleDeclaration(node, modifiers, name, body);
+export function updateModuleDeclaration(o) {
+    return ts.factory.updateModuleDeclaration(o.node, o.modifiers, o.name, o.body);
 }
-export function createModuleBlock({ statements }) {
-    return ts.factory.createModuleBlock(statements);
+export function createModuleBlock(o) {
+    return ts.factory.createModuleBlock(o.statements);
 }
-export function updateModuleBlock({ node, statements }) {
-    return ts.factory.updateModuleBlock(node, statements);
+export function updateModuleBlock(o) {
+    return ts.factory.updateModuleBlock(o.node, o.statements);
 }
-export function createCaseBlock({ clauses }) {
-    return ts.factory.createCaseBlock(clauses);
+export function createCaseBlock(o) {
+    return ts.factory.createCaseBlock(o.clauses);
 }
-export function updateCaseBlock({ node, clauses }) {
-    return ts.factory.updateCaseBlock(node, clauses);
+export function updateCaseBlock(o) {
+    return ts.factory.updateCaseBlock(o.node, o.clauses);
 }
-export function createNamespaceExportDeclaration({ name }) {
-    return ts.factory.createNamespaceExportDeclaration(name);
+export function createNamespaceExportDeclaration(o) {
+    return ts.factory.createNamespaceExportDeclaration(o.name);
 }
-export function updateNamespaceExportDeclaration({ node, name }) {
-    return ts.factory.updateNamespaceExportDeclaration(node, name);
+export function updateNamespaceExportDeclaration(o) {
+    return ts.factory.updateNamespaceExportDeclaration(o.node, o.name);
 }
-export function createImportEqualsDeclaration({ modifiers, isTypeOnly, name, moduleReference }) {
-    return ts.factory.createImportEqualsDeclaration(modifiers, isTypeOnly, name, moduleReference);
+export function createImportEqualsDeclaration(o) {
+    return ts.factory.createImportEqualsDeclaration(o.modifiers, o.isTypeOnly, o.name, o.moduleReference);
 }
-export function updateImportEqualsDeclaration({ node, modifiers, isTypeOnly, name, moduleReference }) {
-    return ts.factory.updateImportEqualsDeclaration(node, modifiers, isTypeOnly, name, moduleReference);
+export function updateImportEqualsDeclaration(o) {
+    return ts.factory.updateImportEqualsDeclaration(o.node, o.modifiers, o.isTypeOnly, o.name, o.moduleReference);
 }
-export function createImportDeclaration({ modifiers, importClause, moduleSpecifier, attributes }) {
-    return ts.factory.createImportDeclaration(modifiers, importClause, moduleSpecifier, attributes);
+export function createImportDeclaration(o) {
+    return ts.factory.createImportDeclaration(o.modifiers, o.importClause, o.moduleSpecifier, o.attributes);
 }
-export function updateImportDeclaration({ node, modifiers, importClause, moduleSpecifier, attributes }) {
-    return ts.factory.updateImportDeclaration(node, modifiers, importClause, moduleSpecifier, attributes);
+export function updateImportDeclaration(o) {
+    return ts.factory.updateImportDeclaration(o.node, o.modifiers, o.importClause, o.moduleSpecifier, o.attributes);
 }
-export function createImportClause({ isTypeOnly, name, namedBindings }) {
-    return ts.factory.createImportClause(isTypeOnly, name, namedBindings);
+export function createImportClause(o) {
+    return ts.factory.createImportClause(o.isTypeOnly, o.name, o.namedBindings);
 }
-export function updateImportClause({ node, isTypeOnly, name, namedBindings }) {
-    return ts.factory.updateImportClause(node, isTypeOnly, name, namedBindings);
+export function updateImportClause(o) {
+    return ts.factory.updateImportClause(o.node, o.isTypeOnly, o.name, o.namedBindings);
 }
-export function createAssertClause({ elements, multiLine }) {
-    return ts.factory.createAssertClause(elements, multiLine);
+export function createAssertClause(o) {
+    return ts.factory.createAssertClause(o.elements, o.multiLine);
 }
-export function updateAssertClause({ node, elements, multiLine }) {
-    return ts.factory.updateAssertClause(node, elements, multiLine);
+export function updateAssertClause(o) {
+    return ts.factory.updateAssertClause(o.node, o.elements, o.multiLine);
 }
-export function createAssertEntry({ name, value }) {
-    return ts.factory.createAssertEntry(name, value);
+export function createAssertEntry(o) {
+    return ts.factory.createAssertEntry(o.name, o.value);
 }
-export function updateAssertEntry({ node, name, value }) {
-    return ts.factory.updateAssertEntry(node, name, value);
+export function updateAssertEntry(o) {
+    return ts.factory.updateAssertEntry(o.node, o.name, o.value);
 }
-export function createImportTypeAssertionContainer({ clause, multiLine }) {
-    return ts.factory.createImportTypeAssertionContainer(clause, multiLine);
+export function createImportTypeAssertionContainer(o) {
+    return ts.factory.createImportTypeAssertionContainer(o.clause, o.multiLine);
 }
-export function updateImportTypeAssertionContainer({ node, clause, multiLine }) {
-    return ts.factory.updateImportTypeAssertionContainer(node, clause, multiLine);
+export function updateImportTypeAssertionContainer(o) {
+    return ts.factory.updateImportTypeAssertionContainer(o.node, o.clause, o.multiLine);
 }
-export function createImportAttributes({ elements, multiLine }) {
-    return ts.factory.createImportAttributes(elements, multiLine);
+export function createImportAttributes(o) {
+    return ts.factory.createImportAttributes(o.elements, o.multiLine);
 }
-export function updateImportAttributes({ node, elements, multiLine }) {
-    return ts.factory.updateImportAttributes(node, elements, multiLine);
+export function updateImportAttributes(o) {
+    return ts.factory.updateImportAttributes(o.node, o.elements, o.multiLine);
 }
-export function createImportAttribute({ name, value }) {
-    return ts.factory.createImportAttribute(name, value);
+export function createImportAttribute(o) {
+    return ts.factory.createImportAttribute(o.name, o.value);
 }
-export function updateImportAttribute({ node, name, value }) {
-    return ts.factory.updateImportAttribute(node, name, value);
+export function updateImportAttribute(o) {
+    return ts.factory.updateImportAttribute(o.node, o.name, o.value);
 }
-export function createNamespaceImport({ name }) {
-    return ts.factory.createNamespaceImport(name);
+export function createNamespaceImport(o) {
+    return ts.factory.createNamespaceImport(o.name);
 }
-export function updateNamespaceImport({ node, name }) {
-    return ts.factory.updateNamespaceImport(node, name);
+export function updateNamespaceImport(o) {
+    return ts.factory.updateNamespaceImport(o.node, o.name);
 }
-export function createNamespaceExport({ name }) {
-    return ts.factory.createNamespaceExport(name);
+export function createNamespaceExport(o) {
+    return ts.factory.createNamespaceExport(o.name);
 }
-export function updateNamespaceExport({ node, name }) {
-    return ts.factory.updateNamespaceExport(node, name);
+export function updateNamespaceExport(o) {
+    return ts.factory.updateNamespaceExport(o.node, o.name);
 }
-export function createNamedImports({ elements }) {
-    return ts.factory.createNamedImports(elements);
+export function createNamedImports(o) {
+    return ts.factory.createNamedImports(o.elements);
 }
-export function updateNamedImports({ node, elements }) {
-    return ts.factory.updateNamedImports(node, elements);
+export function updateNamedImports(o) {
+    return ts.factory.updateNamedImports(o.node, o.elements);
 }
-export function createImportSpecifier({ isTypeOnly, propertyName, name }) {
-    return ts.factory.createImportSpecifier(isTypeOnly, propertyName, name);
+export function createImportSpecifier(o) {
+    return ts.factory.createImportSpecifier(o.isTypeOnly, o.propertyName, o.name);
 }
-export function updateImportSpecifier({ node, isTypeOnly, propertyName, name }) {
-    return ts.factory.updateImportSpecifier(node, isTypeOnly, propertyName, name);
+export function updateImportSpecifier(o) {
+    return ts.factory.updateImportSpecifier(o.node, o.isTypeOnly, o.propertyName, o.name);
 }
-export function createExportAssignment({ modifiers, isExportEquals, expression }) {
-    return ts.factory.createExportAssignment(modifiers, isExportEquals, expression);
+export function createExportAssignment(o) {
+    return ts.factory.createExportAssignment(o.modifiers, o.isExportEquals, o.expression);
 }
-export function updateExportAssignment({ node, modifiers, expression }) {
-    return ts.factory.updateExportAssignment(node, modifiers, expression);
+export function updateExportAssignment(o) {
+    return ts.factory.updateExportAssignment(o.node, o.modifiers, o.expression);
 }
-export function createExportDeclaration({ modifiers, isTypeOnly, exportClause, moduleSpecifier, attributes }) {
-    return ts.factory.createExportDeclaration(modifiers, isTypeOnly, exportClause, moduleSpecifier, attributes);
+export function createExportDeclaration(o) {
+    return ts.factory.createExportDeclaration(o.modifiers, o.isTypeOnly, o.exportClause, o.moduleSpecifier, o.attributes);
 }
-export function updateExportDeclaration({ node, modifiers, isTypeOnly, exportClause, moduleSpecifier, attributes }) {
-    return ts.factory.updateExportDeclaration(node, modifiers, isTypeOnly, exportClause, moduleSpecifier, attributes);
+export function updateExportDeclaration(o) {
+    return ts.factory.updateExportDeclaration(o.node, o.modifiers, o.isTypeOnly, o.exportClause, o.moduleSpecifier, o.attributes);
 }
-export function createNamedExports({ elements }) {
-    return ts.factory.createNamedExports(elements);
+export function createNamedExports(o) {
+    return ts.factory.createNamedExports(o.elements);
 }
-export function updateNamedExports({ node, elements }) {
-    return ts.factory.updateNamedExports(node, elements);
+export function updateNamedExports(o) {
+    return ts.factory.updateNamedExports(o.node, o.elements);
 }
-export function createExportSpecifier({ isTypeOnly, propertyName, name }) {
-    return ts.factory.createExportSpecifier(isTypeOnly, propertyName, name);
+export function createExportSpecifier(o) {
+    return ts.factory.createExportSpecifier(o.isTypeOnly, o.propertyName, o.name);
 }
-export function updateExportSpecifier({ node, isTypeOnly, propertyName, name }) {
-    return ts.factory.updateExportSpecifier(node, isTypeOnly, propertyName, name);
+export function updateExportSpecifier(o) {
+    return ts.factory.updateExportSpecifier(o.node, o.isTypeOnly, o.propertyName, o.name);
 }
-export function createExternalModuleReference({ expression }) {
-    return ts.factory.createExternalModuleReference(expression);
+export function createExternalModuleReference(o) {
+    return ts.factory.createExternalModuleReference(o.expression);
 }
-export function updateExternalModuleReference({ node, expression }) {
-    return ts.factory.updateExternalModuleReference(node, expression);
+export function updateExternalModuleReference(o) {
+    return ts.factory.updateExternalModuleReference(o.node, o.expression);
 }
 export function createJSDocAllType() {
     return ts.factory.createJSDocAllType();
@@ -827,278 +827,278 @@ export function createJSDocAllType() {
 export function createJSDocUnknownType() {
     return ts.factory.createJSDocUnknownType();
 }
-export function createJSDocNonNullableType({ type, postfix }) {
-    return ts.factory.createJSDocNonNullableType(type, postfix);
+export function createJSDocNonNullableType(o) {
+    return ts.factory.createJSDocNonNullableType(o.type, o.postfix);
 }
-export function updateJSDocNonNullableType({ node, type }) {
-    return ts.factory.updateJSDocNonNullableType(node, type);
+export function updateJSDocNonNullableType(o) {
+    return ts.factory.updateJSDocNonNullableType(o.node, o.type);
 }
-export function createJSDocNullableType({ type, postfix }) {
-    return ts.factory.createJSDocNullableType(type, postfix);
+export function createJSDocNullableType(o) {
+    return ts.factory.createJSDocNullableType(o.type, o.postfix);
 }
-export function updateJSDocNullableType({ node, type }) {
-    return ts.factory.updateJSDocNullableType(node, type);
+export function updateJSDocNullableType(o) {
+    return ts.factory.updateJSDocNullableType(o.node, o.type);
 }
-export function createJSDocOptionalType({ type }) {
-    return ts.factory.createJSDocOptionalType(type);
+export function createJSDocOptionalType(o) {
+    return ts.factory.createJSDocOptionalType(o.type);
 }
-export function updateJSDocOptionalType({ node, type }) {
-    return ts.factory.updateJSDocOptionalType(node, type);
+export function updateJSDocOptionalType(o) {
+    return ts.factory.updateJSDocOptionalType(o.node, o.type);
 }
-export function createJSDocFunctionType({ parameters, type }) {
-    return ts.factory.createJSDocFunctionType(parameters, type);
+export function createJSDocFunctionType(o) {
+    return ts.factory.createJSDocFunctionType(o.parameters, o.type);
 }
-export function updateJSDocFunctionType({ node, parameters, type }) {
-    return ts.factory.updateJSDocFunctionType(node, parameters, type);
+export function updateJSDocFunctionType(o) {
+    return ts.factory.updateJSDocFunctionType(o.node, o.parameters, o.type);
 }
-export function createJSDocVariadicType({ type }) {
-    return ts.factory.createJSDocVariadicType(type);
+export function createJSDocVariadicType(o) {
+    return ts.factory.createJSDocVariadicType(o.type);
 }
-export function updateJSDocVariadicType({ node, type }) {
-    return ts.factory.updateJSDocVariadicType(node, type);
+export function updateJSDocVariadicType(o) {
+    return ts.factory.updateJSDocVariadicType(o.node, o.type);
 }
-export function createJSDocNamepathType({ type }) {
-    return ts.factory.createJSDocNamepathType(type);
+export function createJSDocNamepathType(o) {
+    return ts.factory.createJSDocNamepathType(o.type);
 }
-export function updateJSDocNamepathType({ node, type }) {
-    return ts.factory.updateJSDocNamepathType(node, type);
+export function updateJSDocNamepathType(o) {
+    return ts.factory.updateJSDocNamepathType(o.node, o.type);
 }
-export function createJSDocTypeExpression({ type }) {
-    return ts.factory.createJSDocTypeExpression(type);
+export function createJSDocTypeExpression(o) {
+    return ts.factory.createJSDocTypeExpression(o.type);
 }
-export function updateJSDocTypeExpression({ node, type }) {
-    return ts.factory.updateJSDocTypeExpression(node, type);
+export function updateJSDocTypeExpression(o) {
+    return ts.factory.updateJSDocTypeExpression(o.node, o.type);
 }
-export function createJSDocNameReference({ name }) {
-    return ts.factory.createJSDocNameReference(name);
+export function createJSDocNameReference(o) {
+    return ts.factory.createJSDocNameReference(o.name);
 }
-export function updateJSDocNameReference({ node, name }) {
-    return ts.factory.updateJSDocNameReference(node, name);
+export function updateJSDocNameReference(o) {
+    return ts.factory.updateJSDocNameReference(o.node, o.name);
 }
-export function createJSDocMemberName({ left, right }) {
-    return ts.factory.createJSDocMemberName(left, right);
+export function createJSDocMemberName(o) {
+    return ts.factory.createJSDocMemberName(o.left, o.right);
 }
-export function updateJSDocMemberName({ node, left, right }) {
-    return ts.factory.updateJSDocMemberName(node, left, right);
+export function updateJSDocMemberName(o) {
+    return ts.factory.updateJSDocMemberName(o.node, o.left, o.right);
 }
-export function createJSDocLink({ name, text }) {
-    return ts.factory.createJSDocLink(name, text);
+export function createJSDocLink(o) {
+    return ts.factory.createJSDocLink(o.name, o.text);
 }
-export function updateJSDocLink({ node, name, text }) {
-    return ts.factory.updateJSDocLink(node, name, text);
+export function updateJSDocLink(o) {
+    return ts.factory.updateJSDocLink(o.node, o.name, o.text);
 }
-export function createJSDocLinkCode({ name, text }) {
-    return ts.factory.createJSDocLinkCode(name, text);
+export function createJSDocLinkCode(o) {
+    return ts.factory.createJSDocLinkCode(o.name, o.text);
 }
-export function updateJSDocLinkCode({ node, name, text }) {
-    return ts.factory.updateJSDocLinkCode(node, name, text);
+export function updateJSDocLinkCode(o) {
+    return ts.factory.updateJSDocLinkCode(o.node, o.name, o.text);
 }
-export function createJSDocLinkPlain({ name, text }) {
-    return ts.factory.createJSDocLinkPlain(name, text);
+export function createJSDocLinkPlain(o) {
+    return ts.factory.createJSDocLinkPlain(o.name, o.text);
 }
-export function updateJSDocLinkPlain({ node, name, text }) {
-    return ts.factory.updateJSDocLinkPlain(node, name, text);
+export function updateJSDocLinkPlain(o) {
+    return ts.factory.updateJSDocLinkPlain(o.node, o.name, o.text);
 }
-export function createJSDocTypeLiteral({ jsDocPropertyTags, isArrayType }) {
-    return ts.factory.createJSDocTypeLiteral(jsDocPropertyTags, isArrayType);
+export function createJSDocTypeLiteral(o) {
+    return ts.factory.createJSDocTypeLiteral(o.jsDocPropertyTags, o.isArrayType);
 }
-export function updateJSDocTypeLiteral({ node, jsDocPropertyTags, isArrayType }) {
-    return ts.factory.updateJSDocTypeLiteral(node, jsDocPropertyTags, isArrayType);
+export function updateJSDocTypeLiteral(o) {
+    return ts.factory.updateJSDocTypeLiteral(o.node, o.jsDocPropertyTags, o.isArrayType);
 }
-export function createJSDocSignature({ typeParameters, parameters, type }) {
-    return ts.factory.createJSDocSignature(typeParameters, parameters, type);
+export function createJSDocSignature(o) {
+    return ts.factory.createJSDocSignature(o.typeParameters, o.parameters, o.type);
 }
-export function updateJSDocSignature({ node, typeParameters, parameters, type }) {
-    return ts.factory.updateJSDocSignature(node, typeParameters, parameters, type);
+export function updateJSDocSignature(o) {
+    return ts.factory.updateJSDocSignature(o.node, o.typeParameters, o.parameters, o.type);
 }
-export function createJSDocTemplateTag({ tagName, constraint, typeParameters, comment }) {
-    return ts.factory.createJSDocTemplateTag(tagName, constraint, typeParameters, comment);
+export function createJSDocTemplateTag(o) {
+    return ts.factory.createJSDocTemplateTag(o.tagName, o.constraint, o.typeParameters, o.comment);
 }
-export function updateJSDocTemplateTag({ node, tagName, constraint, typeParameters, comment }) {
-    return ts.factory.updateJSDocTemplateTag(node, tagName, constraint, typeParameters, comment);
+export function updateJSDocTemplateTag(o) {
+    return ts.factory.updateJSDocTemplateTag(o.node, o.tagName, o.constraint, o.typeParameters, o.comment);
 }
-export function createJSDocTypedefTag({ tagName, typeExpression, fullName, comment }) {
-    return ts.factory.createJSDocTypedefTag(tagName, typeExpression, fullName, comment);
+export function createJSDocTypedefTag(o) {
+    return ts.factory.createJSDocTypedefTag(o.tagName, o.typeExpression, o.fullName, o.comment);
 }
-export function updateJSDocTypedefTag({ node, tagName, typeExpression, fullName, comment }) {
-    return ts.factory.updateJSDocTypedefTag(node, tagName, typeExpression, fullName, comment);
+export function updateJSDocTypedefTag(o) {
+    return ts.factory.updateJSDocTypedefTag(o.node, o.tagName, o.typeExpression, o.fullName, o.comment);
 }
-export function createJSDocParameterTag({ tagName, name, isBracketed, typeExpression, isNameFirst, comment }) {
-    return ts.factory.createJSDocParameterTag(tagName, name, isBracketed, typeExpression, isNameFirst, comment);
+export function createJSDocParameterTag(o) {
+    return ts.factory.createJSDocParameterTag(o.tagName, o.name, o.isBracketed, o.typeExpression, o.isNameFirst, o.comment);
 }
-export function updateJSDocParameterTag({ node, tagName, name, isBracketed, typeExpression, isNameFirst, comment }) {
-    return ts.factory.updateJSDocParameterTag(node, tagName, name, isBracketed, typeExpression, isNameFirst, comment);
+export function updateJSDocParameterTag(o) {
+    return ts.factory.updateJSDocParameterTag(o.node, o.tagName, o.name, o.isBracketed, o.typeExpression, o.isNameFirst, o.comment);
 }
-export function createJSDocPropertyTag({ tagName, name, isBracketed, typeExpression, isNameFirst, comment }) {
-    return ts.factory.createJSDocPropertyTag(tagName, name, isBracketed, typeExpression, isNameFirst, comment);
+export function createJSDocPropertyTag(o) {
+    return ts.factory.createJSDocPropertyTag(o.tagName, o.name, o.isBracketed, o.typeExpression, o.isNameFirst, o.comment);
 }
-export function updateJSDocPropertyTag({ node, tagName, name, isBracketed, typeExpression, isNameFirst, comment }) {
-    return ts.factory.updateJSDocPropertyTag(node, tagName, name, isBracketed, typeExpression, isNameFirst, comment);
+export function updateJSDocPropertyTag(o) {
+    return ts.factory.updateJSDocPropertyTag(o.node, o.tagName, o.name, o.isBracketed, o.typeExpression, o.isNameFirst, o.comment);
 }
-export function createJSDocTypeTag({ tagName, typeExpression, comment }) {
-    return ts.factory.createJSDocTypeTag(tagName, typeExpression, comment);
+export function createJSDocTypeTag(o) {
+    return ts.factory.createJSDocTypeTag(o.tagName, o.typeExpression, o.comment);
 }
-export function updateJSDocTypeTag({ node, tagName, typeExpression, comment }) {
-    return ts.factory.updateJSDocTypeTag(node, tagName, typeExpression, comment);
+export function updateJSDocTypeTag(o) {
+    return ts.factory.updateJSDocTypeTag(o.node, o.tagName, o.typeExpression, o.comment);
 }
-export function createJSDocSeeTag({ tagName, nameExpression, comment }) {
-    return ts.factory.createJSDocSeeTag(tagName, nameExpression, comment);
+export function createJSDocSeeTag(o) {
+    return ts.factory.createJSDocSeeTag(o.tagName, o.nameExpression, o.comment);
 }
-export function updateJSDocSeeTag({ node, tagName, nameExpression, comment }) {
-    return ts.factory.updateJSDocSeeTag(node, tagName, nameExpression, comment);
+export function updateJSDocSeeTag(o) {
+    return ts.factory.updateJSDocSeeTag(o.node, o.tagName, o.nameExpression, o.comment);
 }
-export function createJSDocReturnTag({ tagName, typeExpression, comment }) {
-    return ts.factory.createJSDocReturnTag(tagName, typeExpression, comment);
+export function createJSDocReturnTag(o) {
+    return ts.factory.createJSDocReturnTag(o.tagName, o.typeExpression, o.comment);
 }
-export function updateJSDocReturnTag({ node, tagName, typeExpression, comment }) {
-    return ts.factory.updateJSDocReturnTag(node, tagName, typeExpression, comment);
+export function updateJSDocReturnTag(o) {
+    return ts.factory.updateJSDocReturnTag(o.node, o.tagName, o.typeExpression, o.comment);
 }
-export function createJSDocThisTag({ tagName, typeExpression, comment }) {
-    return ts.factory.createJSDocThisTag(tagName, typeExpression, comment);
+export function createJSDocThisTag(o) {
+    return ts.factory.createJSDocThisTag(o.tagName, o.typeExpression, o.comment);
 }
-export function updateJSDocThisTag({ node, tagName, typeExpression, comment }) {
-    return ts.factory.updateJSDocThisTag(node, tagName, typeExpression, comment);
+export function updateJSDocThisTag(o) {
+    return ts.factory.updateJSDocThisTag(o.node, o.tagName, o.typeExpression, o.comment);
 }
-export function createJSDocEnumTag({ tagName, typeExpression, comment }) {
-    return ts.factory.createJSDocEnumTag(tagName, typeExpression, comment);
+export function createJSDocEnumTag(o) {
+    return ts.factory.createJSDocEnumTag(o.tagName, o.typeExpression, o.comment);
 }
-export function updateJSDocEnumTag({ node, tagName, typeExpression, comment }) {
-    return ts.factory.updateJSDocEnumTag(node, tagName, typeExpression, comment);
+export function updateJSDocEnumTag(o) {
+    return ts.factory.updateJSDocEnumTag(o.node, o.tagName, o.typeExpression, o.comment);
 }
-export function createJSDocCallbackTag({ tagName, typeExpression, fullName, comment }) {
-    return ts.factory.createJSDocCallbackTag(tagName, typeExpression, fullName, comment);
+export function createJSDocCallbackTag(o) {
+    return ts.factory.createJSDocCallbackTag(o.tagName, o.typeExpression, o.fullName, o.comment);
 }
-export function updateJSDocCallbackTag({ node, tagName, typeExpression, fullName, comment }) {
-    return ts.factory.updateJSDocCallbackTag(node, tagName, typeExpression, fullName, comment);
+export function updateJSDocCallbackTag(o) {
+    return ts.factory.updateJSDocCallbackTag(o.node, o.tagName, o.typeExpression, o.fullName, o.comment);
 }
-export function createJSDocOverloadTag({ tagName, typeExpression, comment }) {
-    return ts.factory.createJSDocOverloadTag(tagName, typeExpression, comment);
+export function createJSDocOverloadTag(o) {
+    return ts.factory.createJSDocOverloadTag(o.tagName, o.typeExpression, o.comment);
 }
-export function updateJSDocOverloadTag({ node, tagName, typeExpression, comment }) {
-    return ts.factory.updateJSDocOverloadTag(node, tagName, typeExpression, comment);
+export function updateJSDocOverloadTag(o) {
+    return ts.factory.updateJSDocOverloadTag(o.node, o.tagName, o.typeExpression, o.comment);
 }
-export function createJSDocAugmentsTag({ tagName, className, comment }) {
-    return ts.factory.createJSDocAugmentsTag(tagName, className, comment);
+export function createJSDocAugmentsTag(o) {
+    return ts.factory.createJSDocAugmentsTag(o.tagName, o.className, o.comment);
 }
-export function updateJSDocAugmentsTag({ node, tagName, className, comment }) {
-    return ts.factory.updateJSDocAugmentsTag(node, tagName, className, comment);
+export function updateJSDocAugmentsTag(o) {
+    return ts.factory.updateJSDocAugmentsTag(o.node, o.tagName, o.className, o.comment);
 }
-export function createJSDocImplementsTag({ tagName, className, comment }) {
-    return ts.factory.createJSDocImplementsTag(tagName, className, comment);
+export function createJSDocImplementsTag(o) {
+    return ts.factory.createJSDocImplementsTag(o.tagName, o.className, o.comment);
 }
-export function updateJSDocImplementsTag({ node, tagName, className, comment }) {
-    return ts.factory.updateJSDocImplementsTag(node, tagName, className, comment);
+export function updateJSDocImplementsTag(o) {
+    return ts.factory.updateJSDocImplementsTag(o.node, o.tagName, o.className, o.comment);
 }
-export function createJSDocAuthorTag({ tagName, comment }) {
-    return ts.factory.createJSDocAuthorTag(tagName, comment);
+export function createJSDocAuthorTag(o) {
+    return ts.factory.createJSDocAuthorTag(o.tagName, o.comment);
 }
-export function updateJSDocAuthorTag({ node, tagName, comment }) {
-    return ts.factory.updateJSDocAuthorTag(node, tagName, comment);
+export function updateJSDocAuthorTag(o) {
+    return ts.factory.updateJSDocAuthorTag(o.node, o.tagName, o.comment);
 }
-export function createJSDocClassTag({ tagName, comment }) {
-    return ts.factory.createJSDocClassTag(tagName, comment);
+export function createJSDocClassTag(o) {
+    return ts.factory.createJSDocClassTag(o.tagName, o.comment);
 }
-export function updateJSDocClassTag({ node, tagName, comment }) {
-    return ts.factory.updateJSDocClassTag(node, tagName, comment);
+export function updateJSDocClassTag(o) {
+    return ts.factory.updateJSDocClassTag(o.node, o.tagName, o.comment);
 }
-export function createJSDocPublicTag({ tagName, comment }) {
-    return ts.factory.createJSDocPublicTag(tagName, comment);
+export function createJSDocPublicTag(o) {
+    return ts.factory.createJSDocPublicTag(o.tagName, o.comment);
 }
-export function updateJSDocPublicTag({ node, tagName, comment }) {
-    return ts.factory.updateJSDocPublicTag(node, tagName, comment);
+export function updateJSDocPublicTag(o) {
+    return ts.factory.updateJSDocPublicTag(o.node, o.tagName, o.comment);
 }
-export function createJSDocPrivateTag({ tagName, comment }) {
-    return ts.factory.createJSDocPrivateTag(tagName, comment);
+export function createJSDocPrivateTag(o) {
+    return ts.factory.createJSDocPrivateTag(o.tagName, o.comment);
 }
-export function updateJSDocPrivateTag({ node, tagName, comment }) {
-    return ts.factory.updateJSDocPrivateTag(node, tagName, comment);
+export function updateJSDocPrivateTag(o) {
+    return ts.factory.updateJSDocPrivateTag(o.node, o.tagName, o.comment);
 }
-export function createJSDocProtectedTag({ tagName, comment }) {
-    return ts.factory.createJSDocProtectedTag(tagName, comment);
+export function createJSDocProtectedTag(o) {
+    return ts.factory.createJSDocProtectedTag(o.tagName, o.comment);
 }
-export function updateJSDocProtectedTag({ node, tagName, comment }) {
-    return ts.factory.updateJSDocProtectedTag(node, tagName, comment);
+export function updateJSDocProtectedTag(o) {
+    return ts.factory.updateJSDocProtectedTag(o.node, o.tagName, o.comment);
 }
-export function createJSDocReadonlyTag({ tagName, comment }) {
-    return ts.factory.createJSDocReadonlyTag(tagName, comment);
+export function createJSDocReadonlyTag(o) {
+    return ts.factory.createJSDocReadonlyTag(o.tagName, o.comment);
 }
-export function updateJSDocReadonlyTag({ node, tagName, comment }) {
-    return ts.factory.updateJSDocReadonlyTag(node, tagName, comment);
+export function updateJSDocReadonlyTag(o) {
+    return ts.factory.updateJSDocReadonlyTag(o.node, o.tagName, o.comment);
 }
-export function createJSDocUnknownTag({ tagName, comment }) {
-    return ts.factory.createJSDocUnknownTag(tagName, comment);
+export function createJSDocUnknownTag(o) {
+    return ts.factory.createJSDocUnknownTag(o.tagName, o.comment);
 }
-export function updateJSDocUnknownTag({ node, tagName, comment }) {
-    return ts.factory.updateJSDocUnknownTag(node, tagName, comment);
+export function updateJSDocUnknownTag(o) {
+    return ts.factory.updateJSDocUnknownTag(o.node, o.tagName, o.comment);
 }
-export function createJSDocDeprecatedTag({ tagName, comment }) {
-    return ts.factory.createJSDocDeprecatedTag(tagName, comment);
+export function createJSDocDeprecatedTag(o) {
+    return ts.factory.createJSDocDeprecatedTag(o.tagName, o.comment);
 }
-export function updateJSDocDeprecatedTag({ node, tagName, comment }) {
-    return ts.factory.updateJSDocDeprecatedTag(node, tagName, comment);
+export function updateJSDocDeprecatedTag(o) {
+    return ts.factory.updateJSDocDeprecatedTag(o.node, o.tagName, o.comment);
 }
-export function createJSDocOverrideTag({ tagName, comment }) {
-    return ts.factory.createJSDocOverrideTag(tagName, comment);
+export function createJSDocOverrideTag(o) {
+    return ts.factory.createJSDocOverrideTag(o.tagName, o.comment);
 }
-export function updateJSDocOverrideTag({ node, tagName, comment }) {
-    return ts.factory.updateJSDocOverrideTag(node, tagName, comment);
+export function updateJSDocOverrideTag(o) {
+    return ts.factory.updateJSDocOverrideTag(o.node, o.tagName, o.comment);
 }
-export function createJSDocThrowsTag({ tagName, typeExpression, comment }) {
-    return ts.factory.createJSDocThrowsTag(tagName, typeExpression, comment);
+export function createJSDocThrowsTag(o) {
+    return ts.factory.createJSDocThrowsTag(o.tagName, o.typeExpression, o.comment);
 }
-export function updateJSDocThrowsTag({ node, tagName, typeExpression, comment }) {
-    return ts.factory.updateJSDocThrowsTag(node, tagName, typeExpression, comment);
+export function updateJSDocThrowsTag(o) {
+    return ts.factory.updateJSDocThrowsTag(o.node, o.tagName, o.typeExpression, o.comment);
 }
-export function createJSDocSatisfiesTag({ tagName, typeExpression, comment }) {
-    return ts.factory.createJSDocSatisfiesTag(tagName, typeExpression, comment);
+export function createJSDocSatisfiesTag(o) {
+    return ts.factory.createJSDocSatisfiesTag(o.tagName, o.typeExpression, o.comment);
 }
-export function updateJSDocSatisfiesTag({ node, tagName, typeExpression, comment }) {
-    return ts.factory.updateJSDocSatisfiesTag(node, tagName, typeExpression, comment);
+export function updateJSDocSatisfiesTag(o) {
+    return ts.factory.updateJSDocSatisfiesTag(o.node, o.tagName, o.typeExpression, o.comment);
 }
-export function createJSDocText({ text }) {
-    return ts.factory.createJSDocText(text);
+export function createJSDocText(o) {
+    return ts.factory.createJSDocText(o.text);
 }
-export function updateJSDocText({ node, text }) {
-    return ts.factory.updateJSDocText(node, text);
+export function updateJSDocText(o) {
+    return ts.factory.updateJSDocText(o.node, o.text);
 }
-export function createJSDocComment({ comment, tags }) {
-    return ts.factory.createJSDocComment(comment, tags);
+export function createJSDocComment(o) {
+    return ts.factory.createJSDocComment(o.comment, o.tags);
 }
-export function updateJSDocComment({ node, comment, tags }) {
-    return ts.factory.updateJSDocComment(node, comment, tags);
+export function updateJSDocComment(o) {
+    return ts.factory.updateJSDocComment(o.node, o.comment, o.tags);
 }
-export function createJsxElement({ openingElement, children, closingElement }) {
-    return ts.factory.createJsxElement(openingElement, children, closingElement);
+export function createJsxElement(o) {
+    return ts.factory.createJsxElement(o.openingElement, o.children, o.closingElement);
 }
-export function updateJsxElement({ node, openingElement, children, closingElement }) {
-    return ts.factory.updateJsxElement(node, openingElement, children, closingElement);
+export function updateJsxElement(o) {
+    return ts.factory.updateJsxElement(o.node, o.openingElement, o.children, o.closingElement);
 }
-export function createJsxSelfClosingElement({ tagName, typeArguments, attributes }) {
-    return ts.factory.createJsxSelfClosingElement(tagName, typeArguments, attributes);
+export function createJsxSelfClosingElement(o) {
+    return ts.factory.createJsxSelfClosingElement(o.tagName, o.typeArguments, o.attributes);
 }
-export function updateJsxSelfClosingElement({ node, tagName, typeArguments, attributes }) {
-    return ts.factory.updateJsxSelfClosingElement(node, tagName, typeArguments, attributes);
+export function updateJsxSelfClosingElement(o) {
+    return ts.factory.updateJsxSelfClosingElement(o.node, o.tagName, o.typeArguments, o.attributes);
 }
-export function createJsxOpeningElement({ tagName, typeArguments, attributes }) {
-    return ts.factory.createJsxOpeningElement(tagName, typeArguments, attributes);
+export function createJsxOpeningElement(o) {
+    return ts.factory.createJsxOpeningElement(o.tagName, o.typeArguments, o.attributes);
 }
-export function updateJsxOpeningElement({ node, tagName, typeArguments, attributes }) {
-    return ts.factory.updateJsxOpeningElement(node, tagName, typeArguments, attributes);
+export function updateJsxOpeningElement(o) {
+    return ts.factory.updateJsxOpeningElement(o.node, o.tagName, o.typeArguments, o.attributes);
 }
-export function createJsxClosingElement({ tagName }) {
-    return ts.factory.createJsxClosingElement(tagName);
+export function createJsxClosingElement(o) {
+    return ts.factory.createJsxClosingElement(o.tagName);
 }
-export function updateJsxClosingElement({ node, tagName }) {
-    return ts.factory.updateJsxClosingElement(node, tagName);
+export function updateJsxClosingElement(o) {
+    return ts.factory.updateJsxClosingElement(o.node, o.tagName);
 }
-export function createJsxFragment({ openingFragment, children, closingFragment }) {
-    return ts.factory.createJsxFragment(openingFragment, children, closingFragment);
+export function createJsxFragment(o) {
+    return ts.factory.createJsxFragment(o.openingFragment, o.children, o.closingFragment);
 }
-export function createJsxText({ text, containsOnlyTriviaWhiteSpaces }) {
-    return ts.factory.createJsxText(text, containsOnlyTriviaWhiteSpaces);
+export function createJsxText(o) {
+    return ts.factory.createJsxText(o.text, o.containsOnlyTriviaWhiteSpaces);
 }
-export function updateJsxText({ node, text, containsOnlyTriviaWhiteSpaces }) {
-    return ts.factory.updateJsxText(node, text, containsOnlyTriviaWhiteSpaces);
+export function updateJsxText(o) {
+    return ts.factory.updateJsxText(o.node, o.text, o.containsOnlyTriviaWhiteSpaces);
 }
 export function createJsxOpeningFragment() {
     return ts.factory.createJsxOpeningFragment();
@@ -1106,235 +1106,235 @@ export function createJsxOpeningFragment() {
 export function createJsxJsxClosingFragment() {
     return ts.factory.createJsxJsxClosingFragment();
 }
-export function updateJsxFragment({ node, openingFragment, children, closingFragment }) {
-    return ts.factory.updateJsxFragment(node, openingFragment, children, closingFragment);
+export function updateJsxFragment(o) {
+    return ts.factory.updateJsxFragment(o.node, o.openingFragment, o.children, o.closingFragment);
 }
-export function createJsxAttribute({ name, initializer }) {
-    return ts.factory.createJsxAttribute(name, initializer);
+export function createJsxAttribute(o) {
+    return ts.factory.createJsxAttribute(o.name, o.initializer);
 }
-export function updateJsxAttribute({ node, name, initializer }) {
-    return ts.factory.updateJsxAttribute(node, name, initializer);
+export function updateJsxAttribute(o) {
+    return ts.factory.updateJsxAttribute(o.node, o.name, o.initializer);
 }
-export function createJsxAttributes({ properties }) {
-    return ts.factory.createJsxAttributes(properties);
+export function createJsxAttributes(o) {
+    return ts.factory.createJsxAttributes(o.properties);
 }
-export function updateJsxAttributes({ node, properties }) {
-    return ts.factory.updateJsxAttributes(node, properties);
+export function updateJsxAttributes(o) {
+    return ts.factory.updateJsxAttributes(o.node, o.properties);
 }
-export function createJsxSpreadAttribute({ expression }) {
-    return ts.factory.createJsxSpreadAttribute(expression);
+export function createJsxSpreadAttribute(o) {
+    return ts.factory.createJsxSpreadAttribute(o.expression);
 }
-export function updateJsxSpreadAttribute({ node, expression }) {
-    return ts.factory.updateJsxSpreadAttribute(node, expression);
+export function updateJsxSpreadAttribute(o) {
+    return ts.factory.updateJsxSpreadAttribute(o.node, o.expression);
 }
-export function createJsxExpression({ dotDotDotToken, expression }) {
-    return ts.factory.createJsxExpression(dotDotDotToken, expression);
+export function createJsxExpression(o) {
+    return ts.factory.createJsxExpression(o.dotDotDotToken, o.expression);
 }
-export function updateJsxExpression({ node, expression }) {
-    return ts.factory.updateJsxExpression(node, expression);
+export function updateJsxExpression(o) {
+    return ts.factory.updateJsxExpression(o.node, o.expression);
 }
-export function createJsxNamespacedName({ namespace, name }) {
-    return ts.factory.createJsxNamespacedName(namespace, name);
+export function createJsxNamespacedName(o) {
+    return ts.factory.createJsxNamespacedName(o.namespace, o.name);
 }
-export function updateJsxNamespacedName({ node, namespace, name }) {
-    return ts.factory.updateJsxNamespacedName(node, namespace, name);
+export function updateJsxNamespacedName(o) {
+    return ts.factory.updateJsxNamespacedName(o.node, o.namespace, o.name);
 }
-export function createCaseClause({ expression, statements }) {
-    return ts.factory.createCaseClause(expression, statements);
+export function createCaseClause(o) {
+    return ts.factory.createCaseClause(o.expression, o.statements);
 }
-export function updateCaseClause({ node, expression, statements }) {
-    return ts.factory.updateCaseClause(node, expression, statements);
+export function updateCaseClause(o) {
+    return ts.factory.updateCaseClause(o.node, o.expression, o.statements);
 }
-export function createDefaultClause({ statements }) {
-    return ts.factory.createDefaultClause(statements);
+export function createDefaultClause(o) {
+    return ts.factory.createDefaultClause(o.statements);
 }
-export function updateDefaultClause({ node, statements }) {
-    return ts.factory.updateDefaultClause(node, statements);
+export function updateDefaultClause(o) {
+    return ts.factory.updateDefaultClause(o.node, o.statements);
 }
-export function createHeritageClause({ token, types }) {
-    return ts.factory.createHeritageClause(token, types);
+export function createHeritageClause(o) {
+    return ts.factory.createHeritageClause(o.token, o.types);
 }
-export function updateHeritageClause({ node, types }) {
-    return ts.factory.updateHeritageClause(node, types);
+export function updateHeritageClause(o) {
+    return ts.factory.updateHeritageClause(o.node, o.types);
 }
-export function createCatchClause({ variableDeclaration, block }) {
-    return ts.factory.createCatchClause(variableDeclaration, block);
+export function createCatchClause(o) {
+    return ts.factory.createCatchClause(o.variableDeclaration, o.block);
 }
-export function updateCatchClause({ node, variableDeclaration, block }) {
-    return ts.factory.updateCatchClause(node, variableDeclaration, block);
+export function updateCatchClause(o) {
+    return ts.factory.updateCatchClause(o.node, o.variableDeclaration, o.block);
 }
-export function createPropertyAssignment({ name, initializer }) {
-    return ts.factory.createPropertyAssignment(name, initializer);
+export function createPropertyAssignment(o) {
+    return ts.factory.createPropertyAssignment(o.name, o.initializer);
 }
-export function updatePropertyAssignment({ node, name, initializer }) {
-    return ts.factory.updatePropertyAssignment(node, name, initializer);
+export function updatePropertyAssignment(o) {
+    return ts.factory.updatePropertyAssignment(o.node, o.name, o.initializer);
 }
-export function createShorthandPropertyAssignment({ name, objectAssignmentInitializer }) {
-    return ts.factory.createShorthandPropertyAssignment(name, objectAssignmentInitializer);
+export function createShorthandPropertyAssignment(o) {
+    return ts.factory.createShorthandPropertyAssignment(o.name, o.objectAssignmentInitializer);
 }
-export function updateShorthandPropertyAssignment({ node, name, objectAssignmentInitializer }) {
-    return ts.factory.updateShorthandPropertyAssignment(node, name, objectAssignmentInitializer);
+export function updateShorthandPropertyAssignment(o) {
+    return ts.factory.updateShorthandPropertyAssignment(o.node, o.name, o.objectAssignmentInitializer);
 }
-export function createSpreadAssignment({ expression }) {
-    return ts.factory.createSpreadAssignment(expression);
+export function createSpreadAssignment(o) {
+    return ts.factory.createSpreadAssignment(o.expression);
 }
-export function updateSpreadAssignment({ node, expression }) {
-    return ts.factory.updateSpreadAssignment(node, expression);
+export function updateSpreadAssignment(o) {
+    return ts.factory.updateSpreadAssignment(o.node, o.expression);
 }
-export function createEnumMember({ name, initializer }) {
-    return ts.factory.createEnumMember(name, initializer);
+export function createEnumMember(o) {
+    return ts.factory.createEnumMember(o.name, o.initializer);
 }
-export function updateEnumMember({ node, name, initializer }) {
-    return ts.factory.updateEnumMember(node, name, initializer);
+export function updateEnumMember(o) {
+    return ts.factory.updateEnumMember(o.node, o.name, o.initializer);
 }
-export function createSourceFile({ statements, endOfFileToken, flags }) {
-    return ts.factory.createSourceFile(statements, endOfFileToken, flags);
+export function createSourceFile(o) {
+    return ts.factory.createSourceFile(o.statements, o.endOfFileToken, o.flags);
 }
-export function updateSourceFile({ node, statements, isDeclarationFile, referencedFiles, typeReferences, hasNoDefaultLib, libReferences }) {
-    return ts.factory.updateSourceFile(node, statements, isDeclarationFile, referencedFiles, typeReferences, hasNoDefaultLib, libReferences);
+export function updateSourceFile(o) {
+    return ts.factory.updateSourceFile(o.node, o.statements, o.isDeclarationFile, o.referencedFiles, o.typeReferences, o.hasNoDefaultLib, o.libReferences);
 }
-export function createNotEmittedStatement({ original }) {
-    return ts.factory.createNotEmittedStatement(original);
+export function createNotEmittedStatement(o) {
+    return ts.factory.createNotEmittedStatement(o.original);
 }
-export function createPartiallyEmittedExpression({ expression, original }) {
-    return ts.factory.createPartiallyEmittedExpression(expression, original);
+export function createPartiallyEmittedExpression(o) {
+    return ts.factory.createPartiallyEmittedExpression(o.expression, o.original);
 }
-export function updatePartiallyEmittedExpression({ node, expression }) {
-    return ts.factory.updatePartiallyEmittedExpression(node, expression);
+export function updatePartiallyEmittedExpression(o) {
+    return ts.factory.updatePartiallyEmittedExpression(o.node, o.expression);
 }
-export function createCommaListExpression({ elements }) {
-    return ts.factory.createCommaListExpression(elements);
+export function createCommaListExpression(o) {
+    return ts.factory.createCommaListExpression(o.elements);
 }
-export function updateCommaListExpression({ node, elements }) {
-    return ts.factory.updateCommaListExpression(node, elements);
+export function updateCommaListExpression(o) {
+    return ts.factory.updateCommaListExpression(o.node, o.elements);
 }
-export function createBundle({ sourceFiles, prepends }) {
-    return ts.factory.createBundle(sourceFiles, prepends);
+export function createBundle(o) {
+    return ts.factory.createBundle(o.sourceFiles, o.prepends);
 }
-export function updateBundle({ node, sourceFiles, prepends }) {
-    return ts.factory.updateBundle(node, sourceFiles, prepends);
+export function updateBundle(o) {
+    return ts.factory.updateBundle(o.node, o.sourceFiles, o.prepends);
 }
-export function createComma({ left, right }) {
-    return ts.factory.createComma(left, right);
+export function createComma(o) {
+    return ts.factory.createComma(o.left, o.right);
 }
-export function createAssignment({ left, right }) {
-    return ts.factory.createAssignment(left, right);
+export function createAssignment(o) {
+    return ts.factory.createAssignment(o.left, o.right);
 }
-export function createLogicalOr({ left, right }) {
-    return ts.factory.createLogicalOr(left, right);
+export function createLogicalOr(o) {
+    return ts.factory.createLogicalOr(o.left, o.right);
 }
-export function createLogicalAnd({ left, right }) {
-    return ts.factory.createLogicalAnd(left, right);
+export function createLogicalAnd(o) {
+    return ts.factory.createLogicalAnd(o.left, o.right);
 }
-export function createBitwiseOr({ left, right }) {
-    return ts.factory.createBitwiseOr(left, right);
+export function createBitwiseOr(o) {
+    return ts.factory.createBitwiseOr(o.left, o.right);
 }
-export function createBitwiseXor({ left, right }) {
-    return ts.factory.createBitwiseXor(left, right);
+export function createBitwiseXor(o) {
+    return ts.factory.createBitwiseXor(o.left, o.right);
 }
-export function createBitwiseAnd({ left, right }) {
-    return ts.factory.createBitwiseAnd(left, right);
+export function createBitwiseAnd(o) {
+    return ts.factory.createBitwiseAnd(o.left, o.right);
 }
-export function createStrictEquality({ left, right }) {
-    return ts.factory.createStrictEquality(left, right);
+export function createStrictEquality(o) {
+    return ts.factory.createStrictEquality(o.left, o.right);
 }
-export function createStrictInequality({ left, right }) {
-    return ts.factory.createStrictInequality(left, right);
+export function createStrictInequality(o) {
+    return ts.factory.createStrictInequality(o.left, o.right);
 }
-export function createEquality({ left, right }) {
-    return ts.factory.createEquality(left, right);
+export function createEquality(o) {
+    return ts.factory.createEquality(o.left, o.right);
 }
-export function createInequality({ left, right }) {
-    return ts.factory.createInequality(left, right);
+export function createInequality(o) {
+    return ts.factory.createInequality(o.left, o.right);
 }
-export function createLessThan({ left, right }) {
-    return ts.factory.createLessThan(left, right);
+export function createLessThan(o) {
+    return ts.factory.createLessThan(o.left, o.right);
 }
-export function createLessThanEquals({ left, right }) {
-    return ts.factory.createLessThanEquals(left, right);
+export function createLessThanEquals(o) {
+    return ts.factory.createLessThanEquals(o.left, o.right);
 }
-export function createGreaterThan({ left, right }) {
-    return ts.factory.createGreaterThan(left, right);
+export function createGreaterThan(o) {
+    return ts.factory.createGreaterThan(o.left, o.right);
 }
-export function createGreaterThanEquals({ left, right }) {
-    return ts.factory.createGreaterThanEquals(left, right);
+export function createGreaterThanEquals(o) {
+    return ts.factory.createGreaterThanEquals(o.left, o.right);
 }
-export function createLeftShift({ left, right }) {
-    return ts.factory.createLeftShift(left, right);
+export function createLeftShift(o) {
+    return ts.factory.createLeftShift(o.left, o.right);
 }
-export function createRightShift({ left, right }) {
-    return ts.factory.createRightShift(left, right);
+export function createRightShift(o) {
+    return ts.factory.createRightShift(o.left, o.right);
 }
-export function createUnsignedRightShift({ left, right }) {
-    return ts.factory.createUnsignedRightShift(left, right);
+export function createUnsignedRightShift(o) {
+    return ts.factory.createUnsignedRightShift(o.left, o.right);
 }
-export function createAdd({ left, right }) {
-    return ts.factory.createAdd(left, right);
+export function createAdd(o) {
+    return ts.factory.createAdd(o.left, o.right);
 }
-export function createSubtract({ left, right }) {
-    return ts.factory.createSubtract(left, right);
+export function createSubtract(o) {
+    return ts.factory.createSubtract(o.left, o.right);
 }
-export function createMultiply({ left, right }) {
-    return ts.factory.createMultiply(left, right);
+export function createMultiply(o) {
+    return ts.factory.createMultiply(o.left, o.right);
 }
-export function createDivide({ left, right }) {
-    return ts.factory.createDivide(left, right);
+export function createDivide(o) {
+    return ts.factory.createDivide(o.left, o.right);
 }
-export function createModulo({ left, right }) {
-    return ts.factory.createModulo(left, right);
+export function createModulo(o) {
+    return ts.factory.createModulo(o.left, o.right);
 }
-export function createExponent({ left, right }) {
-    return ts.factory.createExponent(left, right);
+export function createExponent(o) {
+    return ts.factory.createExponent(o.left, o.right);
 }
-export function createPrefixPlus({ operand }) {
-    return ts.factory.createPrefixPlus(operand);
+export function createPrefixPlus(o) {
+    return ts.factory.createPrefixPlus(o.operand);
 }
-export function createPrefixMinus({ operand }) {
-    return ts.factory.createPrefixMinus(operand);
+export function createPrefixMinus(o) {
+    return ts.factory.createPrefixMinus(o.operand);
 }
-export function createPrefixIncrement({ operand }) {
-    return ts.factory.createPrefixIncrement(operand);
+export function createPrefixIncrement(o) {
+    return ts.factory.createPrefixIncrement(o.operand);
 }
-export function createPrefixDecrement({ operand }) {
-    return ts.factory.createPrefixDecrement(operand);
+export function createPrefixDecrement(o) {
+    return ts.factory.createPrefixDecrement(o.operand);
 }
-export function createBitwiseNot({ operand }) {
-    return ts.factory.createBitwiseNot(operand);
+export function createBitwiseNot(o) {
+    return ts.factory.createBitwiseNot(o.operand);
 }
-export function createLogicalNot({ operand }) {
-    return ts.factory.createLogicalNot(operand);
+export function createLogicalNot(o) {
+    return ts.factory.createLogicalNot(o.operand);
 }
-export function createPostfixIncrement({ operand }) {
-    return ts.factory.createPostfixIncrement(operand);
+export function createPostfixIncrement(o) {
+    return ts.factory.createPostfixIncrement(o.operand);
 }
-export function createPostfixDecrement({ operand }) {
-    return ts.factory.createPostfixDecrement(operand);
+export function createPostfixDecrement(o) {
+    return ts.factory.createPostfixDecrement(o.operand);
 }
-export function createImmediatelyInvokedFunctionExpression({ statements, param, paramValue }) {
-    return ts.factory.createImmediatelyInvokedFunctionExpression(statements, param, paramValue);
+export function createImmediatelyInvokedFunctionExpression(o) {
+    return ts.factory.createImmediatelyInvokedFunctionExpression(o.statements, o.param, o.paramValue);
 }
-export function createImmediatelyInvokedArrowFunction({ statements, param, paramValue }) {
-    return ts.factory.createImmediatelyInvokedArrowFunction(statements, param, paramValue);
+export function createImmediatelyInvokedArrowFunction(o) {
+    return ts.factory.createImmediatelyInvokedArrowFunction(o.statements, o.param, o.paramValue);
 }
 export function createVoidZero() {
     return ts.factory.createVoidZero();
 }
-export function createExportDefault({ expression }) {
-    return ts.factory.createExportDefault(expression);
+export function createExportDefault(o) {
+    return ts.factory.createExportDefault(o.expression);
 }
-export function createExternalModuleExport({ exportName }) {
-    return ts.factory.createExternalModuleExport(exportName);
+export function createExternalModuleExport(o) {
+    return ts.factory.createExternalModuleExport(o.exportName);
 }
-export function restoreOuterExpressions({ outerExpression, innerExpression, kinds }) {
-    return ts.factory.restoreOuterExpressions(outerExpression, innerExpression, kinds);
+export function restoreOuterExpressions(o) {
+    return ts.factory.restoreOuterExpressions(o.outerExpression, o.innerExpression, o.kinds);
 }
-export function replaceModifiers({ node, modifiers }) {
-    return ts.factory.replaceModifiers(node, modifiers);
+export function replaceModifiers(o) {
+    return ts.factory.replaceModifiers(o.node, o.modifiers);
 }
-export function replaceDecoratorsAndModifiers({ node, modifiers }) {
-    return ts.factory.replaceDecoratorsAndModifiers(node, modifiers);
+export function replaceDecoratorsAndModifiers(o) {
+    return ts.factory.replaceDecoratorsAndModifiers(o.node, o.modifiers);
 }
-export function replacePropertyName({ node, name }) {
-    return ts.factory.replacePropertyName(node, name);
+export function replacePropertyName(o) {
+    return ts.factory.replacePropertyName(o.node, o.name);
 }
 //# sourceMappingURL=generated.js.map

@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "generate": "npx tsx src",
-    "generate-watch": "npx tsx watch src",
+    "generate-watch": "npx tsx watch --ignore ./lib/generated.ts src",
     "build": "npx tsx src & npx tsc -p lib"
   },
   "author": "Anthony de Jong",
