@@ -70,7 +70,7 @@ for (const [name, signatures] of methods) {
             usedTypes.add(type);
 
         for (const parameter of signature.parameters)
-            (parameters ??= {})[parameter.name.getText(typeFile)] ||= !!parameter.questionToken;
+            (parameters ??= {})[parameter.name.getText(typeFile)] ||= isParameterOptional(parameter);
 
         if (signature.parameters.length === 1) {
             statements.push(createFunction_SingleArgument(signature));
@@ -221,7 +221,9 @@ function createFunction_ObjectArgument({ name, typeParameters, parameters, type 
                     parameters.map(p => factory.createPropertySignature(
                         p.modifiers?.filter(a => ts.isModifier(a)) as Modifier[],
                         p.name as Identifier,
-                        p.questionToken,
+                        isParameterOptional(p)
+                            ? factory.createToken(ts.SyntaxKind.QuestionToken)
+                            : undefined,
                         p.type
                     ))
                 ),
@@ -231,6 +233,10 @@ function createFunction_ObjectArgument({ name, typeParameters, parameters, type 
         type,
         undefined
     )
+}
+
+function isParameterOptional(parameter: ts.ParameterDeclaration) {
+    return !!parameter.questionToken || ts.isUnionTypeNode(parameter.type) && parameter.type.types.some(a => a.kind === ts.SyntaxKind.UndefinedKeyword)
 }
 
 function* getUsedTypeNamesFromMethodOrFunction(declaration: ts.MethodSignature | ts.FunctionTypeNode, ignored?: string[]) {

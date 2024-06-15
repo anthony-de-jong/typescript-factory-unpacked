@@ -1,6 +1,6 @@
 /*
     This code is automayicly generated, do not edit by hand.
-    Generated at: 2024-06-15 09:54:43.181
+    Generated at: 2024-06-15 10:11:37.453
     Generated for: typescript@5.4.5
 */
 import ts, { NodeArray, Node, NumericLiteral, TokenFlags, BigIntLiteral, PseudoBigInt, StringLiteral, PropertyNameLiteral, PrivateIdentifier, RegularExpressionLiteral, Identifier, GeneratedIdentifierFlags, SuperExpression, SyntaxKind, ThisExpression, NullLiteral, TrueLiteral, FalseLiteral, EndOfFileToken, Token, PunctuationToken, PunctuationSyntaxKind, KeywordTypeNode, KeywordTypeSyntaxKind, ModifierToken, ModifierSyntaxKind, KeywordToken, KeywordSyntaxKind, Modifier, ModifierFlags, QualifiedName, EntityName, ComputedPropertyName, Expression, TypeParameterDeclaration, TypeNode, ParameterDeclaration, ModifierLike, DotDotDotToken, BindingName, QuestionToken, Decorator, PropertySignature, PropertyName, PropertyDeclaration, ExclamationToken, MethodSignature, MethodDeclaration, AsteriskToken, Block, ConstructorDeclaration, GetAccessorDeclaration, SetAccessorDeclaration, CallSignatureDeclaration, ConstructSignatureDeclaration, IndexSignatureDeclaration, TemplateLiteralTypeSpan, TemplateMiddle, TemplateTail, ClassStaticBlockDeclaration, TypePredicateNode, AssertsKeyword, ThisTypeNode, TypeReferenceNode, FunctionTypeNode, ConstructorTypeNode, TypeQueryNode, TypeLiteralNode, TypeElement, ArrayTypeNode, TupleTypeNode, NamedTupleMember, OptionalTypeNode, RestTypeNode, UnionTypeNode, IntersectionTypeNode, ConditionalTypeNode, InferTypeNode, ImportTypeNode, ImportAttributes, ParenthesizedTypeNode, TypeOperatorNode, IndexedAccessTypeNode, MappedTypeNode, ReadonlyKeyword, PlusToken, MinusToken, LiteralTypeNode, TemplateLiteralTypeNode, TemplateHead, ObjectBindingPattern, BindingElement, ArrayBindingPattern, ArrayBindingElement, ArrayLiteralExpression, ObjectLiteralExpression, ObjectLiteralElementLike, PropertyAccessExpression, MemberName, PropertyAccessChain, QuestionDotToken, ElementAccessExpression, ElementAccessChain, CallExpression, CallChain, NewExpression, TaggedTemplateExpression, TemplateLiteral, TypeAssertion, ParenthesizedExpression, FunctionExpression, ArrowFunction, EqualsGreaterThanToken, ConciseBody, DeleteExpression, TypeOfExpression, VoidExpression, AwaitExpression, PrefixUnaryExpression, PrefixUnaryOperator, PostfixUnaryExpression, PostfixUnaryOperator, BinaryExpression, BinaryOperator, BinaryOperatorToken, ConditionalExpression, ColonToken, TemplateExpression, TemplateSpan, NoSubstitutionTemplateLiteral, YieldExpression, SpreadElement, ClassExpression, HeritageClause, ClassElement, OmittedExpression, ExpressionWithTypeArguments, AsExpression, NonNullExpression, NonNullChain, MetaProperty, SatisfiesExpression, SemicolonClassElement, Statement, VariableStatement, VariableDeclarationList, VariableDeclaration, EmptyStatement, ExpressionStatement, IfStatement, DoStatement, WhileStatement, ForStatement, ForInitializer, ForInStatement, ForOfStatement, AwaitKeyword, ContinueStatement, BreakStatement, ReturnStatement, WithStatement, SwitchStatement, CaseBlock, LabeledStatement, ThrowStatement, TryStatement, CatchClause, DebuggerStatement, NodeFlags, FunctionDeclaration, ClassDeclaration, InterfaceDeclaration, TypeAliasDeclaration, EnumDeclaration, EnumMember, ModuleDeclaration, ModuleName, ModuleBody, ModuleBlock, CaseOrDefaultClause, NamespaceExportDeclaration, ImportEqualsDeclaration, ModuleReference, ImportDeclaration, ImportClause, NamedImportBindings, AssertClause, AssertEntry, AssertionKey, ImportTypeAssertionContainer, ImportAttribute, ImportAttributeName, NamespaceImport, NamespaceExport, NamedImports, ImportSpecifier, ExportAssignment, ExportDeclaration, NamedExportBindings, NamedExports, ExportSpecifier, ExternalModuleReference, JSDocAllType, JSDocUnknownType, JSDocNonNullableType, JSDocNullableType, JSDocOptionalType, JSDocFunctionType, JSDocVariadicType, JSDocNamepathType, JSDocTypeExpression, JSDocNameReference, JSDocMemberName, JSDocLink, JSDocLinkCode, JSDocLinkPlain, JSDocTypeLiteral, JSDocPropertyLikeTag, JSDocSignature, JSDocTemplateTag, JSDocParameterTag, JSDocReturnTag, JSDocComment, JSDocTypedefTag, JSDocNamespaceDeclaration, JSDocPropertyTag, JSDocTypeTag, JSDocSeeTag, JSDocThisTag, JSDocEnumTag, JSDocCallbackTag, JSDocOverloadTag, JSDocAugmentsTag, JSDocImplementsTag, JSDocAuthorTag, JSDocClassTag, JSDocPublicTag, JSDocPrivateTag, JSDocProtectedTag, JSDocReadonlyTag, JSDocUnknownTag, JSDocDeprecatedTag, JSDocOverrideTag, JSDocThrowsTag, JSDocSatisfiesTag, JSDocText, JSDoc, JSDocTag, JsxElement, JsxOpeningElement, JsxChild, JsxClosingElement, JsxSelfClosingElement, JsxTagNameExpression, JsxAttributes, JsxFragment, JsxOpeningFragment, JsxClosingFragment, JsxText, JsxAttribute, JsxAttributeName, JsxAttributeValue, JsxAttributeLike, JsxSpreadAttribute, JsxExpression, JsxNamespacedName, CaseClause, DefaultClause, PropertyAssignment, ShorthandPropertyAssignment, SpreadAssignment, SourceFile, FileReference, NotEmittedStatement, PartiallyEmittedExpression, CommaListExpression, Bundle, UnparsedSource, InputFiles, DestructuringAssignment, EqualsToken, AssignmentExpression, ImmediatelyInvokedArrowFunction, OuterExpressionKinds, HasModifiers, HasDecorators, AccessorDeclaration } from "typescript";
@@ -55,7 +55,7 @@ export function createIdentifier(o) {
     return typeof o === "object" && "text" in o ? ts.factory.createIdentifier(o.text) : ts.factory.createIdentifier(o);
 }
 export function createTempVariable({ recordTempVariable, reservedInNestedScopes }: {
-    recordTempVariable: ((node: Identifier) => void) | undefined;
+    recordTempVariable?: ((node: Identifier) => void) | undefined;
     reservedInNestedScopes?: boolean;
 }): Identifier;
 export function createTempVariable(o) {
@@ -76,7 +76,7 @@ export function createUniqueName(o) {
     return ts.factory.createUniqueName(o.text, o.flags);
 }
 export function getGeneratedNameForNode({ node, flags }: {
-    node: Node | undefined;
+    node?: Node | undefined;
     flags?: GeneratedIdentifierFlags;
 }): Identifier;
 export function getGeneratedNameForNode(o) {
@@ -214,7 +214,7 @@ export function updateComputedPropertyName(o) {
     return ts.factory.updateComputedPropertyName(o.node, o.expression);
 }
 export function createTypeParameterDeclaration({ modifiers, name, constraint, defaultType }: {
-    modifiers: readonly Modifier[] | undefined;
+    modifiers?: readonly Modifier[] | undefined;
     name: string | Identifier;
     constraint?: TypeNode;
     defaultType?: TypeNode;
@@ -224,17 +224,17 @@ export function createTypeParameterDeclaration(o) {
 }
 export function updateTypeParameterDeclaration({ node, modifiers, name, constraint, defaultType }: {
     node: TypeParameterDeclaration;
-    modifiers: readonly Modifier[] | undefined;
+    modifiers?: readonly Modifier[] | undefined;
     name: Identifier;
-    constraint: TypeNode | undefined;
-    defaultType: TypeNode | undefined;
+    constraint?: TypeNode | undefined;
+    defaultType?: TypeNode | undefined;
 }): TypeParameterDeclaration;
 export function updateTypeParameterDeclaration(o) {
     return ts.factory.updateTypeParameterDeclaration(o.node, o.modifiers, o.name, o.constraint, o.defaultType);
 }
 export function createParameterDeclaration({ modifiers, dotDotDotToken, name, questionToken, type, initializer }: {
-    modifiers: readonly ModifierLike[] | undefined;
-    dotDotDotToken: DotDotDotToken | undefined;
+    modifiers?: readonly ModifierLike[] | undefined;
+    dotDotDotToken?: DotDotDotToken | undefined;
     name: string | BindingName;
     questionToken?: QuestionToken;
     type?: TypeNode;
@@ -245,12 +245,12 @@ export function createParameterDeclaration(o) {
 }
 export function updateParameterDeclaration({ node, modifiers, dotDotDotToken, name, questionToken, type, initializer }: {
     node: ParameterDeclaration;
-    modifiers: readonly ModifierLike[] | undefined;
-    dotDotDotToken: DotDotDotToken | undefined;
+    modifiers?: readonly ModifierLike[] | undefined;
+    dotDotDotToken?: DotDotDotToken | undefined;
     name: string | BindingName;
-    questionToken: QuestionToken | undefined;
-    type: TypeNode | undefined;
-    initializer: Expression | undefined;
+    questionToken?: QuestionToken | undefined;
+    type?: TypeNode | undefined;
+    initializer?: Expression | undefined;
 }): ParameterDeclaration;
 export function updateParameterDeclaration(o) {
     return ts.factory.updateParameterDeclaration(o.node, o.modifiers, o.dotDotDotToken, o.name, o.questionToken, o.type, o.initializer);
@@ -270,188 +270,188 @@ export function updateDecorator(o) {
     return ts.factory.updateDecorator(o.node, o.expression);
 }
 export function createPropertySignature({ modifiers, name, questionToken, type }: {
-    modifiers: readonly Modifier[] | undefined;
+    modifiers?: readonly Modifier[] | undefined;
     name: PropertyName | string;
-    questionToken: QuestionToken | undefined;
-    type: TypeNode | undefined;
+    questionToken?: QuestionToken | undefined;
+    type?: TypeNode | undefined;
 }): PropertySignature;
 export function createPropertySignature(o) {
     return ts.factory.createPropertySignature(o.modifiers, o.name, o.questionToken, o.type);
 }
 export function updatePropertySignature({ node, modifiers, name, questionToken, type }: {
     node: PropertySignature;
-    modifiers: readonly Modifier[] | undefined;
+    modifiers?: readonly Modifier[] | undefined;
     name: PropertyName;
-    questionToken: QuestionToken | undefined;
-    type: TypeNode | undefined;
+    questionToken?: QuestionToken | undefined;
+    type?: TypeNode | undefined;
 }): PropertySignature;
 export function updatePropertySignature(o) {
     return ts.factory.updatePropertySignature(o.node, o.modifiers, o.name, o.questionToken, o.type);
 }
 export function createPropertyDeclaration({ modifiers, name, questionOrExclamationToken, type, initializer }: {
-    modifiers: readonly ModifierLike[] | undefined;
+    modifiers?: readonly ModifierLike[] | undefined;
     name: string | PropertyName;
-    questionOrExclamationToken: QuestionToken | ExclamationToken | undefined;
-    type: TypeNode | undefined;
-    initializer: Expression | undefined;
+    questionOrExclamationToken?: QuestionToken | ExclamationToken | undefined;
+    type?: TypeNode | undefined;
+    initializer?: Expression | undefined;
 }): PropertyDeclaration;
 export function createPropertyDeclaration(o) {
     return ts.factory.createPropertyDeclaration(o.modifiers, o.name, o.questionOrExclamationToken, o.type, o.initializer);
 }
 export function updatePropertyDeclaration({ node, modifiers, name, questionOrExclamationToken, type, initializer }: {
     node: PropertyDeclaration;
-    modifiers: readonly ModifierLike[] | undefined;
+    modifiers?: readonly ModifierLike[] | undefined;
     name: string | PropertyName;
-    questionOrExclamationToken: QuestionToken | ExclamationToken | undefined;
-    type: TypeNode | undefined;
-    initializer: Expression | undefined;
+    questionOrExclamationToken?: QuestionToken | ExclamationToken | undefined;
+    type?: TypeNode | undefined;
+    initializer?: Expression | undefined;
 }): PropertyDeclaration;
 export function updatePropertyDeclaration(o) {
     return ts.factory.updatePropertyDeclaration(o.node, o.modifiers, o.name, o.questionOrExclamationToken, o.type, o.initializer);
 }
 export function createMethodSignature({ modifiers, name, questionToken, typeParameters, parameters, type }: {
-    modifiers: readonly Modifier[] | undefined;
+    modifiers?: readonly Modifier[] | undefined;
     name: string | PropertyName;
-    questionToken: QuestionToken | undefined;
-    typeParameters: readonly TypeParameterDeclaration[] | undefined;
+    questionToken?: QuestionToken | undefined;
+    typeParameters?: readonly TypeParameterDeclaration[] | undefined;
     parameters: readonly ParameterDeclaration[];
-    type: TypeNode | undefined;
+    type?: TypeNode | undefined;
 }): MethodSignature;
 export function createMethodSignature(o) {
     return ts.factory.createMethodSignature(o.modifiers, o.name, o.questionToken, o.typeParameters, o.parameters, o.type);
 }
 export function updateMethodSignature({ node, modifiers, name, questionToken, typeParameters, parameters, type }: {
     node: MethodSignature;
-    modifiers: readonly Modifier[] | undefined;
+    modifiers?: readonly Modifier[] | undefined;
     name: PropertyName;
-    questionToken: QuestionToken | undefined;
-    typeParameters: NodeArray<TypeParameterDeclaration> | undefined;
+    questionToken?: QuestionToken | undefined;
+    typeParameters?: NodeArray<TypeParameterDeclaration> | undefined;
     parameters: NodeArray<ParameterDeclaration>;
-    type: TypeNode | undefined;
+    type?: TypeNode | undefined;
 }): MethodSignature;
 export function updateMethodSignature(o) {
     return ts.factory.updateMethodSignature(o.node, o.modifiers, o.name, o.questionToken, o.typeParameters, o.parameters, o.type);
 }
 export function createMethodDeclaration({ modifiers, asteriskToken, name, questionToken, typeParameters, parameters, type, body }: {
-    modifiers: readonly ModifierLike[] | undefined;
-    asteriskToken: AsteriskToken | undefined;
+    modifiers?: readonly ModifierLike[] | undefined;
+    asteriskToken?: AsteriskToken | undefined;
     name: string | PropertyName;
-    questionToken: QuestionToken | undefined;
-    typeParameters: readonly TypeParameterDeclaration[] | undefined;
+    questionToken?: QuestionToken | undefined;
+    typeParameters?: readonly TypeParameterDeclaration[] | undefined;
     parameters: readonly ParameterDeclaration[];
-    type: TypeNode | undefined;
-    body: Block | undefined;
+    type?: TypeNode | undefined;
+    body?: Block | undefined;
 }): MethodDeclaration;
 export function createMethodDeclaration(o) {
     return ts.factory.createMethodDeclaration(o.modifiers, o.asteriskToken, o.name, o.questionToken, o.typeParameters, o.parameters, o.type, o.body);
 }
 export function updateMethodDeclaration({ node, modifiers, asteriskToken, name, questionToken, typeParameters, parameters, type, body }: {
     node: MethodDeclaration;
-    modifiers: readonly ModifierLike[] | undefined;
-    asteriskToken: AsteriskToken | undefined;
+    modifiers?: readonly ModifierLike[] | undefined;
+    asteriskToken?: AsteriskToken | undefined;
     name: PropertyName;
-    questionToken: QuestionToken | undefined;
-    typeParameters: readonly TypeParameterDeclaration[] | undefined;
+    questionToken?: QuestionToken | undefined;
+    typeParameters?: readonly TypeParameterDeclaration[] | undefined;
     parameters: readonly ParameterDeclaration[];
-    type: TypeNode | undefined;
-    body: Block | undefined;
+    type?: TypeNode | undefined;
+    body?: Block | undefined;
 }): MethodDeclaration;
 export function updateMethodDeclaration(o) {
     return ts.factory.updateMethodDeclaration(o.node, o.modifiers, o.asteriskToken, o.name, o.questionToken, o.typeParameters, o.parameters, o.type, o.body);
 }
 export function createConstructorDeclaration({ modifiers, parameters, body }: {
-    modifiers: readonly ModifierLike[] | undefined;
+    modifiers?: readonly ModifierLike[] | undefined;
     parameters: readonly ParameterDeclaration[];
-    body: Block | undefined;
+    body?: Block | undefined;
 }): ConstructorDeclaration;
 export function createConstructorDeclaration(o) {
     return ts.factory.createConstructorDeclaration(o.modifiers, o.parameters, o.body);
 }
 export function updateConstructorDeclaration({ node, modifiers, parameters, body }: {
     node: ConstructorDeclaration;
-    modifiers: readonly ModifierLike[] | undefined;
+    modifiers?: readonly ModifierLike[] | undefined;
     parameters: readonly ParameterDeclaration[];
-    body: Block | undefined;
+    body?: Block | undefined;
 }): ConstructorDeclaration;
 export function updateConstructorDeclaration(o) {
     return ts.factory.updateConstructorDeclaration(o.node, o.modifiers, o.parameters, o.body);
 }
 export function createGetAccessorDeclaration({ modifiers, name, parameters, type, body }: {
-    modifiers: readonly ModifierLike[] | undefined;
+    modifiers?: readonly ModifierLike[] | undefined;
     name: string | PropertyName;
     parameters: readonly ParameterDeclaration[];
-    type: TypeNode | undefined;
-    body: Block | undefined;
+    type?: TypeNode | undefined;
+    body?: Block | undefined;
 }): GetAccessorDeclaration;
 export function createGetAccessorDeclaration(o) {
     return ts.factory.createGetAccessorDeclaration(o.modifiers, o.name, o.parameters, o.type, o.body);
 }
 export function updateGetAccessorDeclaration({ node, modifiers, name, parameters, type, body }: {
     node: GetAccessorDeclaration;
-    modifiers: readonly ModifierLike[] | undefined;
+    modifiers?: readonly ModifierLike[] | undefined;
     name: PropertyName;
     parameters: readonly ParameterDeclaration[];
-    type: TypeNode | undefined;
-    body: Block | undefined;
+    type?: TypeNode | undefined;
+    body?: Block | undefined;
 }): GetAccessorDeclaration;
 export function updateGetAccessorDeclaration(o) {
     return ts.factory.updateGetAccessorDeclaration(o.node, o.modifiers, o.name, o.parameters, o.type, o.body);
 }
 export function createSetAccessorDeclaration({ modifiers, name, parameters, body }: {
-    modifiers: readonly ModifierLike[] | undefined;
+    modifiers?: readonly ModifierLike[] | undefined;
     name: string | PropertyName;
     parameters: readonly ParameterDeclaration[];
-    body: Block | undefined;
+    body?: Block | undefined;
 }): SetAccessorDeclaration;
 export function createSetAccessorDeclaration(o) {
     return ts.factory.createSetAccessorDeclaration(o.modifiers, o.name, o.parameters, o.body);
 }
 export function updateSetAccessorDeclaration({ node, modifiers, name, parameters, body }: {
     node: SetAccessorDeclaration;
-    modifiers: readonly ModifierLike[] | undefined;
+    modifiers?: readonly ModifierLike[] | undefined;
     name: PropertyName;
     parameters: readonly ParameterDeclaration[];
-    body: Block | undefined;
+    body?: Block | undefined;
 }): SetAccessorDeclaration;
 export function updateSetAccessorDeclaration(o) {
     return ts.factory.updateSetAccessorDeclaration(o.node, o.modifiers, o.name, o.parameters, o.body);
 }
 export function createCallSignature({ typeParameters, parameters, type }: {
-    typeParameters: readonly TypeParameterDeclaration[] | undefined;
+    typeParameters?: readonly TypeParameterDeclaration[] | undefined;
     parameters: readonly ParameterDeclaration[];
-    type: TypeNode | undefined;
+    type?: TypeNode | undefined;
 }): CallSignatureDeclaration;
 export function createCallSignature(o) {
     return ts.factory.createCallSignature(o.typeParameters, o.parameters, o.type);
 }
 export function updateCallSignature({ node, typeParameters, parameters, type }: {
     node: CallSignatureDeclaration;
-    typeParameters: NodeArray<TypeParameterDeclaration> | undefined;
+    typeParameters?: NodeArray<TypeParameterDeclaration> | undefined;
     parameters: NodeArray<ParameterDeclaration>;
-    type: TypeNode | undefined;
+    type?: TypeNode | undefined;
 }): CallSignatureDeclaration;
 export function updateCallSignature(o) {
     return ts.factory.updateCallSignature(o.node, o.typeParameters, o.parameters, o.type);
 }
 export function createConstructSignature({ typeParameters, parameters, type }: {
-    typeParameters: readonly TypeParameterDeclaration[] | undefined;
+    typeParameters?: readonly TypeParameterDeclaration[] | undefined;
     parameters: readonly ParameterDeclaration[];
-    type: TypeNode | undefined;
+    type?: TypeNode | undefined;
 }): ConstructSignatureDeclaration;
 export function createConstructSignature(o) {
     return ts.factory.createConstructSignature(o.typeParameters, o.parameters, o.type);
 }
 export function updateConstructSignature({ node, typeParameters, parameters, type }: {
     node: ConstructSignatureDeclaration;
-    typeParameters: NodeArray<TypeParameterDeclaration> | undefined;
+    typeParameters?: NodeArray<TypeParameterDeclaration> | undefined;
     parameters: NodeArray<ParameterDeclaration>;
-    type: TypeNode | undefined;
+    type?: TypeNode | undefined;
 }): ConstructSignatureDeclaration;
 export function updateConstructSignature(o) {
     return ts.factory.updateConstructSignature(o.node, o.typeParameters, o.parameters, o.type);
 }
 export function createIndexSignature({ modifiers, parameters, type }: {
-    modifiers: readonly ModifierLike[] | undefined;
+    modifiers?: readonly ModifierLike[] | undefined;
     parameters: readonly ParameterDeclaration[];
     type: TypeNode;
 }): IndexSignatureDeclaration;
@@ -460,7 +460,7 @@ export function createIndexSignature(o) {
 }
 export function updateIndexSignature({ node, modifiers, parameters, type }: {
     node: IndexSignatureDeclaration;
-    modifiers: readonly ModifierLike[] | undefined;
+    modifiers?: readonly ModifierLike[] | undefined;
     parameters: readonly ParameterDeclaration[];
     type: TypeNode;
 }): IndexSignatureDeclaration;
@@ -504,18 +504,18 @@ export function createKeywordTypeNode(o) {
     return typeof o === "object" && "kind" in o ? ts.factory.createKeywordTypeNode(o.kind) : ts.factory.createKeywordTypeNode(o);
 }
 export function createTypePredicateNode({ assertsModifier, parameterName, type }: {
-    assertsModifier: AssertsKeyword | undefined;
+    assertsModifier?: AssertsKeyword | undefined;
     parameterName: Identifier | ThisTypeNode | string;
-    type: TypeNode | undefined;
+    type?: TypeNode | undefined;
 }): TypePredicateNode;
 export function createTypePredicateNode(o) {
     return ts.factory.createTypePredicateNode(o.assertsModifier, o.parameterName, o.type);
 }
 export function updateTypePredicateNode({ node, assertsModifier, parameterName, type }: {
     node: TypePredicateNode;
-    assertsModifier: AssertsKeyword | undefined;
+    assertsModifier?: AssertsKeyword | undefined;
     parameterName: Identifier | ThisTypeNode;
-    type: TypeNode | undefined;
+    type?: TypeNode | undefined;
 }): TypePredicateNode;
 export function updateTypePredicateNode(o) {
     return ts.factory.updateTypePredicateNode(o.node, o.assertsModifier, o.parameterName, o.type);
@@ -530,13 +530,13 @@ export function createTypeReferenceNode(o) {
 export function updateTypeReferenceNode({ node, typeName, typeArguments }: {
     node: TypeReferenceNode;
     typeName: EntityName;
-    typeArguments: NodeArray<TypeNode> | undefined;
+    typeArguments?: NodeArray<TypeNode> | undefined;
 }): TypeReferenceNode;
 export function updateTypeReferenceNode(o) {
     return ts.factory.updateTypeReferenceNode(o.node, o.typeName, o.typeArguments);
 }
 export function createFunctionTypeNode({ typeParameters, parameters, type }: {
-    typeParameters: readonly TypeParameterDeclaration[] | undefined;
+    typeParameters?: readonly TypeParameterDeclaration[] | undefined;
     parameters: readonly ParameterDeclaration[];
     type: TypeNode;
 }): FunctionTypeNode;
@@ -545,7 +545,7 @@ export function createFunctionTypeNode(o) {
 }
 export function updateFunctionTypeNode({ node, typeParameters, parameters, type }: {
     node: FunctionTypeNode;
-    typeParameters: NodeArray<TypeParameterDeclaration> | undefined;
+    typeParameters?: NodeArray<TypeParameterDeclaration> | undefined;
     parameters: NodeArray<ParameterDeclaration>;
     type: TypeNode;
 }): FunctionTypeNode;
@@ -553,8 +553,8 @@ export function updateFunctionTypeNode(o) {
     return ts.factory.updateFunctionTypeNode(o.node, o.typeParameters, o.parameters, o.type);
 }
 export function createConstructorTypeNode({ modifiers, typeParameters, parameters, type }: {
-    modifiers: readonly Modifier[] | undefined;
-    typeParameters: readonly TypeParameterDeclaration[] | undefined;
+    modifiers?: readonly Modifier[] | undefined;
+    typeParameters?: readonly TypeParameterDeclaration[] | undefined;
     parameters: readonly ParameterDeclaration[];
     type: TypeNode;
 }): ConstructorTypeNode;
@@ -563,8 +563,8 @@ export function createConstructorTypeNode(o) {
 }
 export function updateConstructorTypeNode({ node, modifiers, typeParameters, parameters, type }: {
     node: ConstructorTypeNode;
-    modifiers: readonly Modifier[] | undefined;
-    typeParameters: NodeArray<TypeParameterDeclaration> | undefined;
+    modifiers?: readonly Modifier[] | undefined;
+    typeParameters?: NodeArray<TypeParameterDeclaration> | undefined;
     parameters: NodeArray<ParameterDeclaration>;
     type: TypeNode;
 }): ConstructorTypeNode;
@@ -588,10 +588,10 @@ export function updateTypeQueryNode(o) {
 }
 export function createTypeLiteralNode(members: readonly TypeElement[] | undefined): TypeLiteralNode;
 export function createTypeLiteralNode({ members }: {
-    members: readonly TypeElement[] | undefined;
+    members?: readonly TypeElement[] | undefined;
 }): TypeLiteralNode;
 export function createTypeLiteralNode(o) {
-    return typeof o === "object" && "members" in o ? ts.factory.createTypeLiteralNode(o.members) : ts.factory.createTypeLiteralNode(o);
+    return typeof o === "object" ? ts.factory.createTypeLiteralNode(o.members) : ts.factory.createTypeLiteralNode(o);
 }
 export function updateTypeLiteralNode({ node, members }: {
     node: TypeLiteralNode;
@@ -629,9 +629,9 @@ export function updateTupleTypeNode(o) {
     return ts.factory.updateTupleTypeNode(o.node, o.elements);
 }
 export function createNamedTupleMember({ dotDotDotToken, name, questionToken, type }: {
-    dotDotDotToken: DotDotDotToken | undefined;
+    dotDotDotToken?: DotDotDotToken | undefined;
     name: Identifier;
-    questionToken: QuestionToken | undefined;
+    questionToken?: QuestionToken | undefined;
     type: TypeNode;
 }): NamedTupleMember;
 export function createNamedTupleMember(o) {
@@ -639,9 +639,9 @@ export function createNamedTupleMember(o) {
 }
 export function updateNamedTupleMember({ node, dotDotDotToken, name, questionToken, type }: {
     node: NamedTupleMember;
-    dotDotDotToken: DotDotDotToken | undefined;
+    dotDotDotToken?: DotDotDotToken | undefined;
     name: Identifier;
-    questionToken: QuestionToken | undefined;
+    questionToken?: QuestionToken | undefined;
     type: TypeNode;
 }): NamedTupleMember;
 export function updateNamedTupleMember(o) {
@@ -749,9 +749,9 @@ export function createImportTypeNode(o) {
 export function updateImportTypeNode({ node, argument, attributes, qualifier, typeArguments, isTypeOf }: {
     node: ImportTypeNode;
     argument: TypeNode;
-    attributes: ImportAttributes | undefined;
-    qualifier: EntityName | undefined;
-    typeArguments: readonly TypeNode[] | undefined;
+    attributes?: ImportAttributes | undefined;
+    qualifier?: EntityName | undefined;
+    typeArguments?: readonly TypeNode[] | undefined;
     isTypeOf?: boolean;
 }): ImportTypeNode;
 export function updateImportTypeNode(o) {
@@ -805,24 +805,24 @@ export function updateIndexedAccessTypeNode(o) {
     return ts.factory.updateIndexedAccessTypeNode(o.node, o.objectType, o.indexType);
 }
 export function createMappedTypeNode({ readonlyToken, typeParameter, nameType, questionToken, type, members }: {
-    readonlyToken: ReadonlyKeyword | PlusToken | MinusToken | undefined;
+    readonlyToken?: ReadonlyKeyword | PlusToken | MinusToken | undefined;
     typeParameter: TypeParameterDeclaration;
-    nameType: TypeNode | undefined;
-    questionToken: QuestionToken | PlusToken | MinusToken | undefined;
-    type: TypeNode | undefined;
-    members: NodeArray<TypeElement> | undefined;
+    nameType?: TypeNode | undefined;
+    questionToken?: QuestionToken | PlusToken | MinusToken | undefined;
+    type?: TypeNode | undefined;
+    members?: NodeArray<TypeElement> | undefined;
 }): MappedTypeNode;
 export function createMappedTypeNode(o) {
     return ts.factory.createMappedTypeNode(o.readonlyToken, o.typeParameter, o.nameType, o.questionToken, o.type, o.members);
 }
 export function updateMappedTypeNode({ node, readonlyToken, typeParameter, nameType, questionToken, type, members }: {
     node: MappedTypeNode;
-    readonlyToken: ReadonlyKeyword | PlusToken | MinusToken | undefined;
+    readonlyToken?: ReadonlyKeyword | PlusToken | MinusToken | undefined;
     typeParameter: TypeParameterDeclaration;
-    nameType: TypeNode | undefined;
-    questionToken: QuestionToken | PlusToken | MinusToken | undefined;
-    type: TypeNode | undefined;
-    members: NodeArray<TypeElement> | undefined;
+    nameType?: TypeNode | undefined;
+    questionToken?: QuestionToken | PlusToken | MinusToken | undefined;
+    type?: TypeNode | undefined;
+    members?: NodeArray<TypeElement> | undefined;
 }): MappedTypeNode;
 export function updateMappedTypeNode(o) {
     return ts.factory.updateMappedTypeNode(o.node, o.readonlyToken, o.typeParameter, o.nameType, o.questionToken, o.type, o.members);
@@ -885,8 +885,8 @@ export function updateArrayBindingPattern(o) {
     return ts.factory.updateArrayBindingPattern(o.node, o.elements);
 }
 export function createBindingElement({ dotDotDotToken, propertyName, name, initializer }: {
-    dotDotDotToken: DotDotDotToken | undefined;
-    propertyName: string | PropertyName | undefined;
+    dotDotDotToken?: DotDotDotToken | undefined;
+    propertyName?: string | PropertyName | undefined;
     name: string | BindingName;
     initializer?: Expression;
 }): BindingElement;
@@ -895,10 +895,10 @@ export function createBindingElement(o) {
 }
 export function updateBindingElement({ node, dotDotDotToken, propertyName, name, initializer }: {
     node: BindingElement;
-    dotDotDotToken: DotDotDotToken | undefined;
-    propertyName: PropertyName | undefined;
+    dotDotDotToken?: DotDotDotToken | undefined;
+    propertyName?: PropertyName | undefined;
     name: BindingName;
-    initializer: Expression | undefined;
+    initializer?: Expression | undefined;
 }): BindingElement;
 export function updateBindingElement(o) {
     return ts.factory.updateBindingElement(o.node, o.dotDotDotToken, o.propertyName, o.name, o.initializer);
@@ -948,7 +948,7 @@ export function updatePropertyAccessExpression(o) {
 }
 export function createPropertyAccessChain({ expression, questionDotToken, name }: {
     expression: Expression;
-    questionDotToken: QuestionDotToken | undefined;
+    questionDotToken?: QuestionDotToken | undefined;
     name: string | MemberName;
 }): PropertyAccessChain;
 export function createPropertyAccessChain(o) {
@@ -957,7 +957,7 @@ export function createPropertyAccessChain(o) {
 export function updatePropertyAccessChain({ node, expression, questionDotToken, name }: {
     node: PropertyAccessChain;
     expression: Expression;
-    questionDotToken: QuestionDotToken | undefined;
+    questionDotToken?: QuestionDotToken | undefined;
     name: MemberName;
 }): PropertyAccessChain;
 export function updatePropertyAccessChain(o) {
@@ -980,7 +980,7 @@ export function updateElementAccessExpression(o) {
 }
 export function createElementAccessChain({ expression, questionDotToken, index }: {
     expression: Expression;
-    questionDotToken: QuestionDotToken | undefined;
+    questionDotToken?: QuestionDotToken | undefined;
     index: number | Expression;
 }): ElementAccessChain;
 export function createElementAccessChain(o) {
@@ -989,7 +989,7 @@ export function createElementAccessChain(o) {
 export function updateElementAccessChain({ node, expression, questionDotToken, argumentExpression }: {
     node: ElementAccessChain;
     expression: Expression;
-    questionDotToken: QuestionDotToken | undefined;
+    questionDotToken?: QuestionDotToken | undefined;
     argumentExpression: Expression;
 }): ElementAccessChain;
 export function updateElementAccessChain(o) {
@@ -997,8 +997,8 @@ export function updateElementAccessChain(o) {
 }
 export function createCallExpression({ expression, typeArguments, argumentsArray }: {
     expression: Expression;
-    typeArguments: readonly TypeNode[] | undefined;
-    argumentsArray: readonly Expression[] | undefined;
+    typeArguments?: readonly TypeNode[] | undefined;
+    argumentsArray?: readonly Expression[] | undefined;
 }): CallExpression;
 export function createCallExpression(o) {
     return ts.factory.createCallExpression(o.expression, o.typeArguments, o.argumentsArray);
@@ -1006,7 +1006,7 @@ export function createCallExpression(o) {
 export function updateCallExpression({ node, expression, typeArguments, argumentsArray }: {
     node: CallExpression;
     expression: Expression;
-    typeArguments: readonly TypeNode[] | undefined;
+    typeArguments?: readonly TypeNode[] | undefined;
     argumentsArray: readonly Expression[];
 }): CallExpression;
 export function updateCallExpression(o) {
@@ -1014,9 +1014,9 @@ export function updateCallExpression(o) {
 }
 export function createCallChain({ expression, questionDotToken, typeArguments, argumentsArray }: {
     expression: Expression;
-    questionDotToken: QuestionDotToken | undefined;
-    typeArguments: readonly TypeNode[] | undefined;
-    argumentsArray: readonly Expression[] | undefined;
+    questionDotToken?: QuestionDotToken | undefined;
+    typeArguments?: readonly TypeNode[] | undefined;
+    argumentsArray?: readonly Expression[] | undefined;
 }): CallChain;
 export function createCallChain(o) {
     return ts.factory.createCallChain(o.expression, o.questionDotToken, o.typeArguments, o.argumentsArray);
@@ -1024,8 +1024,8 @@ export function createCallChain(o) {
 export function updateCallChain({ node, expression, questionDotToken, typeArguments, argumentsArray }: {
     node: CallChain;
     expression: Expression;
-    questionDotToken: QuestionDotToken | undefined;
-    typeArguments: readonly TypeNode[] | undefined;
+    questionDotToken?: QuestionDotToken | undefined;
+    typeArguments?: readonly TypeNode[] | undefined;
     argumentsArray: readonly Expression[];
 }): CallChain;
 export function updateCallChain(o) {
@@ -1033,8 +1033,8 @@ export function updateCallChain(o) {
 }
 export function createNewExpression({ expression, typeArguments, argumentsArray }: {
     expression: Expression;
-    typeArguments: readonly TypeNode[] | undefined;
-    argumentsArray: readonly Expression[] | undefined;
+    typeArguments?: readonly TypeNode[] | undefined;
+    argumentsArray?: readonly Expression[] | undefined;
 }): NewExpression;
 export function createNewExpression(o) {
     return ts.factory.createNewExpression(o.expression, o.typeArguments, o.argumentsArray);
@@ -1042,15 +1042,15 @@ export function createNewExpression(o) {
 export function updateNewExpression({ node, expression, typeArguments, argumentsArray }: {
     node: NewExpression;
     expression: Expression;
-    typeArguments: readonly TypeNode[] | undefined;
-    argumentsArray: readonly Expression[] | undefined;
+    typeArguments?: readonly TypeNode[] | undefined;
+    argumentsArray?: readonly Expression[] | undefined;
 }): NewExpression;
 export function updateNewExpression(o) {
     return ts.factory.updateNewExpression(o.node, o.expression, o.typeArguments, o.argumentsArray);
 }
 export function createTaggedTemplateExpression({ tag, typeArguments, template }: {
     tag: Expression;
-    typeArguments: readonly TypeNode[] | undefined;
+    typeArguments?: readonly TypeNode[] | undefined;
     template: TemplateLiteral;
 }): TaggedTemplateExpression;
 export function createTaggedTemplateExpression(o) {
@@ -1059,7 +1059,7 @@ export function createTaggedTemplateExpression(o) {
 export function updateTaggedTemplateExpression({ node, tag, typeArguments, template }: {
     node: TaggedTemplateExpression;
     tag: Expression;
-    typeArguments: readonly TypeNode[] | undefined;
+    typeArguments?: readonly TypeNode[] | undefined;
     template: TemplateLiteral;
 }): TaggedTemplateExpression;
 export function updateTaggedTemplateExpression(o) {
@@ -1095,12 +1095,12 @@ export function updateParenthesizedExpression(o) {
     return ts.factory.updateParenthesizedExpression(o.node, o.expression);
 }
 export function createFunctionExpression({ modifiers, asteriskToken, name, typeParameters, parameters, type, body }: {
-    modifiers: readonly Modifier[] | undefined;
-    asteriskToken: AsteriskToken | undefined;
-    name: string | Identifier | undefined;
-    typeParameters: readonly TypeParameterDeclaration[] | undefined;
-    parameters: readonly ParameterDeclaration[] | undefined;
-    type: TypeNode | undefined;
+    modifiers?: readonly Modifier[] | undefined;
+    asteriskToken?: AsteriskToken | undefined;
+    name?: string | Identifier | undefined;
+    typeParameters?: readonly TypeParameterDeclaration[] | undefined;
+    parameters?: readonly ParameterDeclaration[] | undefined;
+    type?: TypeNode | undefined;
     body: Block;
 }): FunctionExpression;
 export function createFunctionExpression(o) {
@@ -1108,23 +1108,23 @@ export function createFunctionExpression(o) {
 }
 export function updateFunctionExpression({ node, modifiers, asteriskToken, name, typeParameters, parameters, type, body }: {
     node: FunctionExpression;
-    modifiers: readonly Modifier[] | undefined;
-    asteriskToken: AsteriskToken | undefined;
-    name: Identifier | undefined;
-    typeParameters: readonly TypeParameterDeclaration[] | undefined;
+    modifiers?: readonly Modifier[] | undefined;
+    asteriskToken?: AsteriskToken | undefined;
+    name?: Identifier | undefined;
+    typeParameters?: readonly TypeParameterDeclaration[] | undefined;
     parameters: readonly ParameterDeclaration[];
-    type: TypeNode | undefined;
+    type?: TypeNode | undefined;
     body: Block;
 }): FunctionExpression;
 export function updateFunctionExpression(o) {
     return ts.factory.updateFunctionExpression(o.node, o.modifiers, o.asteriskToken, o.name, o.typeParameters, o.parameters, o.type, o.body);
 }
 export function createArrowFunction({ modifiers, typeParameters, parameters, type, equalsGreaterThanToken, body }: {
-    modifiers: readonly Modifier[] | undefined;
-    typeParameters: readonly TypeParameterDeclaration[] | undefined;
+    modifiers?: readonly Modifier[] | undefined;
+    typeParameters?: readonly TypeParameterDeclaration[] | undefined;
     parameters: readonly ParameterDeclaration[];
-    type: TypeNode | undefined;
-    equalsGreaterThanToken: EqualsGreaterThanToken | undefined;
+    type?: TypeNode | undefined;
+    equalsGreaterThanToken?: EqualsGreaterThanToken | undefined;
     body: ConciseBody;
 }): ArrowFunction;
 export function createArrowFunction(o) {
@@ -1132,10 +1132,10 @@ export function createArrowFunction(o) {
 }
 export function updateArrowFunction({ node, modifiers, typeParameters, parameters, type, equalsGreaterThanToken, body }: {
     node: ArrowFunction;
-    modifiers: readonly Modifier[] | undefined;
-    typeParameters: readonly TypeParameterDeclaration[] | undefined;
+    modifiers?: readonly Modifier[] | undefined;
+    typeParameters?: readonly TypeParameterDeclaration[] | undefined;
     parameters: readonly ParameterDeclaration[];
-    type: TypeNode | undefined;
+    type?: TypeNode | undefined;
     equalsGreaterThanToken: EqualsGreaterThanToken;
     body: ConciseBody;
 }): ArrowFunction;
@@ -1245,9 +1245,9 @@ export function updateBinaryExpression(o) {
 }
 export function createConditionalExpression({ condition, questionToken, whenTrue, colonToken, whenFalse }: {
     condition: Expression;
-    questionToken: QuestionToken | undefined;
+    questionToken?: QuestionToken | undefined;
     whenTrue: Expression;
-    colonToken: ColonToken | undefined;
+    colonToken?: ColonToken | undefined;
     whenFalse: Expression;
 }): ConditionalExpression;
 export function createConditionalExpression(o) {
@@ -1285,7 +1285,7 @@ export function createTemplateHead({ text, rawText, templateFlags }: {
     templateFlags?: TokenFlags;
 }): TemplateHead;
 export function createTemplateHead({ text, rawText, templateFlags }: {
-    text: string | undefined;
+    text?: string | undefined;
     rawText: string;
     templateFlags?: TokenFlags;
 }): TemplateHead;
@@ -1298,7 +1298,7 @@ export function createTemplateMiddle({ text, rawText, templateFlags }: {
     templateFlags?: TokenFlags;
 }): TemplateMiddle;
 export function createTemplateMiddle({ text, rawText, templateFlags }: {
-    text: string | undefined;
+    text?: string | undefined;
     rawText: string;
     templateFlags?: TokenFlags;
 }): TemplateMiddle;
@@ -1311,7 +1311,7 @@ export function createTemplateTail({ text, rawText, templateFlags }: {
     templateFlags?: TokenFlags;
 }): TemplateTail;
 export function createTemplateTail({ text, rawText, templateFlags }: {
-    text: string | undefined;
+    text?: string | undefined;
     rawText: string;
     templateFlags?: TokenFlags;
 }): TemplateTail;
@@ -1323,7 +1323,7 @@ export function createNoSubstitutionTemplateLiteral({ text, rawText }: {
     rawText?: string;
 }): NoSubstitutionTemplateLiteral;
 export function createNoSubstitutionTemplateLiteral({ text, rawText }: {
-    text: string | undefined;
+    text?: string | undefined;
     rawText: string;
 }): NoSubstitutionTemplateLiteral;
 export function createNoSubstitutionTemplateLiteral(o) {
@@ -1335,15 +1335,15 @@ export function createYieldExpression({ asteriskToken, expression }: {
 }): YieldExpression;
 export function createYieldExpression({ asteriskToken, expression }: {
     asteriskToken: undefined;
-    expression: Expression | undefined;
+    expression?: Expression | undefined;
 }): YieldExpression;
 export function createYieldExpression(o) {
     return ts.factory.createYieldExpression(o.asteriskToken, o.expression);
 }
 export function updateYieldExpression({ node, asteriskToken, expression }: {
     node: YieldExpression;
-    asteriskToken: AsteriskToken | undefined;
-    expression: Expression | undefined;
+    asteriskToken?: AsteriskToken | undefined;
+    expression?: Expression | undefined;
 }): YieldExpression;
 export function updateYieldExpression(o) {
     return ts.factory.updateYieldExpression(o.node, o.asteriskToken, o.expression);
@@ -1363,10 +1363,10 @@ export function updateSpreadElement(o) {
     return ts.factory.updateSpreadElement(o.node, o.expression);
 }
 export function createClassExpression({ modifiers, name, typeParameters, heritageClauses, members }: {
-    modifiers: readonly ModifierLike[] | undefined;
-    name: string | Identifier | undefined;
-    typeParameters: readonly TypeParameterDeclaration[] | undefined;
-    heritageClauses: readonly HeritageClause[] | undefined;
+    modifiers?: readonly ModifierLike[] | undefined;
+    name?: string | Identifier | undefined;
+    typeParameters?: readonly TypeParameterDeclaration[] | undefined;
+    heritageClauses?: readonly HeritageClause[] | undefined;
     members: readonly ClassElement[];
 }): ClassExpression;
 export function createClassExpression(o) {
@@ -1374,10 +1374,10 @@ export function createClassExpression(o) {
 }
 export function updateClassExpression({ node, modifiers, name, typeParameters, heritageClauses, members }: {
     node: ClassExpression;
-    modifiers: readonly ModifierLike[] | undefined;
-    name: Identifier | undefined;
-    typeParameters: readonly TypeParameterDeclaration[] | undefined;
-    heritageClauses: readonly HeritageClause[] | undefined;
+    modifiers?: readonly ModifierLike[] | undefined;
+    name?: Identifier | undefined;
+    typeParameters?: readonly TypeParameterDeclaration[] | undefined;
+    heritageClauses?: readonly HeritageClause[] | undefined;
     members: readonly ClassElement[];
 }): ClassExpression;
 export function updateClassExpression(o) {
@@ -1389,7 +1389,7 @@ export function createOmittedExpression() {
 }
 export function createExpressionWithTypeArguments({ expression, typeArguments }: {
     expression: Expression;
-    typeArguments: readonly TypeNode[] | undefined;
+    typeArguments?: readonly TypeNode[] | undefined;
 }): ExpressionWithTypeArguments;
 export function createExpressionWithTypeArguments(o) {
     return ts.factory.createExpressionWithTypeArguments(o.expression, o.typeArguments);
@@ -1397,7 +1397,7 @@ export function createExpressionWithTypeArguments(o) {
 export function updateExpressionWithTypeArguments({ node, expression, typeArguments }: {
     node: ExpressionWithTypeArguments;
     expression: Expression;
-    typeArguments: readonly TypeNode[] | undefined;
+    typeArguments?: readonly TypeNode[] | undefined;
 }): ExpressionWithTypeArguments;
 export function updateExpressionWithTypeArguments(o) {
     return ts.factory.updateExpressionWithTypeArguments(o.node, o.expression, o.typeArguments);
@@ -1508,7 +1508,7 @@ export function updateBlock(o) {
     return ts.factory.updateBlock(o.node, o.statements);
 }
 export function createVariableStatement({ modifiers, declarationList }: {
-    modifiers: readonly ModifierLike[] | undefined;
+    modifiers?: readonly ModifierLike[] | undefined;
     declarationList: VariableDeclarationList | readonly VariableDeclaration[];
 }): VariableStatement;
 export function createVariableStatement(o) {
@@ -1516,7 +1516,7 @@ export function createVariableStatement(o) {
 }
 export function updateVariableStatement({ node, modifiers, declarationList }: {
     node: VariableStatement;
-    modifiers: readonly ModifierLike[] | undefined;
+    modifiers?: readonly ModifierLike[] | undefined;
     declarationList: VariableDeclarationList;
 }): VariableStatement;
 export function updateVariableStatement(o) {
@@ -1552,7 +1552,7 @@ export function updateIfStatement({ node, expression, thenStatement, elseStateme
     node: IfStatement;
     expression: Expression;
     thenStatement: Statement;
-    elseStatement: Statement | undefined;
+    elseStatement?: Statement | undefined;
 }): IfStatement;
 export function updateIfStatement(o) {
     return ts.factory.updateIfStatement(o.node, o.expression, o.thenStatement, o.elseStatement);
@@ -1588,9 +1588,9 @@ export function updateWhileStatement(o) {
     return ts.factory.updateWhileStatement(o.node, o.expression, o.statement);
 }
 export function createForStatement({ initializer, condition, incrementor, statement }: {
-    initializer: ForInitializer | undefined;
-    condition: Expression | undefined;
-    incrementor: Expression | undefined;
+    initializer?: ForInitializer | undefined;
+    condition?: Expression | undefined;
+    incrementor?: Expression | undefined;
     statement: Statement;
 }): ForStatement;
 export function createForStatement(o) {
@@ -1598,9 +1598,9 @@ export function createForStatement(o) {
 }
 export function updateForStatement({ node, initializer, condition, incrementor, statement }: {
     node: ForStatement;
-    initializer: ForInitializer | undefined;
-    condition: Expression | undefined;
-    incrementor: Expression | undefined;
+    initializer?: ForInitializer | undefined;
+    condition?: Expression | undefined;
+    incrementor?: Expression | undefined;
     statement: Statement;
 }): ForStatement;
 export function updateForStatement(o) {
@@ -1624,7 +1624,7 @@ export function updateForInStatement(o) {
     return ts.factory.updateForInStatement(o.node, o.initializer, o.expression, o.statement);
 }
 export function createForOfStatement({ awaitModifier, initializer, expression, statement }: {
-    awaitModifier: AwaitKeyword | undefined;
+    awaitModifier?: AwaitKeyword | undefined;
     initializer: ForInitializer;
     expression: Expression;
     statement: Statement;
@@ -1634,7 +1634,7 @@ export function createForOfStatement(o) {
 }
 export function updateForOfStatement({ node, awaitModifier, initializer, expression, statement }: {
     node: ForOfStatement;
-    awaitModifier: AwaitKeyword | undefined;
+    awaitModifier?: AwaitKeyword | undefined;
     initializer: ForInitializer;
     expression: Expression;
     statement: Statement;
@@ -1651,7 +1651,7 @@ export function createContinueStatement(o) {
 }
 export function updateContinueStatement({ node, label }: {
     node: ContinueStatement;
-    label: Identifier | undefined;
+    label?: Identifier | undefined;
 }): ContinueStatement;
 export function updateContinueStatement(o) {
     return ts.factory.updateContinueStatement(o.node, o.label);
@@ -1665,7 +1665,7 @@ export function createBreakStatement(o) {
 }
 export function updateBreakStatement({ node, label }: {
     node: BreakStatement;
-    label: Identifier | undefined;
+    label?: Identifier | undefined;
 }): BreakStatement;
 export function updateBreakStatement(o) {
     return ts.factory.updateBreakStatement(o.node, o.label);
@@ -1679,7 +1679,7 @@ export function createReturnStatement(o) {
 }
 export function updateReturnStatement({ node, expression }: {
     node: ReturnStatement;
-    expression: Expression | undefined;
+    expression?: Expression | undefined;
 }): ReturnStatement;
 export function updateReturnStatement(o) {
     return ts.factory.updateReturnStatement(o.node, o.expression);
@@ -1745,8 +1745,8 @@ export function updateThrowStatement(o) {
 }
 export function createTryStatement({ tryBlock, catchClause, finallyBlock }: {
     tryBlock: Block;
-    catchClause: CatchClause | undefined;
-    finallyBlock: Block | undefined;
+    catchClause?: CatchClause | undefined;
+    finallyBlock?: Block | undefined;
 }): TryStatement;
 export function createTryStatement(o) {
     return ts.factory.createTryStatement(o.tryBlock, o.catchClause, o.finallyBlock);
@@ -1754,8 +1754,8 @@ export function createTryStatement(o) {
 export function updateTryStatement({ node, tryBlock, catchClause, finallyBlock }: {
     node: TryStatement;
     tryBlock: Block;
-    catchClause: CatchClause | undefined;
-    finallyBlock: Block | undefined;
+    catchClause?: CatchClause | undefined;
+    finallyBlock?: Block | undefined;
 }): TryStatement;
 export function updateTryStatement(o) {
     return ts.factory.updateTryStatement(o.node, o.tryBlock, o.catchClause, o.finallyBlock);
@@ -1776,9 +1776,9 @@ export function createVariableDeclaration(o) {
 export function updateVariableDeclaration({ node, name, exclamationToken, type, initializer }: {
     node: VariableDeclaration;
     name: BindingName;
-    exclamationToken: ExclamationToken | undefined;
-    type: TypeNode | undefined;
-    initializer: Expression | undefined;
+    exclamationToken?: ExclamationToken | undefined;
+    type?: TypeNode | undefined;
+    initializer?: Expression | undefined;
 }): VariableDeclaration;
 export function updateVariableDeclaration(o) {
     return ts.factory.updateVariableDeclaration(o.node, o.name, o.exclamationToken, o.type, o.initializer);
@@ -1798,35 +1798,35 @@ export function updateVariableDeclarationList(o) {
     return ts.factory.updateVariableDeclarationList(o.node, o.declarations);
 }
 export function createFunctionDeclaration({ modifiers, asteriskToken, name, typeParameters, parameters, type, body }: {
-    modifiers: readonly ModifierLike[] | undefined;
-    asteriskToken: AsteriskToken | undefined;
-    name: string | Identifier | undefined;
-    typeParameters: readonly TypeParameterDeclaration[] | undefined;
+    modifiers?: readonly ModifierLike[] | undefined;
+    asteriskToken?: AsteriskToken | undefined;
+    name?: string | Identifier | undefined;
+    typeParameters?: readonly TypeParameterDeclaration[] | undefined;
     parameters: readonly ParameterDeclaration[];
-    type: TypeNode | undefined;
-    body: Block | undefined;
+    type?: TypeNode | undefined;
+    body?: Block | undefined;
 }): FunctionDeclaration;
 export function createFunctionDeclaration(o) {
     return ts.factory.createFunctionDeclaration(o.modifiers, o.asteriskToken, o.name, o.typeParameters, o.parameters, o.type, o.body);
 }
 export function updateFunctionDeclaration({ node, modifiers, asteriskToken, name, typeParameters, parameters, type, body }: {
     node: FunctionDeclaration;
-    modifiers: readonly ModifierLike[] | undefined;
-    asteriskToken: AsteriskToken | undefined;
-    name: Identifier | undefined;
-    typeParameters: readonly TypeParameterDeclaration[] | undefined;
+    modifiers?: readonly ModifierLike[] | undefined;
+    asteriskToken?: AsteriskToken | undefined;
+    name?: Identifier | undefined;
+    typeParameters?: readonly TypeParameterDeclaration[] | undefined;
     parameters: readonly ParameterDeclaration[];
-    type: TypeNode | undefined;
-    body: Block | undefined;
+    type?: TypeNode | undefined;
+    body?: Block | undefined;
 }): FunctionDeclaration;
 export function updateFunctionDeclaration(o) {
     return ts.factory.updateFunctionDeclaration(o.node, o.modifiers, o.asteriskToken, o.name, o.typeParameters, o.parameters, o.type, o.body);
 }
 export function createClassDeclaration({ modifiers, name, typeParameters, heritageClauses, members }: {
-    modifiers: readonly ModifierLike[] | undefined;
-    name: string | Identifier | undefined;
-    typeParameters: readonly TypeParameterDeclaration[] | undefined;
-    heritageClauses: readonly HeritageClause[] | undefined;
+    modifiers?: readonly ModifierLike[] | undefined;
+    name?: string | Identifier | undefined;
+    typeParameters?: readonly TypeParameterDeclaration[] | undefined;
+    heritageClauses?: readonly HeritageClause[] | undefined;
     members: readonly ClassElement[];
 }): ClassDeclaration;
 export function createClassDeclaration(o) {
@@ -1834,20 +1834,20 @@ export function createClassDeclaration(o) {
 }
 export function updateClassDeclaration({ node, modifiers, name, typeParameters, heritageClauses, members }: {
     node: ClassDeclaration;
-    modifiers: readonly ModifierLike[] | undefined;
-    name: Identifier | undefined;
-    typeParameters: readonly TypeParameterDeclaration[] | undefined;
-    heritageClauses: readonly HeritageClause[] | undefined;
+    modifiers?: readonly ModifierLike[] | undefined;
+    name?: Identifier | undefined;
+    typeParameters?: readonly TypeParameterDeclaration[] | undefined;
+    heritageClauses?: readonly HeritageClause[] | undefined;
     members: readonly ClassElement[];
 }): ClassDeclaration;
 export function updateClassDeclaration(o) {
     return ts.factory.updateClassDeclaration(o.node, o.modifiers, o.name, o.typeParameters, o.heritageClauses, o.members);
 }
 export function createInterfaceDeclaration({ modifiers, name, typeParameters, heritageClauses, members }: {
-    modifiers: readonly ModifierLike[] | undefined;
+    modifiers?: readonly ModifierLike[] | undefined;
     name: string | Identifier;
-    typeParameters: readonly TypeParameterDeclaration[] | undefined;
-    heritageClauses: readonly HeritageClause[] | undefined;
+    typeParameters?: readonly TypeParameterDeclaration[] | undefined;
+    heritageClauses?: readonly HeritageClause[] | undefined;
     members: readonly TypeElement[];
 }): InterfaceDeclaration;
 export function createInterfaceDeclaration(o) {
@@ -1855,19 +1855,19 @@ export function createInterfaceDeclaration(o) {
 }
 export function updateInterfaceDeclaration({ node, modifiers, name, typeParameters, heritageClauses, members }: {
     node: InterfaceDeclaration;
-    modifiers: readonly ModifierLike[] | undefined;
+    modifiers?: readonly ModifierLike[] | undefined;
     name: Identifier;
-    typeParameters: readonly TypeParameterDeclaration[] | undefined;
-    heritageClauses: readonly HeritageClause[] | undefined;
+    typeParameters?: readonly TypeParameterDeclaration[] | undefined;
+    heritageClauses?: readonly HeritageClause[] | undefined;
     members: readonly TypeElement[];
 }): InterfaceDeclaration;
 export function updateInterfaceDeclaration(o) {
     return ts.factory.updateInterfaceDeclaration(o.node, o.modifiers, o.name, o.typeParameters, o.heritageClauses, o.members);
 }
 export function createTypeAliasDeclaration({ modifiers, name, typeParameters, type }: {
-    modifiers: readonly ModifierLike[] | undefined;
+    modifiers?: readonly ModifierLike[] | undefined;
     name: string | Identifier;
-    typeParameters: readonly TypeParameterDeclaration[] | undefined;
+    typeParameters?: readonly TypeParameterDeclaration[] | undefined;
     type: TypeNode;
 }): TypeAliasDeclaration;
 export function createTypeAliasDeclaration(o) {
@@ -1875,16 +1875,16 @@ export function createTypeAliasDeclaration(o) {
 }
 export function updateTypeAliasDeclaration({ node, modifiers, name, typeParameters, type }: {
     node: TypeAliasDeclaration;
-    modifiers: readonly ModifierLike[] | undefined;
+    modifiers?: readonly ModifierLike[] | undefined;
     name: Identifier;
-    typeParameters: readonly TypeParameterDeclaration[] | undefined;
+    typeParameters?: readonly TypeParameterDeclaration[] | undefined;
     type: TypeNode;
 }): TypeAliasDeclaration;
 export function updateTypeAliasDeclaration(o) {
     return ts.factory.updateTypeAliasDeclaration(o.node, o.modifiers, o.name, o.typeParameters, o.type);
 }
 export function createEnumDeclaration({ modifiers, name, members }: {
-    modifiers: readonly ModifierLike[] | undefined;
+    modifiers?: readonly ModifierLike[] | undefined;
     name: string | Identifier;
     members: readonly EnumMember[];
 }): EnumDeclaration;
@@ -1893,7 +1893,7 @@ export function createEnumDeclaration(o) {
 }
 export function updateEnumDeclaration({ node, modifiers, name, members }: {
     node: EnumDeclaration;
-    modifiers: readonly ModifierLike[] | undefined;
+    modifiers?: readonly ModifierLike[] | undefined;
     name: Identifier;
     members: readonly EnumMember[];
 }): EnumDeclaration;
@@ -1901,9 +1901,9 @@ export function updateEnumDeclaration(o) {
     return ts.factory.updateEnumDeclaration(o.node, o.modifiers, o.name, o.members);
 }
 export function createModuleDeclaration({ modifiers, name, body, flags }: {
-    modifiers: readonly ModifierLike[] | undefined;
+    modifiers?: readonly ModifierLike[] | undefined;
     name: ModuleName;
-    body: ModuleBody | undefined;
+    body?: ModuleBody | undefined;
     flags?: NodeFlags;
 }): ModuleDeclaration;
 export function createModuleDeclaration(o) {
@@ -1911,9 +1911,9 @@ export function createModuleDeclaration(o) {
 }
 export function updateModuleDeclaration({ node, modifiers, name, body }: {
     node: ModuleDeclaration;
-    modifiers: readonly ModifierLike[] | undefined;
+    modifiers?: readonly ModifierLike[] | undefined;
     name: ModuleName;
-    body: ModuleBody | undefined;
+    body?: ModuleBody | undefined;
 }): ModuleDeclaration;
 export function updateModuleDeclaration(o) {
     return ts.factory.updateModuleDeclaration(o.node, o.modifiers, o.name, o.body);
@@ -1961,7 +1961,7 @@ export function updateNamespaceExportDeclaration(o) {
     return ts.factory.updateNamespaceExportDeclaration(o.node, o.name);
 }
 export function createImportEqualsDeclaration({ modifiers, isTypeOnly, name, moduleReference }: {
-    modifiers: readonly ModifierLike[] | undefined;
+    modifiers?: readonly ModifierLike[] | undefined;
     isTypeOnly: boolean;
     name: string | Identifier;
     moduleReference: ModuleReference;
@@ -1971,7 +1971,7 @@ export function createImportEqualsDeclaration(o) {
 }
 export function updateImportEqualsDeclaration({ node, modifiers, isTypeOnly, name, moduleReference }: {
     node: ImportEqualsDeclaration;
-    modifiers: readonly ModifierLike[] | undefined;
+    modifiers?: readonly ModifierLike[] | undefined;
     isTypeOnly: boolean;
     name: Identifier;
     moduleReference: ModuleReference;
@@ -1980,8 +1980,8 @@ export function updateImportEqualsDeclaration(o) {
     return ts.factory.updateImportEqualsDeclaration(o.node, o.modifiers, o.isTypeOnly, o.name, o.moduleReference);
 }
 export function createImportDeclaration({ modifiers, importClause, moduleSpecifier, attributes }: {
-    modifiers: readonly ModifierLike[] | undefined;
-    importClause: ImportClause | undefined;
+    modifiers?: readonly ModifierLike[] | undefined;
+    importClause?: ImportClause | undefined;
     moduleSpecifier: Expression;
     attributes?: ImportAttributes;
 }): ImportDeclaration;
@@ -1990,18 +1990,18 @@ export function createImportDeclaration(o) {
 }
 export function updateImportDeclaration({ node, modifiers, importClause, moduleSpecifier, attributes }: {
     node: ImportDeclaration;
-    modifiers: readonly ModifierLike[] | undefined;
-    importClause: ImportClause | undefined;
+    modifiers?: readonly ModifierLike[] | undefined;
+    importClause?: ImportClause | undefined;
     moduleSpecifier: Expression;
-    attributes: ImportAttributes | undefined;
+    attributes?: ImportAttributes | undefined;
 }): ImportDeclaration;
 export function updateImportDeclaration(o) {
     return ts.factory.updateImportDeclaration(o.node, o.modifiers, o.importClause, o.moduleSpecifier, o.attributes);
 }
 export function createImportClause({ isTypeOnly, name, namedBindings }: {
     isTypeOnly: boolean;
-    name: Identifier | undefined;
-    namedBindings: NamedImportBindings | undefined;
+    name?: Identifier | undefined;
+    namedBindings?: NamedImportBindings | undefined;
 }): ImportClause;
 export function createImportClause(o) {
     return ts.factory.createImportClause(o.isTypeOnly, o.name, o.namedBindings);
@@ -2009,8 +2009,8 @@ export function createImportClause(o) {
 export function updateImportClause({ node, isTypeOnly, name, namedBindings }: {
     node: ImportClause;
     isTypeOnly: boolean;
-    name: Identifier | undefined;
-    namedBindings: NamedImportBindings | undefined;
+    name?: Identifier | undefined;
+    namedBindings?: NamedImportBindings | undefined;
 }): ImportClause;
 export function updateImportClause(o) {
     return ts.factory.updateImportClause(o.node, o.isTypeOnly, o.name, o.namedBindings);
@@ -2134,7 +2134,7 @@ export function updateNamedImports(o) {
 }
 export function createImportSpecifier({ isTypeOnly, propertyName, name }: {
     isTypeOnly: boolean;
-    propertyName: Identifier | undefined;
+    propertyName?: Identifier | undefined;
     name: Identifier;
 }): ImportSpecifier;
 export function createImportSpecifier(o) {
@@ -2143,15 +2143,15 @@ export function createImportSpecifier(o) {
 export function updateImportSpecifier({ node, isTypeOnly, propertyName, name }: {
     node: ImportSpecifier;
     isTypeOnly: boolean;
-    propertyName: Identifier | undefined;
+    propertyName?: Identifier | undefined;
     name: Identifier;
 }): ImportSpecifier;
 export function updateImportSpecifier(o) {
     return ts.factory.updateImportSpecifier(o.node, o.isTypeOnly, o.propertyName, o.name);
 }
 export function createExportAssignment({ modifiers, isExportEquals, expression }: {
-    modifiers: readonly ModifierLike[] | undefined;
-    isExportEquals: boolean | undefined;
+    modifiers?: readonly ModifierLike[] | undefined;
+    isExportEquals?: boolean | undefined;
     expression: Expression;
 }): ExportAssignment;
 export function createExportAssignment(o) {
@@ -2159,16 +2159,16 @@ export function createExportAssignment(o) {
 }
 export function updateExportAssignment({ node, modifiers, expression }: {
     node: ExportAssignment;
-    modifiers: readonly ModifierLike[] | undefined;
+    modifiers?: readonly ModifierLike[] | undefined;
     expression: Expression;
 }): ExportAssignment;
 export function updateExportAssignment(o) {
     return ts.factory.updateExportAssignment(o.node, o.modifiers, o.expression);
 }
 export function createExportDeclaration({ modifiers, isTypeOnly, exportClause, moduleSpecifier, attributes }: {
-    modifiers: readonly ModifierLike[] | undefined;
+    modifiers?: readonly ModifierLike[] | undefined;
     isTypeOnly: boolean;
-    exportClause: NamedExportBindings | undefined;
+    exportClause?: NamedExportBindings | undefined;
     moduleSpecifier?: Expression;
     attributes?: ImportAttributes;
 }): ExportDeclaration;
@@ -2177,11 +2177,11 @@ export function createExportDeclaration(o) {
 }
 export function updateExportDeclaration({ node, modifiers, isTypeOnly, exportClause, moduleSpecifier, attributes }: {
     node: ExportDeclaration;
-    modifiers: readonly ModifierLike[] | undefined;
+    modifiers?: readonly ModifierLike[] | undefined;
     isTypeOnly: boolean;
-    exportClause: NamedExportBindings | undefined;
-    moduleSpecifier: Expression | undefined;
-    attributes: ImportAttributes | undefined;
+    exportClause?: NamedExportBindings | undefined;
+    moduleSpecifier?: Expression | undefined;
+    attributes?: ImportAttributes | undefined;
 }): ExportDeclaration;
 export function updateExportDeclaration(o) {
     return ts.factory.updateExportDeclaration(o.node, o.modifiers, o.isTypeOnly, o.exportClause, o.moduleSpecifier, o.attributes);
@@ -2202,7 +2202,7 @@ export function updateNamedExports(o) {
 }
 export function createExportSpecifier({ isTypeOnly, propertyName, name }: {
     isTypeOnly: boolean;
-    propertyName: string | Identifier | undefined;
+    propertyName?: string | Identifier | undefined;
     name: string | Identifier;
 }): ExportSpecifier;
 export function createExportSpecifier(o) {
@@ -2211,7 +2211,7 @@ export function createExportSpecifier(o) {
 export function updateExportSpecifier({ node, isTypeOnly, propertyName, name }: {
     node: ExportSpecifier;
     isTypeOnly: boolean;
-    propertyName: Identifier | undefined;
+    propertyName?: Identifier | undefined;
     name: Identifier;
 }): ExportSpecifier;
 export function updateExportSpecifier(o) {
@@ -2283,7 +2283,7 @@ export function updateJSDocOptionalType(o) {
 }
 export function createJSDocFunctionType({ parameters, type }: {
     parameters: readonly ParameterDeclaration[];
-    type: TypeNode | undefined;
+    type?: TypeNode | undefined;
 }): JSDocFunctionType;
 export function createJSDocFunctionType(o) {
     return ts.factory.createJSDocFunctionType(o.parameters, o.type);
@@ -2291,7 +2291,7 @@ export function createJSDocFunctionType(o) {
 export function updateJSDocFunctionType({ node, parameters, type }: {
     node: JSDocFunctionType;
     parameters: readonly ParameterDeclaration[];
-    type: TypeNode | undefined;
+    type?: TypeNode | undefined;
 }): JSDocFunctionType;
 export function updateJSDocFunctionType(o) {
     return ts.factory.updateJSDocFunctionType(o.node, o.parameters, o.type);
@@ -2368,7 +2368,7 @@ export function updateJSDocMemberName(o) {
     return ts.factory.updateJSDocMemberName(o.node, o.left, o.right);
 }
 export function createJSDocLink({ name, text }: {
-    name: EntityName | JSDocMemberName | undefined;
+    name?: EntityName | JSDocMemberName | undefined;
     text: string;
 }): JSDocLink;
 export function createJSDocLink(o) {
@@ -2376,14 +2376,14 @@ export function createJSDocLink(o) {
 }
 export function updateJSDocLink({ node, name, text }: {
     node: JSDocLink;
-    name: EntityName | JSDocMemberName | undefined;
+    name?: EntityName | JSDocMemberName | undefined;
     text: string;
 }): JSDocLink;
 export function updateJSDocLink(o) {
     return ts.factory.updateJSDocLink(o.node, o.name, o.text);
 }
 export function createJSDocLinkCode({ name, text }: {
-    name: EntityName | JSDocMemberName | undefined;
+    name?: EntityName | JSDocMemberName | undefined;
     text: string;
 }): JSDocLinkCode;
 export function createJSDocLinkCode(o) {
@@ -2391,14 +2391,14 @@ export function createJSDocLinkCode(o) {
 }
 export function updateJSDocLinkCode({ node, name, text }: {
     node: JSDocLinkCode;
-    name: EntityName | JSDocMemberName | undefined;
+    name?: EntityName | JSDocMemberName | undefined;
     text: string;
 }): JSDocLinkCode;
 export function updateJSDocLinkCode(o) {
     return ts.factory.updateJSDocLinkCode(o.node, o.name, o.text);
 }
 export function createJSDocLinkPlain({ name, text }: {
-    name: EntityName | JSDocMemberName | undefined;
+    name?: EntityName | JSDocMemberName | undefined;
     text: string;
 }): JSDocLinkPlain;
 export function createJSDocLinkPlain(o) {
@@ -2406,7 +2406,7 @@ export function createJSDocLinkPlain(o) {
 }
 export function updateJSDocLinkPlain({ node, name, text }: {
     node: JSDocLinkPlain;
-    name: EntityName | JSDocMemberName | undefined;
+    name?: EntityName | JSDocMemberName | undefined;
     text: string;
 }): JSDocLinkPlain;
 export function updateJSDocLinkPlain(o) {
@@ -2421,14 +2421,14 @@ export function createJSDocTypeLiteral(o) {
 }
 export function updateJSDocTypeLiteral({ node, jsDocPropertyTags, isArrayType }: {
     node: JSDocTypeLiteral;
-    jsDocPropertyTags: readonly JSDocPropertyLikeTag[] | undefined;
-    isArrayType: boolean | undefined;
+    jsDocPropertyTags?: readonly JSDocPropertyLikeTag[] | undefined;
+    isArrayType?: boolean | undefined;
 }): JSDocTypeLiteral;
 export function updateJSDocTypeLiteral(o) {
     return ts.factory.updateJSDocTypeLiteral(o.node, o.jsDocPropertyTags, o.isArrayType);
 }
 export function createJSDocSignature({ typeParameters, parameters, type }: {
-    typeParameters: readonly JSDocTemplateTag[] | undefined;
+    typeParameters?: readonly JSDocTemplateTag[] | undefined;
     parameters: readonly JSDocParameterTag[];
     type?: JSDocReturnTag;
 }): JSDocSignature;
@@ -2437,16 +2437,16 @@ export function createJSDocSignature(o) {
 }
 export function updateJSDocSignature({ node, typeParameters, parameters, type }: {
     node: JSDocSignature;
-    typeParameters: readonly JSDocTemplateTag[] | undefined;
+    typeParameters?: readonly JSDocTemplateTag[] | undefined;
     parameters: readonly JSDocParameterTag[];
-    type: JSDocReturnTag | undefined;
+    type?: JSDocReturnTag | undefined;
 }): JSDocSignature;
 export function updateJSDocSignature(o) {
     return ts.factory.updateJSDocSignature(o.node, o.typeParameters, o.parameters, o.type);
 }
 export function createJSDocTemplateTag({ tagName, constraint, typeParameters, comment }: {
-    tagName: Identifier | undefined;
-    constraint: JSDocTypeExpression | undefined;
+    tagName?: Identifier | undefined;
+    constraint?: JSDocTypeExpression | undefined;
     typeParameters: readonly TypeParameterDeclaration[];
     comment?: string | NodeArray<JSDocComment>;
 }): JSDocTemplateTag;
@@ -2455,16 +2455,16 @@ export function createJSDocTemplateTag(o) {
 }
 export function updateJSDocTemplateTag({ node, tagName, constraint, typeParameters, comment }: {
     node: JSDocTemplateTag;
-    tagName: Identifier | undefined;
-    constraint: JSDocTypeExpression | undefined;
+    tagName?: Identifier | undefined;
+    constraint?: JSDocTypeExpression | undefined;
     typeParameters: readonly TypeParameterDeclaration[];
-    comment: string | NodeArray<JSDocComment> | undefined;
+    comment?: string | NodeArray<JSDocComment> | undefined;
 }): JSDocTemplateTag;
 export function updateJSDocTemplateTag(o) {
     return ts.factory.updateJSDocTemplateTag(o.node, o.tagName, o.constraint, o.typeParameters, o.comment);
 }
 export function createJSDocTypedefTag({ tagName, typeExpression, fullName, comment }: {
-    tagName: Identifier | undefined;
+    tagName?: Identifier | undefined;
     typeExpression?: JSDocTypeExpression | JSDocTypeLiteral;
     fullName?: Identifier | JSDocNamespaceDeclaration;
     comment?: string | NodeArray<JSDocComment>;
@@ -2474,16 +2474,16 @@ export function createJSDocTypedefTag(o) {
 }
 export function updateJSDocTypedefTag({ node, tagName, typeExpression, fullName, comment }: {
     node: JSDocTypedefTag;
-    tagName: Identifier | undefined;
-    typeExpression: JSDocTypeExpression | JSDocTypeLiteral | undefined;
-    fullName: Identifier | JSDocNamespaceDeclaration | undefined;
-    comment: string | NodeArray<JSDocComment> | undefined;
+    tagName?: Identifier | undefined;
+    typeExpression?: JSDocTypeExpression | JSDocTypeLiteral | undefined;
+    fullName?: Identifier | JSDocNamespaceDeclaration | undefined;
+    comment?: string | NodeArray<JSDocComment> | undefined;
 }): JSDocTypedefTag;
 export function updateJSDocTypedefTag(o) {
     return ts.factory.updateJSDocTypedefTag(o.node, o.tagName, o.typeExpression, o.fullName, o.comment);
 }
 export function createJSDocParameterTag({ tagName, name, isBracketed, typeExpression, isNameFirst, comment }: {
-    tagName: Identifier | undefined;
+    tagName?: Identifier | undefined;
     name: EntityName;
     isBracketed: boolean;
     typeExpression?: JSDocTypeExpression;
@@ -2495,18 +2495,18 @@ export function createJSDocParameterTag(o) {
 }
 export function updateJSDocParameterTag({ node, tagName, name, isBracketed, typeExpression, isNameFirst, comment }: {
     node: JSDocParameterTag;
-    tagName: Identifier | undefined;
+    tagName?: Identifier | undefined;
     name: EntityName;
     isBracketed: boolean;
-    typeExpression: JSDocTypeExpression | undefined;
+    typeExpression?: JSDocTypeExpression | undefined;
     isNameFirst: boolean;
-    comment: string | NodeArray<JSDocComment> | undefined;
+    comment?: string | NodeArray<JSDocComment> | undefined;
 }): JSDocParameterTag;
 export function updateJSDocParameterTag(o) {
     return ts.factory.updateJSDocParameterTag(o.node, o.tagName, o.name, o.isBracketed, o.typeExpression, o.isNameFirst, o.comment);
 }
 export function createJSDocPropertyTag({ tagName, name, isBracketed, typeExpression, isNameFirst, comment }: {
-    tagName: Identifier | undefined;
+    tagName?: Identifier | undefined;
     name: EntityName;
     isBracketed: boolean;
     typeExpression?: JSDocTypeExpression;
@@ -2518,18 +2518,18 @@ export function createJSDocPropertyTag(o) {
 }
 export function updateJSDocPropertyTag({ node, tagName, name, isBracketed, typeExpression, isNameFirst, comment }: {
     node: JSDocPropertyTag;
-    tagName: Identifier | undefined;
+    tagName?: Identifier | undefined;
     name: EntityName;
     isBracketed: boolean;
-    typeExpression: JSDocTypeExpression | undefined;
+    typeExpression?: JSDocTypeExpression | undefined;
     isNameFirst: boolean;
-    comment: string | NodeArray<JSDocComment> | undefined;
+    comment?: string | NodeArray<JSDocComment> | undefined;
 }): JSDocPropertyTag;
 export function updateJSDocPropertyTag(o) {
     return ts.factory.updateJSDocPropertyTag(o.node, o.tagName, o.name, o.isBracketed, o.typeExpression, o.isNameFirst, o.comment);
 }
 export function createJSDocTypeTag({ tagName, typeExpression, comment }: {
-    tagName: Identifier | undefined;
+    tagName?: Identifier | undefined;
     typeExpression: JSDocTypeExpression;
     comment?: string | NodeArray<JSDocComment>;
 }): JSDocTypeTag;
@@ -2538,16 +2538,16 @@ export function createJSDocTypeTag(o) {
 }
 export function updateJSDocTypeTag({ node, tagName, typeExpression, comment }: {
     node: JSDocTypeTag;
-    tagName: Identifier | undefined;
+    tagName?: Identifier | undefined;
     typeExpression: JSDocTypeExpression;
-    comment: string | NodeArray<JSDocComment> | undefined;
+    comment?: string | NodeArray<JSDocComment> | undefined;
 }): JSDocTypeTag;
 export function updateJSDocTypeTag(o) {
     return ts.factory.updateJSDocTypeTag(o.node, o.tagName, o.typeExpression, o.comment);
 }
 export function createJSDocSeeTag({ tagName, nameExpression, comment }: {
-    tagName: Identifier | undefined;
-    nameExpression: JSDocNameReference | undefined;
+    tagName?: Identifier | undefined;
+    nameExpression?: JSDocNameReference | undefined;
     comment?: string | NodeArray<JSDocComment>;
 }): JSDocSeeTag;
 export function createJSDocSeeTag(o) {
@@ -2555,15 +2555,15 @@ export function createJSDocSeeTag(o) {
 }
 export function updateJSDocSeeTag({ node, tagName, nameExpression, comment }: {
     node: JSDocSeeTag;
-    tagName: Identifier | undefined;
-    nameExpression: JSDocNameReference | undefined;
+    tagName?: Identifier | undefined;
+    nameExpression?: JSDocNameReference | undefined;
     comment?: string | NodeArray<JSDocComment>;
 }): JSDocSeeTag;
 export function updateJSDocSeeTag(o) {
     return ts.factory.updateJSDocSeeTag(o.node, o.tagName, o.nameExpression, o.comment);
 }
 export function createJSDocReturnTag({ tagName, typeExpression, comment }: {
-    tagName: Identifier | undefined;
+    tagName?: Identifier | undefined;
     typeExpression?: JSDocTypeExpression;
     comment?: string | NodeArray<JSDocComment>;
 }): JSDocReturnTag;
@@ -2572,15 +2572,15 @@ export function createJSDocReturnTag(o) {
 }
 export function updateJSDocReturnTag({ node, tagName, typeExpression, comment }: {
     node: JSDocReturnTag;
-    tagName: Identifier | undefined;
-    typeExpression: JSDocTypeExpression | undefined;
-    comment: string | NodeArray<JSDocComment> | undefined;
+    tagName?: Identifier | undefined;
+    typeExpression?: JSDocTypeExpression | undefined;
+    comment?: string | NodeArray<JSDocComment> | undefined;
 }): JSDocReturnTag;
 export function updateJSDocReturnTag(o) {
     return ts.factory.updateJSDocReturnTag(o.node, o.tagName, o.typeExpression, o.comment);
 }
 export function createJSDocThisTag({ tagName, typeExpression, comment }: {
-    tagName: Identifier | undefined;
+    tagName?: Identifier | undefined;
     typeExpression: JSDocTypeExpression;
     comment?: string | NodeArray<JSDocComment>;
 }): JSDocThisTag;
@@ -2589,15 +2589,15 @@ export function createJSDocThisTag(o) {
 }
 export function updateJSDocThisTag({ node, tagName, typeExpression, comment }: {
     node: JSDocThisTag;
-    tagName: Identifier | undefined;
-    typeExpression: JSDocTypeExpression | undefined;
-    comment: string | NodeArray<JSDocComment> | undefined;
+    tagName?: Identifier | undefined;
+    typeExpression?: JSDocTypeExpression | undefined;
+    comment?: string | NodeArray<JSDocComment> | undefined;
 }): JSDocThisTag;
 export function updateJSDocThisTag(o) {
     return ts.factory.updateJSDocThisTag(o.node, o.tagName, o.typeExpression, o.comment);
 }
 export function createJSDocEnumTag({ tagName, typeExpression, comment }: {
-    tagName: Identifier | undefined;
+    tagName?: Identifier | undefined;
     typeExpression: JSDocTypeExpression;
     comment?: string | NodeArray<JSDocComment>;
 }): JSDocEnumTag;
@@ -2606,15 +2606,15 @@ export function createJSDocEnumTag(o) {
 }
 export function updateJSDocEnumTag({ node, tagName, typeExpression, comment }: {
     node: JSDocEnumTag;
-    tagName: Identifier | undefined;
+    tagName?: Identifier | undefined;
     typeExpression: JSDocTypeExpression;
-    comment: string | NodeArray<JSDocComment> | undefined;
+    comment?: string | NodeArray<JSDocComment> | undefined;
 }): JSDocEnumTag;
 export function updateJSDocEnumTag(o) {
     return ts.factory.updateJSDocEnumTag(o.node, o.tagName, o.typeExpression, o.comment);
 }
 export function createJSDocCallbackTag({ tagName, typeExpression, fullName, comment }: {
-    tagName: Identifier | undefined;
+    tagName?: Identifier | undefined;
     typeExpression: JSDocSignature;
     fullName?: Identifier | JSDocNamespaceDeclaration;
     comment?: string | NodeArray<JSDocComment>;
@@ -2624,16 +2624,16 @@ export function createJSDocCallbackTag(o) {
 }
 export function updateJSDocCallbackTag({ node, tagName, typeExpression, fullName, comment }: {
     node: JSDocCallbackTag;
-    tagName: Identifier | undefined;
+    tagName?: Identifier | undefined;
     typeExpression: JSDocSignature;
-    fullName: Identifier | JSDocNamespaceDeclaration | undefined;
-    comment: string | NodeArray<JSDocComment> | undefined;
+    fullName?: Identifier | JSDocNamespaceDeclaration | undefined;
+    comment?: string | NodeArray<JSDocComment> | undefined;
 }): JSDocCallbackTag;
 export function updateJSDocCallbackTag(o) {
     return ts.factory.updateJSDocCallbackTag(o.node, o.tagName, o.typeExpression, o.fullName, o.comment);
 }
 export function createJSDocOverloadTag({ tagName, typeExpression, comment }: {
-    tagName: Identifier | undefined;
+    tagName?: Identifier | undefined;
     typeExpression: JSDocSignature;
     comment?: string | NodeArray<JSDocComment>;
 }): JSDocOverloadTag;
@@ -2642,15 +2642,15 @@ export function createJSDocOverloadTag(o) {
 }
 export function updateJSDocOverloadTag({ node, tagName, typeExpression, comment }: {
     node: JSDocOverloadTag;
-    tagName: Identifier | undefined;
+    tagName?: Identifier | undefined;
     typeExpression: JSDocSignature;
-    comment: string | NodeArray<JSDocComment> | undefined;
+    comment?: string | NodeArray<JSDocComment> | undefined;
 }): JSDocOverloadTag;
 export function updateJSDocOverloadTag(o) {
     return ts.factory.updateJSDocOverloadTag(o.node, o.tagName, o.typeExpression, o.comment);
 }
 export function createJSDocAugmentsTag({ tagName, className, comment }: {
-    tagName: Identifier | undefined;
+    tagName?: Identifier | undefined;
     className: JSDocAugmentsTag["class"];
     comment?: string | NodeArray<JSDocComment>;
 }): JSDocAugmentsTag;
@@ -2659,15 +2659,15 @@ export function createJSDocAugmentsTag(o) {
 }
 export function updateJSDocAugmentsTag({ node, tagName, className, comment }: {
     node: JSDocAugmentsTag;
-    tagName: Identifier | undefined;
+    tagName?: Identifier | undefined;
     className: JSDocAugmentsTag["class"];
-    comment: string | NodeArray<JSDocComment> | undefined;
+    comment?: string | NodeArray<JSDocComment> | undefined;
 }): JSDocAugmentsTag;
 export function updateJSDocAugmentsTag(o) {
     return ts.factory.updateJSDocAugmentsTag(o.node, o.tagName, o.className, o.comment);
 }
 export function createJSDocImplementsTag({ tagName, className, comment }: {
-    tagName: Identifier | undefined;
+    tagName?: Identifier | undefined;
     className: JSDocImplementsTag["class"];
     comment?: string | NodeArray<JSDocComment>;
 }): JSDocImplementsTag;
@@ -2676,15 +2676,15 @@ export function createJSDocImplementsTag(o) {
 }
 export function updateJSDocImplementsTag({ node, tagName, className, comment }: {
     node: JSDocImplementsTag;
-    tagName: Identifier | undefined;
+    tagName?: Identifier | undefined;
     className: JSDocImplementsTag["class"];
-    comment: string | NodeArray<JSDocComment> | undefined;
+    comment?: string | NodeArray<JSDocComment> | undefined;
 }): JSDocImplementsTag;
 export function updateJSDocImplementsTag(o) {
     return ts.factory.updateJSDocImplementsTag(o.node, o.tagName, o.className, o.comment);
 }
 export function createJSDocAuthorTag({ tagName, comment }: {
-    tagName: Identifier | undefined;
+    tagName?: Identifier | undefined;
     comment?: string | NodeArray<JSDocComment>;
 }): JSDocAuthorTag;
 export function createJSDocAuthorTag(o) {
@@ -2692,14 +2692,14 @@ export function createJSDocAuthorTag(o) {
 }
 export function updateJSDocAuthorTag({ node, tagName, comment }: {
     node: JSDocAuthorTag;
-    tagName: Identifier | undefined;
-    comment: string | NodeArray<JSDocComment> | undefined;
+    tagName?: Identifier | undefined;
+    comment?: string | NodeArray<JSDocComment> | undefined;
 }): JSDocAuthorTag;
 export function updateJSDocAuthorTag(o) {
     return ts.factory.updateJSDocAuthorTag(o.node, o.tagName, o.comment);
 }
 export function createJSDocClassTag({ tagName, comment }: {
-    tagName: Identifier | undefined;
+    tagName?: Identifier | undefined;
     comment?: string | NodeArray<JSDocComment>;
 }): JSDocClassTag;
 export function createJSDocClassTag(o) {
@@ -2707,14 +2707,14 @@ export function createJSDocClassTag(o) {
 }
 export function updateJSDocClassTag({ node, tagName, comment }: {
     node: JSDocClassTag;
-    tagName: Identifier | undefined;
-    comment: string | NodeArray<JSDocComment> | undefined;
+    tagName?: Identifier | undefined;
+    comment?: string | NodeArray<JSDocComment> | undefined;
 }): JSDocClassTag;
 export function updateJSDocClassTag(o) {
     return ts.factory.updateJSDocClassTag(o.node, o.tagName, o.comment);
 }
 export function createJSDocPublicTag({ tagName, comment }: {
-    tagName: Identifier | undefined;
+    tagName?: Identifier | undefined;
     comment?: string | NodeArray<JSDocComment>;
 }): JSDocPublicTag;
 export function createJSDocPublicTag(o) {
@@ -2722,14 +2722,14 @@ export function createJSDocPublicTag(o) {
 }
 export function updateJSDocPublicTag({ node, tagName, comment }: {
     node: JSDocPublicTag;
-    tagName: Identifier | undefined;
-    comment: string | NodeArray<JSDocComment> | undefined;
+    tagName?: Identifier | undefined;
+    comment?: string | NodeArray<JSDocComment> | undefined;
 }): JSDocPublicTag;
 export function updateJSDocPublicTag(o) {
     return ts.factory.updateJSDocPublicTag(o.node, o.tagName, o.comment);
 }
 export function createJSDocPrivateTag({ tagName, comment }: {
-    tagName: Identifier | undefined;
+    tagName?: Identifier | undefined;
     comment?: string | NodeArray<JSDocComment>;
 }): JSDocPrivateTag;
 export function createJSDocPrivateTag(o) {
@@ -2737,14 +2737,14 @@ export function createJSDocPrivateTag(o) {
 }
 export function updateJSDocPrivateTag({ node, tagName, comment }: {
     node: JSDocPrivateTag;
-    tagName: Identifier | undefined;
-    comment: string | NodeArray<JSDocComment> | undefined;
+    tagName?: Identifier | undefined;
+    comment?: string | NodeArray<JSDocComment> | undefined;
 }): JSDocPrivateTag;
 export function updateJSDocPrivateTag(o) {
     return ts.factory.updateJSDocPrivateTag(o.node, o.tagName, o.comment);
 }
 export function createJSDocProtectedTag({ tagName, comment }: {
-    tagName: Identifier | undefined;
+    tagName?: Identifier | undefined;
     comment?: string | NodeArray<JSDocComment>;
 }): JSDocProtectedTag;
 export function createJSDocProtectedTag(o) {
@@ -2752,14 +2752,14 @@ export function createJSDocProtectedTag(o) {
 }
 export function updateJSDocProtectedTag({ node, tagName, comment }: {
     node: JSDocProtectedTag;
-    tagName: Identifier | undefined;
-    comment: string | NodeArray<JSDocComment> | undefined;
+    tagName?: Identifier | undefined;
+    comment?: string | NodeArray<JSDocComment> | undefined;
 }): JSDocProtectedTag;
 export function updateJSDocProtectedTag(o) {
     return ts.factory.updateJSDocProtectedTag(o.node, o.tagName, o.comment);
 }
 export function createJSDocReadonlyTag({ tagName, comment }: {
-    tagName: Identifier | undefined;
+    tagName?: Identifier | undefined;
     comment?: string | NodeArray<JSDocComment>;
 }): JSDocReadonlyTag;
 export function createJSDocReadonlyTag(o) {
@@ -2767,8 +2767,8 @@ export function createJSDocReadonlyTag(o) {
 }
 export function updateJSDocReadonlyTag({ node, tagName, comment }: {
     node: JSDocReadonlyTag;
-    tagName: Identifier | undefined;
-    comment: string | NodeArray<JSDocComment> | undefined;
+    tagName?: Identifier | undefined;
+    comment?: string | NodeArray<JSDocComment> | undefined;
 }): JSDocReadonlyTag;
 export function updateJSDocReadonlyTag(o) {
     return ts.factory.updateJSDocReadonlyTag(o.node, o.tagName, o.comment);
@@ -2783,13 +2783,13 @@ export function createJSDocUnknownTag(o) {
 export function updateJSDocUnknownTag({ node, tagName, comment }: {
     node: JSDocUnknownTag;
     tagName: Identifier;
-    comment: string | NodeArray<JSDocComment> | undefined;
+    comment?: string | NodeArray<JSDocComment> | undefined;
 }): JSDocUnknownTag;
 export function updateJSDocUnknownTag(o) {
     return ts.factory.updateJSDocUnknownTag(o.node, o.tagName, o.comment);
 }
 export function createJSDocDeprecatedTag({ tagName, comment }: {
-    tagName: Identifier | undefined;
+    tagName?: Identifier | undefined;
     comment?: string | NodeArray<JSDocComment>;
 }): JSDocDeprecatedTag;
 export function createJSDocDeprecatedTag(o) {
@@ -2797,14 +2797,14 @@ export function createJSDocDeprecatedTag(o) {
 }
 export function updateJSDocDeprecatedTag({ node, tagName, comment }: {
     node: JSDocDeprecatedTag;
-    tagName: Identifier | undefined;
+    tagName?: Identifier | undefined;
     comment?: string | NodeArray<JSDocComment>;
 }): JSDocDeprecatedTag;
 export function updateJSDocDeprecatedTag(o) {
     return ts.factory.updateJSDocDeprecatedTag(o.node, o.tagName, o.comment);
 }
 export function createJSDocOverrideTag({ tagName, comment }: {
-    tagName: Identifier | undefined;
+    tagName?: Identifier | undefined;
     comment?: string | NodeArray<JSDocComment>;
 }): JSDocOverrideTag;
 export function createJSDocOverrideTag(o) {
@@ -2812,7 +2812,7 @@ export function createJSDocOverrideTag(o) {
 }
 export function updateJSDocOverrideTag({ node, tagName, comment }: {
     node: JSDocOverrideTag;
-    tagName: Identifier | undefined;
+    tagName?: Identifier | undefined;
     comment?: string | NodeArray<JSDocComment>;
 }): JSDocOverrideTag;
 export function updateJSDocOverrideTag(o) {
@@ -2820,7 +2820,7 @@ export function updateJSDocOverrideTag(o) {
 }
 export function createJSDocThrowsTag({ tagName, typeExpression, comment }: {
     tagName: Identifier;
-    typeExpression: JSDocTypeExpression | undefined;
+    typeExpression?: JSDocTypeExpression | undefined;
     comment?: string | NodeArray<JSDocComment>;
 }): JSDocThrowsTag;
 export function createJSDocThrowsTag(o) {
@@ -2828,15 +2828,15 @@ export function createJSDocThrowsTag(o) {
 }
 export function updateJSDocThrowsTag({ node, tagName, typeExpression, comment }: {
     node: JSDocThrowsTag;
-    tagName: Identifier | undefined;
-    typeExpression: JSDocTypeExpression | undefined;
+    tagName?: Identifier | undefined;
+    typeExpression?: JSDocTypeExpression | undefined;
     comment?: string | NodeArray<JSDocComment> | undefined;
 }): JSDocThrowsTag;
 export function updateJSDocThrowsTag(o) {
     return ts.factory.updateJSDocThrowsTag(o.node, o.tagName, o.typeExpression, o.comment);
 }
 export function createJSDocSatisfiesTag({ tagName, typeExpression, comment }: {
-    tagName: Identifier | undefined;
+    tagName?: Identifier | undefined;
     typeExpression: JSDocTypeExpression;
     comment?: string | NodeArray<JSDocComment>;
 }): JSDocSatisfiesTag;
@@ -2845,9 +2845,9 @@ export function createJSDocSatisfiesTag(o) {
 }
 export function updateJSDocSatisfiesTag({ node, tagName, typeExpression, comment }: {
     node: JSDocSatisfiesTag;
-    tagName: Identifier | undefined;
+    tagName?: Identifier | undefined;
     typeExpression: JSDocTypeExpression;
-    comment: string | NodeArray<JSDocComment> | undefined;
+    comment?: string | NodeArray<JSDocComment> | undefined;
 }): JSDocSatisfiesTag;
 export function updateJSDocSatisfiesTag(o) {
     return ts.factory.updateJSDocSatisfiesTag(o.node, o.tagName, o.typeExpression, o.comment);
@@ -2875,8 +2875,8 @@ export function createJSDocComment(o) {
 }
 export function updateJSDocComment({ node, comment, tags }: {
     node: JSDoc;
-    comment: string | NodeArray<JSDocComment> | undefined;
-    tags: readonly JSDocTag[] | undefined;
+    comment?: string | NodeArray<JSDocComment> | undefined;
+    tags?: readonly JSDocTag[] | undefined;
 }): JSDoc;
 export function updateJSDocComment(o) {
     return ts.factory.updateJSDocComment(o.node, o.comment, o.tags);
@@ -2900,7 +2900,7 @@ export function updateJsxElement(o) {
 }
 export function createJsxSelfClosingElement({ tagName, typeArguments, attributes }: {
     tagName: JsxTagNameExpression;
-    typeArguments: readonly TypeNode[] | undefined;
+    typeArguments?: readonly TypeNode[] | undefined;
     attributes: JsxAttributes;
 }): JsxSelfClosingElement;
 export function createJsxSelfClosingElement(o) {
@@ -2909,7 +2909,7 @@ export function createJsxSelfClosingElement(o) {
 export function updateJsxSelfClosingElement({ node, tagName, typeArguments, attributes }: {
     node: JsxSelfClosingElement;
     tagName: JsxTagNameExpression;
-    typeArguments: readonly TypeNode[] | undefined;
+    typeArguments?: readonly TypeNode[] | undefined;
     attributes: JsxAttributes;
 }): JsxSelfClosingElement;
 export function updateJsxSelfClosingElement(o) {
@@ -2917,7 +2917,7 @@ export function updateJsxSelfClosingElement(o) {
 }
 export function createJsxOpeningElement({ tagName, typeArguments, attributes }: {
     tagName: JsxTagNameExpression;
-    typeArguments: readonly TypeNode[] | undefined;
+    typeArguments?: readonly TypeNode[] | undefined;
     attributes: JsxAttributes;
 }): JsxOpeningElement;
 export function createJsxOpeningElement(o) {
@@ -2926,7 +2926,7 @@ export function createJsxOpeningElement(o) {
 export function updateJsxOpeningElement({ node, tagName, typeArguments, attributes }: {
     node: JsxOpeningElement;
     tagName: JsxTagNameExpression;
-    typeArguments: readonly TypeNode[] | undefined;
+    typeArguments?: readonly TypeNode[] | undefined;
     attributes: JsxAttributes;
 }): JsxOpeningElement;
 export function updateJsxOpeningElement(o) {
@@ -2988,7 +2988,7 @@ export function updateJsxFragment(o) {
 }
 export function createJsxAttribute({ name, initializer }: {
     name: JsxAttributeName;
-    initializer: JsxAttributeValue | undefined;
+    initializer?: JsxAttributeValue | undefined;
 }): JsxAttribute;
 export function createJsxAttribute(o) {
     return ts.factory.createJsxAttribute(o.name, o.initializer);
@@ -2996,7 +2996,7 @@ export function createJsxAttribute(o) {
 export function updateJsxAttribute({ node, name, initializer }: {
     node: JsxAttribute;
     name: JsxAttributeName;
-    initializer: JsxAttributeValue | undefined;
+    initializer?: JsxAttributeValue | undefined;
 }): JsxAttribute;
 export function updateJsxAttribute(o) {
     return ts.factory.updateJsxAttribute(o.node, o.name, o.initializer);
@@ -3030,15 +3030,15 @@ export function updateJsxSpreadAttribute(o) {
     return ts.factory.updateJsxSpreadAttribute(o.node, o.expression);
 }
 export function createJsxExpression({ dotDotDotToken, expression }: {
-    dotDotDotToken: DotDotDotToken | undefined;
-    expression: Expression | undefined;
+    dotDotDotToken?: DotDotDotToken | undefined;
+    expression?: Expression | undefined;
 }): JsxExpression;
 export function createJsxExpression(o) {
     return ts.factory.createJsxExpression(o.dotDotDotToken, o.expression);
 }
 export function updateJsxExpression({ node, expression }: {
     node: JsxExpression;
-    expression: Expression | undefined;
+    expression?: Expression | undefined;
 }): JsxExpression;
 export function updateJsxExpression(o) {
     return ts.factory.updateJsxExpression(o.node, o.expression);
@@ -3102,7 +3102,7 @@ export function updateHeritageClause(o) {
     return ts.factory.updateHeritageClause(o.node, o.types);
 }
 export function createCatchClause({ variableDeclaration, block }: {
-    variableDeclaration: string | BindingName | VariableDeclaration | undefined;
+    variableDeclaration?: string | BindingName | VariableDeclaration | undefined;
     block: Block;
 }): CatchClause;
 export function createCatchClause(o) {
@@ -3110,7 +3110,7 @@ export function createCatchClause(o) {
 }
 export function updateCatchClause({ node, variableDeclaration, block }: {
     node: CatchClause;
-    variableDeclaration: VariableDeclaration | undefined;
+    variableDeclaration?: VariableDeclaration | undefined;
     block: Block;
 }): CatchClause;
 export function updateCatchClause(o) {
@@ -3141,7 +3141,7 @@ export function createShorthandPropertyAssignment(o) {
 export function updateShorthandPropertyAssignment({ node, name, objectAssignmentInitializer }: {
     node: ShorthandPropertyAssignment;
     name: Identifier;
-    objectAssignmentInitializer: Expression | undefined;
+    objectAssignmentInitializer?: Expression | undefined;
 }): ShorthandPropertyAssignment;
 export function updateShorthandPropertyAssignment(o) {
     return ts.factory.updateShorthandPropertyAssignment(o.node, o.name, o.objectAssignmentInitializer);
@@ -3170,7 +3170,7 @@ export function createEnumMember(o) {
 export function updateEnumMember({ node, name, initializer }: {
     node: EnumMember;
     name: PropertyName;
-    initializer: Expression | undefined;
+    initializer?: Expression | undefined;
 }): EnumMember;
 export function updateEnumMember(o) {
     return ts.factory.updateEnumMember(o.node, o.name, o.initializer);
@@ -3524,7 +3524,7 @@ export function createExternalModuleExport(o) {
     return typeof o === "object" && "exportName" in o ? ts.factory.createExternalModuleExport(o.exportName) : ts.factory.createExternalModuleExport(o);
 }
 export function restoreOuterExpressions({ outerExpression, innerExpression, kinds }: {
-    outerExpression: Expression | undefined;
+    outerExpression?: Expression | undefined;
     innerExpression: Expression;
     kinds?: OuterExpressionKinds;
 }): Expression;
@@ -3533,14 +3533,14 @@ export function restoreOuterExpressions(o) {
 }
 export function replaceModifiers<T extends HasModifiers>({ node, modifiers }: {
     node: T;
-    modifiers: readonly Modifier[] | ModifierFlags | undefined;
+    modifiers?: readonly Modifier[] | ModifierFlags | undefined;
 }): T;
 export function replaceModifiers(o) {
     return ts.factory.replaceModifiers(o.node, o.modifiers);
 }
 export function replaceDecoratorsAndModifiers<T extends HasModifiers & HasDecorators>({ node, modifiers }: {
     node: T;
-    modifiers: readonly ModifierLike[] | undefined;
+    modifiers?: readonly ModifierLike[] | undefined;
 }): T;
 export function replaceDecoratorsAndModifiers(o) {
     return ts.factory.replaceDecoratorsAndModifiers(o.node, o.modifiers);
