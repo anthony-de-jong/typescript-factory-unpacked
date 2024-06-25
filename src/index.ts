@@ -1,10 +1,11 @@
-import ts, { Identifier, Modifier, Node, SourceFile } from 'typescript';
+import ts, { Identifier } from 'typescript';
 import { existsSync, readFileSync, renameSync, writeFileSync } from 'fs';
 import { default as assert } from 'assert';
 
 import generateHeaderComment from './header-comment.js';
 
 import * as factory from "../lib/generated.ts";
+import { findAll, findAllInFile, findFirstInFile } from './node-utils.ts';
 
 const FLAG_SINGLE_ARGUMENT_SUPPORT = false;
 
@@ -17,18 +18,6 @@ if (!existsSync(typesPath))
 
 const typesContent = readFileSync(typesPath, { encoding: 'utf-8' });
 const typeFile = ts.createSourceFile('types.ts', typesContent, ts.ScriptTarget.ESNext, false, ts.ScriptKind.TS);
-
-function* nodeIterator(file: SourceFile, node: Node, filter: (node: Node) => boolean): Generator<Node> {
-    if (filter(node))
-        yield node;
-
-    for (const child of node.getChildren(file))
-        yield* nodeIterator(file, child, filter);
-}
-
-function findFirstInFile<T extends Node = Node>(file: SourceFile, filter: (node: Node) => boolean): T | undefined {
-    return nodeIterator(file, file, filter).next().value as T;
-}
 
 // Get variable declaration of the 'factory' value.
 const declarationFactory = findFirstInFile(typeFile, n => ts.isVariableDeclaration(n) && ts.isIdentifier(n.name) && n.name.text === 'factory');
@@ -203,7 +192,7 @@ function createFunction_ObjectArgument({ name, typeParameters, parameters, type 
                 }),
                 type: parameters.length && factory.createTypeLiteralNode({
                     members: parameters.map(p => factory.createPropertySignature({
-                        modifiers: p.modifiers?.filter(a => ts.isModifier(a)) as Modifier[],
+                        modifiers: p.modifiers?.filter(a => ts.isModifier(a)) as ts.Modifier[],
                         name: p.name as Identifier,
                         questionToken: isParameterOptional(p)
                             ? factory.createToken({ token: ts.SyntaxKind.QuestionToken })

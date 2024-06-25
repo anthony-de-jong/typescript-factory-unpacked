@@ -1,7 +1,7 @@
 /*
     This code is automayicly generated, do not edit by hand.
-    Generated at: 2024-06-15 11:16:50.533
-    Generated for: typescript@5.4.5
+    Generated at: 2024-06-25 11:11:18.398
+    Generated for: typescript@5.5.2
 */
 import ts from "typescript";
 ;
@@ -1055,6 +1055,12 @@ export function createJSDocSatisfiesTag(o) {
 export function updateJSDocSatisfiesTag(o) {
     return ts.factory.updateJSDocSatisfiesTag(o.node, o.tagName, o.typeExpression, o.comment);
 }
+export function createJSDocImportTag(o) {
+    return ts.factory.createJSDocImportTag(o.tagName, o.importClause, o.moduleSpecifier, o.attributes, o.comment);
+}
+export function updateJSDocImportTag(o) {
+    return ts.factory.updateJSDocImportTag(o.node, o.tagName, o.importClause, o.moduleSpecifier, o.attributes, o.comment);
+}
 export function createJSDocText(o) {
     return ts.factory.createJSDocText(o.text);
 }
@@ -1209,10 +1215,10 @@ export function updateCommaListExpression(o) {
     return ts.factory.updateCommaListExpression(o.node, o.elements);
 }
 export function createBundle(o) {
-    return ts.factory.createBundle(o.sourceFiles, o.prepends);
+    return ts.factory.createBundle(o.sourceFiles);
 }
 export function updateBundle(o) {
-    return ts.factory.updateBundle(o.node, o.sourceFiles, o.prepends);
+    return ts.factory.updateBundle(o.node, o.sourceFiles);
 }
 export function createComma(o) {
     return ts.factory.createComma(o.left, o.right);

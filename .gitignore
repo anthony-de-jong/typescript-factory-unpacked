@@ -274,3 +274,7 @@ node_modules/typescript/lib/lib.esnext.collection.d.ts
 node_modules/typescript/lib/lib.esnext.object.d.ts
 node_modules/typescript/lib/lib.esnext.promise.d.ts
 node_modules/typescript/lib/lib.webworker.asynciterable.d.ts
+node_modules/typescript/lib/lib.es2023.intl.d.ts
+node_modules/typescript/lib/lib.esnext.array.d.ts
+node_modules/typescript/lib/lib.esnext.regexp.d.ts
+node_modules/typescript/lib/lib.esnext.string.d.ts
