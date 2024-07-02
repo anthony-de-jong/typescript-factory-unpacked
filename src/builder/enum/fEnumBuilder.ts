@@ -1,13 +1,12 @@
 import type { KeyOf } from "../types.ts";
-import type { EnumMemberList, EnumMemberListAdd, EnumMemberType } from "./types.ts";
+import type { fEnumBuilderAdd, EnumMemberList, EnumMemberType } from "./types.ts";
 
 import ts, { factory, SyntaxKind } from "typescript";
 
 import { fEnum } from "./fEnum.ts";
 import { Expression} from "./types.ts";
 
-// TODO: Find way to keep order of defined members.
-export class fEnumBuilder<Members extends EnumMemberList = {}> {
+export class fEnumBuilder<Members extends EnumMemberList = {}, N extends number = 0> {
     #name: string;
     #members = new Map<string, ts.Expression>();
 
@@ -17,9 +16,9 @@ export class fEnumBuilder<Members extends EnumMemberList = {}> {
         // TODO: Validate name as identifier.
     }
 
-    member<Name extends string>(name: Name): fEnumBuilder<EnumMemberListAdd<Members, Name, number>>;
-    member<Name extends string, Value extends number | string>(name: Name, initial: Value): fEnumBuilder<EnumMemberListAdd<Members, Name, Value>>;
-    member<Name extends string, Value extends Expression>(name: Name, initializer: (b: fEnumMemberBuilder<Members>) => Value): fEnumBuilder<EnumMemberListAdd<Members, Name, Value>>;
+    member<Name extends string>(name: Name): fEnumBuilderAdd<this, Name, unknown>;
+    member<Name extends string, Value extends number | string>(name: Name, initial: Value): fEnumBuilderAdd<this, Name, Value>
+    member<Name extends string, Value extends Expression>(name: Name, initializer: (b: fEnumMemberBuilder<Members>) => Value): fEnumBuilderAdd<this, Name, Value>
     member(name: string, initializer?: number | string | ((b: fEnumMemberBuilder<Members>) => Expression)) {
         if (this.#members.has(name))
             throw new Error("Member already exists with name: " + name);
@@ -46,7 +45,8 @@ export class fEnumBuilder<Members extends EnumMemberList = {}> {
 
         this.#members.set(name, expression);
 
-        return this;
+        // Cast to unkown to make all the method definitions happy.
+        return this as unknown;
     }
 
     /** @ignore */

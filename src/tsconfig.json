@@ -7,5 +7,6 @@
         "lib": ["ESNext"],
         "esModuleInterop": true,
         "allowImportingTsExtensions": true,
+        "noErrorTruncation": true,
     }
 }
