@@ -98,7 +98,7 @@ class fEnumMemberBuilder<
 
     pos<T extends number>(value: T): Expression<`+${T}`, number>;
     pos<T extends string>(value: T): Expression<`+'${T}'`, number>;
-    pos<E extends string>(value: Expression<E>): Expression<`+(${E})`, number>
+    pos<E extends string>(value: Expression<E>): Expression<`+${E extends `${"+" | "-"}${string}` ? ` ${E}` : E}`, number>
     pos(value: any) {
         return new Expression(factory.createPrefixUnaryExpression(
             SyntaxKind.PlusToken, createExpressionFromValue(value)
@@ -107,7 +107,7 @@ class fEnumMemberBuilder<
 
     neg<T extends number>(value: T): Expression<`-${T}`, number>;
     neg<T extends string>(value: T): Expression<`-'${T}'`, number>;
-    neg<E extends string>(value: Expression<E>): Expression<`-(${E})`, number>
+    neg<E extends string>(value: Expression<E>): Expression<`-${E extends `${"+" | "-"}${string}` ? ` ${E}` : E}`, number>
     neg(value: any) {
         return new Expression(factory.createPrefixUnaryExpression(
             SyntaxKind.MinusToken, createExpressionFromValue(value)
@@ -123,15 +123,15 @@ class fEnumMemberBuilder<
     add<L extends number, R extends string>(left: L, right: R): Expression<`${L} + '${R}'`, string>;
     add<L extends string, R extends string>(left: L, right: R): Expression<`'${L}' + '${R}'`, string>;
 
-    add<L extends string, R extends number>(left: Expression<L, number>, right: R): Expression<`(${L}) + ${R}`, number>;
-    add<L extends string, R extends string>(left: Expression<L, number | string>, right: R): Expression<`(${L}) + '${R}'`, string>;
+    add<L extends string, R extends number>(left: Expression<L, number>, right: R): Expression<`${L} + ${R}`, number>;
+    add<L extends string, R extends string>(left: Expression<L, number | string>, right: R): Expression<`${L} + '${R}'`, string>;
 
-    add<L extends number, R extends string>(left: L, right: Expression<R, number>): Expression<`${L} + (${R})`, number>;
-    add<L extends string, R extends string>(left: L, right: Expression<R, number | string>): Expression<`${L} + (${R})`, string>;
+    add<L extends number, R extends string>(left: L, right: Expression<R, number>): Expression<`${L} + ${R}`, number>;
+    add<L extends string, R extends string>(left: L, right: Expression<R, number | string>): Expression<`${L} + ${R}`, string>;
     
-    add<L extends string, R extends string>(left: Expression<L, number>, right: Expression<R, number>): Expression<`(${L}) + (${R})`, number>;
-    add<L extends string, R extends string>(left: Expression<L, number | string>, right: Expression<R, string>): Expression<`(${L}) + (${R})`, string>;
-    add<L extends string, R extends string>(left: Expression<L, string>, right: Expression<R, number | string>): Expression<`(${L}) + (${R})`, string>;
+    add<L extends string, R extends string>(left: Expression<L, number>, right: Expression<R, number>): Expression<`${L} + ${R}`, number>;
+    add<L extends string, R extends string>(left: Expression<L, number | string>, right: Expression<R, string>): Expression<`${L} + ${R}`, string>;
+    add<L extends string, R extends string>(left: Expression<L, string>, right: Expression<R, number | string>): Expression<`${L} + ${R}`, string>;
 
     add(left: any, right: any) {
         return new Expression(factory.createBinaryExpression(
@@ -143,9 +143,9 @@ class fEnumMemberBuilder<
 
 
     sub<L extends number, R extends number>(left: L, right: R): Expression<`${L} - ${R}`, number>;
-    sub<L extends string, R extends number>(left: Expression<L, number>, right: R): Expression<`(${L}) - ${R}`, number>;
-    sub<L extends number, R extends string>(left: L, right: Expression<R, number>): Expression<`${L} - (${R})`, number>;
-    sub<L extends string, R extends string>(left: Expression<L, number>, right: Expression<R, number>): Expression<`(${L}) - (${R})`, number>;
+    sub<L extends string, R extends number>(left: Expression<L, number>, right: R): Expression<`${L} - ${R}`, number>;
+    sub<L extends number, R extends string>(left: L, right: Expression<R, number>): Expression<`${L} - ${R}`, number>;
+    sub<L extends string, R extends string>(left: Expression<L, number>, right: Expression<R, number>): Expression<`${L} - ${R}`, number>;
     sub(left: any, right: any) {
         return new Expression(factory.createBinaryExpression(
             createExpressionFromValue(left),
@@ -155,9 +155,9 @@ class fEnumMemberBuilder<
     }
 
     mul<L extends number, R extends number>(left: L, right: R): Expression<`${L} * ${R}`, number>;
-    mul<L extends string, R extends number>(left: Expression<L, number>, right: R): Expression<`(${L}) * ${R}`, number>;
-    mul<L extends number, R extends string>(left: L, right: Expression<R, number>): Expression<`${L} * (${R})`, number>;
-    mul<L extends string, R extends string>(left: Expression<L, number>, right: Expression<R, number>): Expression<`(${L}) * (${R})`, number>;
+    mul<L extends string, R extends number>(left: Expression<L, number>, right: R): Expression<`${L} * ${R}`, number>;
+    mul<L extends number, R extends string>(left: L, right: Expression<R, number>): Expression<`${L} * ${R}`, number>;
+    mul<L extends string, R extends string>(left: Expression<L, number>, right: Expression<R, number>): Expression<`${L} * ${R}`, number>;
     mul(left: any, right: any) {
         return new Expression(factory.createBinaryExpression(
             createExpressionFromValue(left),
@@ -167,9 +167,9 @@ class fEnumMemberBuilder<
     }
 
     div<L extends number, R extends number>(left: L, right: R): Expression<`${L} / ${R}`, number>;
-    div<L extends string, R extends number>(left: Expression<L, number>, right: R): Expression<`(${L}) / ${R}`, number>;
-    div<L extends number, R extends string>(left: L, right: Expression<R, number>): Expression<`${L} / (${R})`, number>;
-    div<L extends string, R extends string>(left: Expression<L, number>, right: Expression<R, number>): Expression<`(${L}) / (${R})`, number>;
+    div<L extends string, R extends number>(left: Expression<L, number>, right: R): Expression<`${L} / ${R}`, number>;
+    div<L extends number, R extends string>(left: L, right: Expression<R, number>): Expression<`${L} / ${R}`, number>;
+    div<L extends string, R extends string>(left: Expression<L, number>, right: Expression<R, number>): Expression<`${L} / ${R}`, number>;
     div(left: any, right: any) {
         return new Expression(factory.createBinaryExpression(
             createExpressionFromValue(left),
@@ -179,9 +179,9 @@ class fEnumMemberBuilder<
     }
 
     mod<L extends number, R extends number>(left: L, right: R): Expression<`${L} % ${R}`, number>;
-    mod<L extends string, R extends number>(left: Expression<L, number>, right: R): Expression<`(${L}) % ${R}`, number>;
-    mod<L extends number, R extends string>(left: L, right: Expression<R, number>): Expression<`${L} % (${R})`, number>;
-    mod<L extends string, R extends string>(left: Expression<L, number>, right: Expression<R, number>): Expression<`(${L}) % (${R})`, number>;
+    mod<L extends string, R extends number>(left: Expression<L, number>, right: R): Expression<`${L} % ${R}`, number>;
+    mod<L extends number, R extends string>(left: L, right: Expression<R, number>): Expression<`${L} % ${R}`, number>;
+    mod<L extends string, R extends string>(left: Expression<L, number>, right: Expression<R, number>): Expression<`${L} % ${R}`, number>;
     mod(left: any, right: any) {
         return new Expression(factory.createBinaryExpression(
             createExpressionFromValue(left),
@@ -195,9 +195,9 @@ class fEnumMemberBuilder<
     //
 
     b_or<L extends number, R extends number>(left: L, right: R): Expression<`${L} | ${R}`, number>;
-    b_or<L extends string, R extends number>(left: Expression<L, number>, right: R): Expression<`(${L}) | ${R}`, number>;
-    b_or<L extends number, R extends string>(left: L, right: Expression<R, number>): Expression<`${L} | (${R})`, number>;
-    b_or<L extends string, R extends string>(left: Expression<L, number>, right: Expression<R, number>): Expression<`(${L}) | (${R})`, number>;
+    b_or<L extends string, R extends number>(left: Expression<L, number>, right: R): Expression<`${L} | ${R}`, number>;
+    b_or<L extends number, R extends string>(left: L, right: Expression<R, number>): Expression<`${L} | ${R}`, number>;
+    b_or<L extends string, R extends string>(left: Expression<L, number>, right: Expression<R, number>): Expression<`${L} | ${R}`, number>;
     b_or(left: any, right: any) {
         return new Expression(factory.createBinaryExpression(
             createExpressionFromValue(left),
@@ -207,9 +207,9 @@ class fEnumMemberBuilder<
     }
 
     b_xor<L extends number, R extends number>(left: L, right: R): Expression<`${L} ^ ${R}`, number>;
-    b_xor<L extends string, R extends number>(left: Expression<L, number>, right: R): Expression<`(${L}) ^ ${R}`, number>;
-    b_xor<L extends number, R extends string>(left: L, right: Expression<R, number>): Expression<`${L} ^ (${R})`, number>;
-    b_xor<L extends string, R extends string>(left: Expression<L, number>, right: Expression<R, number>): Expression<`(${L}) ^ (${R})`, number>;
+    b_xor<L extends string, R extends number>(left: Expression<L, number>, right: R): Expression<`${L} ^ ${R}`, number>;
+    b_xor<L extends number, R extends string>(left: L, right: Expression<R, number>): Expression<`${L} ^ ${R}`, number>;
+    b_xor<L extends string, R extends string>(left: Expression<L, number>, right: Expression<R, number>): Expression<`${L} ^ ${R}`, number>;
     b_xor(left: any, right: any) {
         return new Expression(factory.createBinaryExpression(
             createExpressionFromValue(left),
@@ -219,9 +219,9 @@ class fEnumMemberBuilder<
     }
 
     b_and<L extends number, R extends number>(left: L, right: R): Expression<`${L} & ${R}`, number>;
-    b_and<L extends string, R extends number>(left: Expression<L, number>, right: R): Expression<`(${L}) & ${R}`, number>;
-    b_and<L extends number, R extends string>(left: L, right: Expression<R, number>): Expression<`${L} & (${R})`, number>;
-    b_and<L extends string, R extends string>(left: Expression<L, number>, right: Expression<R, number>): Expression<`(${L}) & (${R})`, number>;
+    b_and<L extends string, R extends number>(left: Expression<L, number>, right: R): Expression<`${L} & ${R}`, number>;
+    b_and<L extends number, R extends string>(left: L, right: Expression<R, number>): Expression<`${L} & ${R}`, number>;
+    b_and<L extends string, R extends string>(left: Expression<L, number>, right: Expression<R, number>): Expression<`${L} & ${R}`, number>;
     b_and(left: any, right: any) {
         return new Expression(factory.createBinaryExpression(
             createExpressionFromValue(left),
@@ -231,9 +231,9 @@ class fEnumMemberBuilder<
     }
 
     b_lshift<L extends number, R extends number>(left: L, right: R): Expression<`${L} << ${R}`, number>;
-    b_lshift<L extends string, R extends number>(left: Expression<L, number>, right: R): Expression<`(${L}) << ${R}`, number>;
-    b_lshift<L extends number, R extends string>(left: L, right: Expression<R, number>): Expression<`${L} << (${R})`, number>;
-    b_lshift<L extends string, R extends string>(left: Expression<L, number>, right: Expression<R, number>): Expression<`(${L}) << (${R})`, number>;
+    b_lshift<L extends string, R extends number>(left: Expression<L, number>, right: R): Expression<`${L} << ${R}`, number>;
+    b_lshift<L extends number, R extends string>(left: L, right: Expression<R, number>): Expression<`${L} << ${R}`, number>;
+    b_lshift<L extends string, R extends string>(left: Expression<L, number>, right: Expression<R, number>): Expression<`${L} << ${R}`, number>;
     b_lshift(left: any, right: any) {
         return new Expression(factory.createBinaryExpression(
             createExpressionFromValue(left),
@@ -244,12 +244,12 @@ class fEnumMemberBuilder<
 
     b_rshift<L extends number, R extends number>(left: L, right: R, withLeadingZeros: true): Expression<`${L} >>> ${R}`, number>;
     b_rshift<L extends number, R extends number>(left: L, right: R, withLeadingZeros?: false): Expression<`${L} >> ${R}`, number>;
-    b_rshift<L extends string, R extends number>(left: Expression<L, number>, right: R, withLeadingZeros: true): Expression<`(${L}) >>> ${R}`, number>;
-    b_rshift<L extends string, R extends number>(left: Expression<L, number>, right: R, withLeadingZeros?: false): Expression<`(${L}) >> ${R}`, number>;
-    b_rshift<L extends number, R extends string>(left: L, right: Expression<R, number>, withLeadingZeros: true): Expression<`${L} >>> (${R})`, number>;
-    b_rshift<L extends number, R extends string>(left: L, right: Expression<R, number>, withLeadingZeros?: false): Expression<`${L} >> (${R})`, number>;
-    b_rshift<L extends string, R extends string>(left: Expression<L, number>, right: Expression<R, number>, withLeadingZeros: true): Expression<`(${L}) >>> (${R})`, number>;
-    b_rshift<L extends string, R extends string>(left: Expression<L, number>, right: Expression<R, number>, withLeadingZeros?: false): Expression<`(${L}) >> (${R})`, number>;
+    b_rshift<L extends string, R extends number>(left: Expression<L, number>, right: R, withLeadingZeros: true): Expression<`${L} >>> ${R}`, number>;
+    b_rshift<L extends string, R extends number>(left: Expression<L, number>, right: R, withLeadingZeros?: false): Expression<`${L} >> ${R}`, number>;
+    b_rshift<L extends number, R extends string>(left: L, right: Expression<R, number>, withLeadingZeros: true): Expression<`${L} >>> ${R}`, number>;
+    b_rshift<L extends number, R extends string>(left: L, right: Expression<R, number>, withLeadingZeros?: false): Expression<`${L} >> ${R}`, number>;
+    b_rshift<L extends string, R extends string>(left: Expression<L, number>, right: Expression<R, number>, withLeadingZeros: true): Expression<`${L} >>> ${R}`, number>;
+    b_rshift<L extends string, R extends string>(left: Expression<L, number>, right: Expression<R, number>, withLeadingZeros?: false): Expression<`${L} >> ${R}`, number>;
     b_rshift(left: any, right: any, withLeadingZeros: boolean = false) {
         return new Expression(factory.createBinaryExpression(
             createExpressionFromValue(left),
