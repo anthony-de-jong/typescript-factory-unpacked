@@ -1,29 +1,32 @@
 import type { KeyOf } from "../types.ts";
-import type { fEnumBuilderAdd, EnumMemberList, EnumMemberType } from "./types.ts";
+import type { EnumBuilderAdd, EnumMemberList, EnumMemberType, EnumMemberListNames } from "./types.ts";
 
 import ts, { factory, SyntaxKind } from "typescript";
 
 import { fEnum } from "./fEnum.ts";
-import { Expression} from "./types.ts";
+import { Expression } from "./types.ts";
 
-export class fEnumBuilder<Members extends EnumMemberList = {}, N extends number = 0> {
-    #name: string;
+export class fEnumBuilder<
+    EnumName extends string = any,
+    EnumMembers extends EnumMemberList = {}, 
+    EnumIterator extends number = 0
+> {
     #members = new Map<string, ts.Expression>();
 
-    constructor(name: string) {
-        this.#name = name;
+    $identifier: ts.Identifier;
 
+    constructor(name: EnumName) {
         // TODO: Validate name as identifier.
+
+        this.$identifier = factory.createIdentifier(name);
     }
 
-    member<Name extends string>(name: Name): fEnumBuilderAdd<this, Name, unknown>;
-    member<Name extends string, Value extends number | string>(name: Name, initial: Value): fEnumBuilderAdd<this, Name, Value>
-    member<Name extends string, Value extends Expression>(name: Name, initializer: (b: fEnumMemberBuilder<Members>) => Value): fEnumBuilderAdd<this, Name, Value>
-    member(name: string, initializer?: number | string | ((b: fEnumMemberBuilder<Members>) => Expression)) {
+    member<Name extends string>(name: Name): EnumBuilderAdd<this, Name, unknown>;
+    member<Name extends string, Value extends number | string>(name: Name, initial: Value): EnumBuilderAdd<this, Name, Value>
+    member<Name extends string, Value extends Expression>(name: Name, initializer: (b: fEnumMemberBuilder<EnumName, EnumMembers>) => Value): EnumBuilderAdd<this, Name, Value>
+    member(name: string, initializer?: number | string | ((b: fEnumMemberBuilder<EnumName,EnumMembers>) => Expression)) {
         if (this.#members.has(name))
             throw new Error("Member already exists with name: " + name);
-
-        // TODO: Validate name as identifier.
 
         let expression: ts.Expression | undefined;
 
@@ -35,7 +38,7 @@ export class fEnumBuilder<Members extends EnumMemberList = {}, N extends number 
                 expression = createExpressionFromValue(initializer);
                 break;
             case "function":
-                expression = initializer(new fEnumMemberBuilder(this.#members.keys())).$expression;
+                expression = initializer(new fEnumMemberBuilder(this, this.#members.keys())).$expression;
                 break;
             default:
                 throw new Error("Invalid argument");
@@ -50,36 +53,43 @@ export class fEnumBuilder<Members extends EnumMemberList = {}, N extends number 
     }
 
     /** @ignore */
-    $build(): fEnum<Members> {
+    $build(): fEnum<EnumName, EnumMembers> {
         const statement = factory.createEnumDeclaration(
             [],
-            this.#name,
-            Array.from(this.#members.entries(), ([name, exp]) => factory.createEnumMember(name, exp))
+            this.$identifier,
+            Array.from(this.#members.entries(), ([name, exp]) => factory.createEnumMember(factory.createStringLiteral(name), exp))
         );
 
-        return new fEnum(this.#name, statement, Array.from(this.#members.keys()));
+        return new fEnum(statement);
     }
 }
 
-class fEnumMemberBuilder<Members extends EnumMemberList> {
+class fEnumMemberBuilder<
+    EnumName extends string, 
+    EnumMembers extends EnumMemberList
+> {
+    #builder: fEnumBuilder;
     #members: Set<string>;
 
-    constructor(members: Iterable<string>) {
+    constructor(builder: fEnumBuilder<any, any, any>, members: Iterable<string>) {
+        this.#builder = builder;
         this.#members = new Set(members)
-     }
+    }
 
     // Member getter:
     // First overload known members
     // Second overload anonymous members
 
-    get<Name extends KeyOf<Members>>(name: Name): Expression<Name, EnumMemberType<Members, Name>>;
-    get<Type extends number | string>(name: string): Expression<"{?}", Type>;
+    get<Name extends KeyOf<EnumMemberListNames<EnumMembers>>>(name: Name): Expression<`${EnumName}[${Name}]`, EnumMemberType<EnumMembers, Name>>;
+    get<Type extends number | string>(name: string): Expression<`${EnumName}[?]`, Type>;
 
     get(name: string) {
         if (!this.#members.has(name))
             throw new Error("No member with name: " + name);
 
-        return new Expression(factory.createIdentifier(name))
+        return new Expression(
+            factory.createElementAccessExpression(this.#builder.$identifier, factory.createStringLiteral(name))
+        );
     }
 
     //
@@ -88,19 +98,19 @@ class fEnumMemberBuilder<Members extends EnumMemberList> {
 
     pos<T extends number>(value: T): Expression<`+${T}`, number>;
     pos<T extends string>(value: T): Expression<`+'${T}'`, number>;
-    pos<E extends string>(builder: (b: this) => Expression<E>): Expression<`+(${E})`, number>
+    pos<E extends string>(value: Expression<E>): Expression<`+(${E})`, number>
     pos(value: any) {
         return new Expression(factory.createPrefixUnaryExpression(
-            SyntaxKind.PlusToken, this.#createInnerExpression(value)
+            SyntaxKind.PlusToken, createExpressionFromValue(value)
         ));
     }
 
     neg<T extends number>(value: T): Expression<`-${T}`, number>;
     neg<T extends string>(value: T): Expression<`-'${T}'`, number>;
-    neg<E extends string>(builder: (b: this) => Expression<E>): Expression<`-(${E})`, number>
+    neg<E extends string>(value: Expression<E>): Expression<`-(${E})`, number>
     neg(value: any) {
         return new Expression(factory.createPrefixUnaryExpression(
-            SyntaxKind.MinusToken, this.#createInnerExpression(value)
+            SyntaxKind.MinusToken, createExpressionFromValue(value)
         ));
     }
 
@@ -113,70 +123,70 @@ class fEnumMemberBuilder<Members extends EnumMemberList> {
     add<L extends number, R extends string>(left: L, right: R): Expression<`${L} + '${R}'`, string>;
     add<L extends string, R extends string>(left: L, right: R): Expression<`'${L}' + '${R}'`, string>;
 
-    add<L extends string, R extends number>(left: (b: this) => Expression<L, number>, right: R): Expression<`(${L}) + ${R}`, number>;
-    add<L extends string, R extends string>(left: (b: this) => Expression<L, number | string>, right: R): Expression<`(${L}) + '${R}'`, string>;
+    add<L extends string, R extends number>(left: Expression<L, number>, right: R): Expression<`(${L}) + ${R}`, number>;
+    add<L extends string, R extends string>(left: Expression<L, number | string>, right: R): Expression<`(${L}) + '${R}'`, string>;
 
-    add<L extends number, R extends string>(left: L, right: (b: this) => Expression<R, number>): Expression<`${L} + (${R})`, number>;
-    add<L extends string, R extends string>(left: L, right: (b: this) => Expression<R, number | string>): Expression<`${L} + (${R})`, string>;
-
-    add<L extends string, R extends string>(left: (b: this) => Expression<L, number>, right: (b: this) => Expression<R, number>): Expression<`(${L}) + (${R})`, number>;
-    add<L extends string, R extends string>(left: (b: this) => Expression<L, number | string>, right: (b: this) => Expression<R, string>): Expression<`(${L}) + (${R})`, string>;
-    add<L extends string, R extends string>(left: (b: this) => Expression<L, string>, right: (b: this) => Expression<R, number | string>): Expression<`(${L}) + (${R})`, string>;
+    add<L extends number, R extends string>(left: L, right: Expression<R, number>): Expression<`${L} + (${R})`, number>;
+    add<L extends string, R extends string>(left: L, right: Expression<R, number | string>): Expression<`${L} + (${R})`, string>;
+    
+    add<L extends string, R extends string>(left: Expression<L, number>, right: Expression<R, number>): Expression<`(${L}) + (${R})`, number>;
+    add<L extends string, R extends string>(left: Expression<L, number | string>, right: Expression<R, string>): Expression<`(${L}) + (${R})`, string>;
+    add<L extends string, R extends string>(left: Expression<L, string>, right: Expression<R, number | string>): Expression<`(${L}) + (${R})`, string>;
 
     add(left: any, right: any) {
         return new Expression(factory.createBinaryExpression(
-            this.#createInnerExpression(left),
+            createExpressionFromValue(left),
             SyntaxKind.PlusToken,
-            this.#createInnerExpression(right),
+            createExpressionFromValue(right),
         ));
     }
 
 
     sub<L extends number, R extends number>(left: L, right: R): Expression<`${L} - ${R}`, number>;
-    sub<L extends string, R extends number>(left: (b: this) => Expression<L, number>, right: R): Expression<`(${L}) - ${R}`, number>;
-    sub<L extends number, R extends string>(left: L, right: (b: this) => Expression<R, number>): Expression<`${L} - (${R})`, number>;
-    sub<L extends string, R extends string>(left: (b: this) => Expression<L, number>, right: (b: this) => Expression<R, number>): Expression<`(${L}) - (${R})`, number>;
+    sub<L extends string, R extends number>(left: Expression<L, number>, right: R): Expression<`(${L}) - ${R}`, number>;
+    sub<L extends number, R extends string>(left: L, right: Expression<R, number>): Expression<`${L} - (${R})`, number>;
+    sub<L extends string, R extends string>(left: Expression<L, number>, right: Expression<R, number>): Expression<`(${L}) - (${R})`, number>;
     sub(left: any, right: any) {
         return new Expression(factory.createBinaryExpression(
-            this.#createInnerExpression(left),
+            createExpressionFromValue(left),
             SyntaxKind.MinusToken,
-            this.#createInnerExpression(right),
+            createExpressionFromValue(right),
         ));
     }
 
     mul<L extends number, R extends number>(left: L, right: R): Expression<`${L} * ${R}`, number>;
-    mul<L extends string, R extends number>(left: (b: this) => Expression<L, number>, right: R): Expression<`(${L}) * ${R}`, number>;
-    mul<L extends number, R extends string>(left: L, right: (b: this) => Expression<R, number>): Expression<`${L} * (${R})`, number>;
-    mul<L extends string, R extends string>(left: (b: this) => Expression<L, number>, right: (b: this) => Expression<R, number>): Expression<`(${L}) * (${R})`, number>;
+    mul<L extends string, R extends number>(left: Expression<L, number>, right: R): Expression<`(${L}) * ${R}`, number>;
+    mul<L extends number, R extends string>(left: L, right: Expression<R, number>): Expression<`${L} * (${R})`, number>;
+    mul<L extends string, R extends string>(left: Expression<L, number>, right: Expression<R, number>): Expression<`(${L}) * (${R})`, number>;
     mul(left: any, right: any) {
         return new Expression(factory.createBinaryExpression(
-            this.#createInnerExpression(left),
+            createExpressionFromValue(left),
             SyntaxKind.AsteriskToken,
-            this.#createInnerExpression(right),
+            createExpressionFromValue(right),
         ));
     }
 
     div<L extends number, R extends number>(left: L, right: R): Expression<`${L} / ${R}`, number>;
-    div<L extends string, R extends number>(left: (b: this) => Expression<L, number>, right: R): Expression<`(${L}) / ${R}`, number>;
-    div<L extends number, R extends string>(left: L, right: (b: this) => Expression<R, number>): Expression<`${L} / (${R})`, number>;
-    div<L extends string, R extends string>(left: (b: this) => Expression<L, number>, right: (b: this) => Expression<R, number>): Expression<`(${L}) / (${R})`, number>;
+    div<L extends string, R extends number>(left: Expression<L, number>, right: R): Expression<`(${L}) / ${R}`, number>;
+    div<L extends number, R extends string>(left: L, right: Expression<R, number>): Expression<`${L} / (${R})`, number>;
+    div<L extends string, R extends string>(left: Expression<L, number>, right: Expression<R, number>): Expression<`(${L}) / (${R})`, number>;
     div(left: any, right: any) {
         return new Expression(factory.createBinaryExpression(
-            this.#createInnerExpression(left),
+            createExpressionFromValue(left),
             SyntaxKind.SlashToken,
-            this.#createInnerExpression(right),
+            createExpressionFromValue(right),
         ));
     }
 
     mod<L extends number, R extends number>(left: L, right: R): Expression<`${L} % ${R}`, number>;
-    mod<L extends string, R extends number>(left: (b: this) => Expression<L, number>, right: R): Expression<`(${L}) % ${R}`, number>;
-    mod<L extends number, R extends string>(left: L, right: (b: this) => Expression<R, number>): Expression<`${L} % (${R})`, number>;
-    mod<L extends string, R extends string>(left: (b: this) => Expression<L, number>, right: (b: this) => Expression<R, number>): Expression<`(${L}) % (${R})`, number>;
+    mod<L extends string, R extends number>(left: Expression<L, number>, right: R): Expression<`(${L}) % ${R}`, number>;
+    mod<L extends number, R extends string>(left: L, right: Expression<R, number>): Expression<`${L} % (${R})`, number>;
+    mod<L extends string, R extends string>(left: Expression<L, number>, right: Expression<R, number>): Expression<`(${L}) % (${R})`, number>;
     mod(left: any, right: any) {
         return new Expression(factory.createBinaryExpression(
-            this.#createInnerExpression(left),
+            createExpressionFromValue(left),
             SyntaxKind.PercentToken,
-            this.#createInnerExpression(right),
+            createExpressionFromValue(right),
         ));
     }
 
@@ -185,75 +195,68 @@ class fEnumMemberBuilder<Members extends EnumMemberList> {
     //
 
     b_or<L extends number, R extends number>(left: L, right: R): Expression<`${L} | ${R}`, number>;
-    b_or<L extends string, R extends number>(left: (b: this) => Expression<L, number>, right: R): Expression<`(${L}) | ${R}`, number>;
-    b_or<L extends number, R extends string>(left: L, right: (b: this) => Expression<R, number>): Expression<`${L} | (${R})`, number>;
-    b_or<L extends string, R extends string>(left: (b: this) => Expression<L, number>, right: (b: this) => Expression<R, number>): Expression<`(${L}) | (${R})`, number>;
+    b_or<L extends string, R extends number>(left: Expression<L, number>, right: R): Expression<`(${L}) | ${R}`, number>;
+    b_or<L extends number, R extends string>(left: L, right: Expression<R, number>): Expression<`${L} | (${R})`, number>;
+    b_or<L extends string, R extends string>(left: Expression<L, number>, right: Expression<R, number>): Expression<`(${L}) | (${R})`, number>;
     b_or(left: any, right: any) {
         return new Expression(factory.createBinaryExpression(
-            this.#createInnerExpression(left),
+            createExpressionFromValue(left),
             SyntaxKind.BarToken,
-            this.#createInnerExpression(right),
+            createExpressionFromValue(right),
         ));
     }
 
     b_xor<L extends number, R extends number>(left: L, right: R): Expression<`${L} ^ ${R}`, number>;
-    b_xor<L extends string, R extends number>(left: (b: this) => Expression<L, number>, right: R): Expression<`(${L}) ^ ${R}`, number>;
-    b_xor<L extends number, R extends string>(left: L, right: (b: this) => Expression<R, number>): Expression<`${L} ^ (${R})`, number>;
-    b_xor<L extends string, R extends string>(left: (b: this) => Expression<L, number>, right: (b: this) => Expression<R, number>): Expression<`(${L}) ^ (${R})`, number>;
+    b_xor<L extends string, R extends number>(left: Expression<L, number>, right: R): Expression<`(${L}) ^ ${R}`, number>;
+    b_xor<L extends number, R extends string>(left: L, right: Expression<R, number>): Expression<`${L} ^ (${R})`, number>;
+    b_xor<L extends string, R extends string>(left: Expression<L, number>, right: Expression<R, number>): Expression<`(${L}) ^ (${R})`, number>;
     b_xor(left: any, right: any) {
         return new Expression(factory.createBinaryExpression(
-            this.#createInnerExpression(left),
+            createExpressionFromValue(left),
             SyntaxKind.CaretToken,
-            this.#createInnerExpression(right),
+            createExpressionFromValue(right),
         ));
     }
 
     b_and<L extends number, R extends number>(left: L, right: R): Expression<`${L} & ${R}`, number>;
-    b_and<L extends string, R extends number>(left: (b: this) => Expression<L, number>, right: R): Expression<`(${L}) & ${R}`, number>;
-    b_and<L extends number, R extends string>(left: L, right: (b: this) => Expression<R, number>): Expression<`${L} & (${R})`, number>;
-    b_and<L extends string, R extends string>(left: (b: this) => Expression<L, number>, right: (b: this) => Expression<R, number>): Expression<`(${L}) & (${R})`, number>;
+    b_and<L extends string, R extends number>(left: Expression<L, number>, right: R): Expression<`(${L}) & ${R}`, number>;
+    b_and<L extends number, R extends string>(left: L, right: Expression<R, number>): Expression<`${L} & (${R})`, number>;
+    b_and<L extends string, R extends string>(left: Expression<L, number>, right: Expression<R, number>): Expression<`(${L}) & (${R})`, number>;
     b_and(left: any, right: any) {
         return new Expression(factory.createBinaryExpression(
-            this.#createInnerExpression(left),
+            createExpressionFromValue(left),
             SyntaxKind.AmpersandToken,
-            this.#createInnerExpression(right),
+            createExpressionFromValue(right),
         ));
     }
 
     b_lshift<L extends number, R extends number>(left: L, right: R): Expression<`${L} << ${R}`, number>;
-    b_lshift<L extends string, R extends number>(left: (b: this) => Expression<L, number>, right: R): Expression<`(${L}) << ${R}`, number>;
-    b_lshift<L extends number, R extends string>(left: L, right: (b: this) => Expression<R, number>): Expression<`${L} << (${R})`, number>;
-    b_lshift<L extends string, R extends string>(left: (b: this) => Expression<L, number>, right: (b: this) => Expression<R, number>): Expression<`(${L}) << (${R})`, number>;
+    b_lshift<L extends string, R extends number>(left: Expression<L, number>, right: R): Expression<`(${L}) << ${R}`, number>;
+    b_lshift<L extends number, R extends string>(left: L, right: Expression<R, number>): Expression<`${L} << (${R})`, number>;
+    b_lshift<L extends string, R extends string>(left: Expression<L, number>, right: Expression<R, number>): Expression<`(${L}) << (${R})`, number>;
     b_lshift(left: any, right: any) {
         return new Expression(factory.createBinaryExpression(
-            this.#createInnerExpression(left),
+            createExpressionFromValue(left),
             SyntaxKind.LessThanLessThanToken,
-            this.#createInnerExpression(right),
+            createExpressionFromValue(right),
         ));
     }
 
     b_rshift<L extends number, R extends number>(left: L, right: R, withLeadingZeros: true): Expression<`${L} >>> ${R}`, number>;
     b_rshift<L extends number, R extends number>(left: L, right: R, withLeadingZeros?: false): Expression<`${L} >> ${R}`, number>;
-    b_rshift<L extends string, R extends number>(left: (b: this) => Expression<L, number>, right: R, withLeadingZeros: true): Expression<`(${L}) >>> ${R}`, number>;
-    b_rshift<L extends string, R extends number>(left: (b: this) => Expression<L, number>, right: R, withLeadingZeros?: false): Expression<`(${L}) >> ${R}`, number>;
-    b_rshift<L extends number, R extends string>(left: L, right: (b: this) => Expression<R, number>, withLeadingZeros: true): Expression<`${L} >>> (${R})`, number>;
-    b_rshift<L extends number, R extends string>(left: L, right: (b: this) => Expression<R, number>, withLeadingZeros?: false): Expression<`${L} >> (${R})`, number>;
-    b_rshift<L extends string, R extends string>(left: (b: this) => Expression<L, number>, right: (b: this) => Expression<R, number>, withLeadingZeros: true): Expression<`(${L}) >>> (${R})`, number>;
-    b_rshift<L extends string, R extends string>(left: (b: this) => Expression<L, number>, right: (b: this) => Expression<R, number>, withLeadingZeros?: false): Expression<`(${L}) >> (${R})`, number>;
+    b_rshift<L extends string, R extends number>(left: Expression<L, number>, right: R, withLeadingZeros: true): Expression<`(${L}) >>> ${R}`, number>;
+    b_rshift<L extends string, R extends number>(left: Expression<L, number>, right: R, withLeadingZeros?: false): Expression<`(${L}) >> ${R}`, number>;
+    b_rshift<L extends number, R extends string>(left: L, right: Expression<R, number>, withLeadingZeros: true): Expression<`${L} >>> (${R})`, number>;
+    b_rshift<L extends number, R extends string>(left: L, right: Expression<R, number>, withLeadingZeros?: false): Expression<`${L} >> (${R})`, number>;
+    b_rshift<L extends string, R extends string>(left: Expression<L, number>, right: Expression<R, number>, withLeadingZeros: true): Expression<`(${L}) >>> (${R})`, number>;
+    b_rshift<L extends string, R extends string>(left: Expression<L, number>, right: Expression<R, number>, withLeadingZeros?: false): Expression<`(${L}) >> (${R})`, number>;
     b_rshift(left: any, right: any, withLeadingZeros: boolean = false) {
         return new Expression(factory.createBinaryExpression(
-            this.#createInnerExpression(left),
+            createExpressionFromValue(left),
             withLeadingZeros ? SyntaxKind.GreaterThanGreaterThanGreaterThanToken : SyntaxKind.GreaterThanGreaterThanToken,
-            this.#createInnerExpression(right),
+            createExpressionFromValue(right),
         ));
     }
-
-    #createInnerExpression(value: number | string | Expression | ((b: this) => Expression)): ts.Expression {
-        return typeof value === "function"
-            ? factory.createParenthesizedExpression(value(this).$expression)
-            : createExpressionFromValue(value);
-    }
-
 }
 
 function createExpressionFromValue(value: number | string | Expression): ts.Expression {
